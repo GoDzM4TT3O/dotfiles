@@ -28,7 +28,7 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is
 Installation instructions:
 
 ```bash
-git clone https://gitlab.com/dwt1/shell-color-scripts`
+git clone https://gitlab.com/dwt1/shell-color-scripts
 cd shell-color-scripts
 rm -rf /opt/shell-color-scripts || return 1
 sudo mkdir -p /opt/shell-color-scripts/colorscripts || return 1
