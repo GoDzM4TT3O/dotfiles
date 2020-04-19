@@ -30,7 +30,7 @@ memory {
 	format_degraded = "MEMORY: %free"
 }
 
-ethernet enp2s0 {
+ethernet enp3s0 {
         format_up = "<span background='#88c0d0'>  %ip </span>"
         format_down = "<span background='#88c0d0'>  Disconnected </span>"
 }
