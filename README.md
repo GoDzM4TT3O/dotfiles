@@ -79,7 +79,7 @@ Install additional packages:
 ```
 git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
 cd dotfiles # go into the dotfiles directory
-cp -rf .* ~ # this will copy all of the dotfiles into /home/$USER
+cp -r * ~ # this will copy all of the dotfiles into /home/$USER
 ```
 
 ## Modifying configurations
