@@ -51,6 +51,7 @@ sudo make install
 Finally copy `vifmrun` to `/usr/bin`:
 ```
 cd dotfiles
+chmod 777 vifrmrun
 sudo cp .config/vifm/vifmrun /usr/bin
 ```
 
