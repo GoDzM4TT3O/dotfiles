@@ -29,6 +29,21 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is
 - Terminal startup script: [shell-color-scripts](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
 
+## powerline
+Installation instructions:
+- Debian/Mint/Ubuntu: `sudo apt install powerline python-pip python3; pip install powerline-status`
+- Arch Linux/Manjaro: `sudo pacman -S powerline python-pip python3; pip install powerline-status`
+
+- After this, check where powerline is installed: `pip show powerline-status | grep -E "^Location:"`
+- Copy the directory (should be like `/home/$USER/.local/lib/...`).
+- Modify `~/.bashrc`
+- Find `. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh`
+- Replace `~/.local/lib/python2.7/site-packages` with the new location you found.
+
+Now we need to apply the themes.
+- `cd` into the directory above (should be like `~/.local/lib/python3.8/site-packages/powerline`)
+- `cd config_files; powerline_lint` this will apply the powerline themes.
+
 ## shell-color-scripts
 Installation instructions:
 
