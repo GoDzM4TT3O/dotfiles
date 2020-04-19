@@ -11,6 +11,11 @@ Htop, cmus and cli-visualizer
 
 ***
 
+## Others (not included)
+Grub theme: [Slaze](https://github.com/vinceliuice/grub2-themes)
+System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
+Icon theme: [Paper](https://github.com/snwh/paper-icon-theme)
+
 ## Terminal
 - Terminal: `kitty`
 - Terminal color scheme: [Nord](http://nordtheme.com/)
