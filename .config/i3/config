@@ -64,7 +64,8 @@ bindsym $mod+Shift+Right move right
 
 # common apps keybinds
 # screenshot
-bindsym --release Print exec --no-startup-id scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'feh ~/$f'
+# change 'mv $f ~/Pictures/' with `feh $f` if you want to see the screenshot and keep it in /home/$USER/
+bindsym --release Print exec --no-startup-id scrot 'Screenshot_%a-%d%b%y_%H.%M.png' -e 'mv $f ~/Pictures/'
 # lock the screen
 bindsym $super+l exec i3lock -i ~/wallpaper.png
 # open firefox
