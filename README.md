@@ -67,12 +67,13 @@ PLEASE see [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/
 Get i3:
 - Debian/Mint/Ubuntu: `sudo apt install i3`
 - Arch Linux/Manjaro: `sudo pacman -S i3`
-The packages that need to be installed are: `i3-wm dunst i3lock i3status suckless-tools`.
+
+The packages that need to be installed are: `i3-wm dunst i3lock i3status`.
 If they aren't automatically installed, install them.
 
 Install additional packages:
 - Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock`
-- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock`
+- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi xsettingsd lxappearance scrot viewnior feh kitty`
 
 ## Copying configurations
 ```
