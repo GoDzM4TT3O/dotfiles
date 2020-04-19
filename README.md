@@ -1,8 +1,17 @@
 # My dotfiles
 ## Preview
-![text][ws2]
+Kitty
+![ws2](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws2.png)
 
-## TERMINAL
+Three kitty terminals
+![ws3](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws3.png)
+
+Htop, cmus and cli-visualizer
+![ws4](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws4.png)
+
+***
+
+## Terminal
 - Terminal: `kitty`
 - Terminal color scheme: [Nord](http://nordtheme.com/)
 - Terminal font: [Fira Code](https://github.com/tonsky/FiraCode)
@@ -15,7 +24,7 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat
 - Terminal startup script: [shell-color-scripts](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
 
-## SHELL-COLOR-SCRIPTS
+## shell-color-scripts
 Installation instructions:
 
 ```bash
@@ -35,11 +44,14 @@ sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 - Status bar font: [FontAwesome](https://github.com/fontawesome/fontawesome)
 - Lock screen: `i3lock`
 
-## MUSIC
+## Image viewer
+- Image viewer: `feh`
+
+## Music
 - Music player: `cmus`
 - Music visualizer: [cli-visualizer](https://github.com/dpayne/cli-visualizer)
 
-## VIM
+## Vim
 - Text editor: `vim`
 - Vim color scheme: deus
 - Vim package managers: vim-plug, vim-pathogen
@@ -47,7 +59,9 @@ sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 
 PLEASE see [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/master/.vim/readme.txt)
 
-## INSTALLATION
+***
+
+## Installation
 Get i3:
 - Debian/Mint/Ubuntu: `sudo apt install i3`
 - Arch Linux/Manjaro: `sudo pacman -S i3`
@@ -151,4 +165,3 @@ tztime local {
 ```
 
 Make sure to replace the network interfaces.
-[ws2]: https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws2.png
