@@ -17,10 +17,10 @@ Htop, cmus and cli-visualizer
 - Terminal font: [Fira Code](https://github.com/tonsky/FiraCode)
 - Terminal config creator: [kitty-cat](https://github.com/adi1090x/kitty-cat)
 
-NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat
+NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created.
 
 - Terminal clock: `tty-clock`
-- Bash prompt: `powerline`
+- Bash prompt: [powerline](https://github.com/powerline/powerline)
 - Terminal startup script: [shell-color-scripts](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
 
@@ -71,17 +71,17 @@ The packages that need to be installed are: `i3-wm dunst i3lock i3status suckles
 If they aren't automatically installed, install them.
 
 Install additional packages:
-- Debian/Mint/Ubuntu: `sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty`
-- Arch Linux/Manjaro: `sudo pacman -S compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty`
+- Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock`
+- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock`
 
-## COPYING CONFIGURATIONS
+## Copying configurations
 ```
 git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
 cd dotfiles # go into the dotfiles directory
 cp -rf .* ~ # this will copy all of the dotfiles into /home/$USER
 ```
 
-## MODIFYING CONFIGURATIONS
+## Modifying configurations
 You should modify `~/.config/i3status/config`, because it contains network interfaces that might be different from yours.
 Change `wlp4s0` and `enp2s0` with your network interfaces.
 You can find yours by running the command `ip link | grep -oE "^[2-9]: [e-w]....."`, then you will likely have two results.
