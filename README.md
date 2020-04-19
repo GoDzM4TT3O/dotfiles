@@ -51,6 +51,8 @@ sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 - Music player: `cmus`
 - Music visualizer: [cli-visualizer](https://github.com/dpayne/cli-visualizer)
 
+NOTE: to launch cli-visualizer, run `vis`
+
 ## Vim
 - Text editor: `vim`
 - Vim color scheme: deus
