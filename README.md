@@ -1,15 +1,22 @@
-TERMINAL
-Terminal: kitty
-Terminal color scheme: Nord
-Terminal font: Fira Code
-Terminal config creator: kitty-cat
-Terminal clock: tty-clock
-Bash prompt: powerline
-Terminal startup script: shell-color-scripts
+# My dotfiles
+## TERMINAL
+- Terminal: `kitty`
+- Terminal color scheme: [Nord](http://nordtheme.com/)
+- Terminal font: [Fira Code](https://github.com/tonsky/FiraCode)
+- Terminal config creator: [kitty-cat](https://github.com/adi1090x/kitty-cat)
 
-SHELL-COLOR-SCRIPTS
+NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat
+
+- Terminal clock: `tty-clock`
+- Bash prompt: `powerline`
+- Terminal startup script: [shell-color-scripts](https://gitlab.com/dwt1/shell-color-scripts)
+- Get system info: `neofetch`
+
+## SHELL-COLOR-SCRIPTS
 Installation instructions:
-git clone https://gitlab.com/dwt1/shell-color-scripts
+
+```bash
+git clone https://gitlab.com/dwt1/shell-color-scripts`
 cd shell-color-scripts
 rm -rf /opt/shell-color-scripts || return 1
 sudo mkdir -p /opt/shell-color-scripts/colorscripts || return 1
@@ -17,42 +24,48 @@ sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
 sudo cp colorscript.sh /usr/bin/colorscript
 # If you use zsh:
 sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
+```
 
-WM
-Window Manager: i3
-Status bar: i3status
-Status bar font: FontAwesome
-Lock screen: i3lock
+## WM
+- Window Manager: `i3`
+- Status bar: `i3bar`
+- Status bar font: [FontAwesome](https://github.com/fontawesome/fontawesome)
+- Lock screen: `i3lock`
 
-MUSIC
-Music player: CMus
-Music visualizer: cli-visualizer
+## MUSIC
+- Music player: `cmus`
+- Music visualizer: [cli-visualizer](https://github.com/dpayne/cli-visualizer)
 
-VIM
-Text editor: Vim
-Vim color scheme: deus
-Vim package managers: vim-plug, vim-pathogen
-Vim status bar: vim-airline
+## VIM
+- Text editor: `vim`
+- Vim color scheme: deus
+- Vim package managers: vim-plug, vim-pathogen
+- Vim status bar: vim-airline
 
-INSTALLATION
+PLEASE see [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/master/.vim/readme.txt)
+
+## INSTALLATION
 Get i3:
-Debian/Mint/Ubuntu: `sudo apt install i3`
-Arch Linux/Manjaro: `sudo pacman -S i3`
-The packages that need to be installed are: `i3-wm dunst i3lock i3status suckless-tools`. If they aren't automatically installed, install them.
+- Debian/Mint/Ubuntu: `sudo apt install i3`
+- Arch Linux/Manjaro: `sudo pacman -S i3`
+The packages that need to be installed are: `i3-wm dunst i3lock i3status suckless-tools`.
+If they aren't automatically installed, install them.
 
 Install additional packages:
-Debian/Mint/Ubuntu: `sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty`
-Arch Linux/Manjaro: `sudo pacman -S compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty`
+- Debian/Mint/Ubuntu: `sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty`
+- Arch Linux/Manjaro: `sudo pacman -S compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty`
 
-COPYING CONFIGURATIONS
-`git clone https://github.com/GoDzM4TT3O/dotfiles` # clone the repo
-`cd dotfiles` # go into the dotfiles directory
-`cp -rf .* ~` # this will copy all of the dotfiles 
+## COPYING CONFIGURATIONS
+```
+git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
+cd dotfiles # go into the dotfiles directory
+cp -rf .* ~ # this will copy all of the dotfiles into /home/$USER
+```
 
-MODIFYING CONFIGURATIONS
+## MODIFYING CONFIGURATIONS
 You should modify `~/.config/i3status/config`, because it contains network interfaces that might be different from yours.
 Change `wlp4s0` and `enp2s0` with your network interfaces.
-You can find yours by running the command ip link | grep -oE "^[2-9]: [e-w].....", then you will likely have two results.
+You can find yours by running the command `ip link | grep -oE "^[2-9]: [e-w]....."`, then you will likely have two results.
 My results are "2: enp3s0" and "3: wlp4s0". You need to copy the interface names (after the number and the colon) respectively over the existing interfaces.
 For example, if your results are "2: eth0" and "3: wlan0", replace "enp3s0" with "eth0", and "wlp4s0" with "wlan0".
 
