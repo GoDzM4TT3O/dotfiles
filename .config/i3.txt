@@ -1,0 +1,15 @@
+How to use i3 (improved tiling window manager)
+Open a terminal: ALT+ENTER
+Split the current window vertically: ALT+V
+Split the current window horizontally: ALT+H
+Switch to the second workspace: ALT+2
+Switch focus: ALT+[Arrow Keys (Up, Down, Right, Left)]
+Move window: ALT+SHIFT+[Arrow Keys]
+Change layout - stacking: ALT+S
+Change layout - tabbed: ALT+W
+Change layout - tiling: ALT+E
+Start an application using dmenu: ALT+D
+Exit out of fullscreen: ALT+SHIFT+SPACE
+Drag a window with your mouse: ALT+[Mouse movement]
+Move app to container 2: ALT+SHIFT+2
+Resize a window: ALT+R+[Arrow Keys]
