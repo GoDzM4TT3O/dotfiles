@@ -1,4 +1,7 @@
 # My dotfiles
+## Preview
+![text][ws2]
+
 ## TERMINAL
 - Terminal: `kitty`
 - Terminal color scheme: [Nord](http://nordtheme.com/)
@@ -148,3 +151,4 @@ tztime local {
 ```
 
 Make sure to replace the network interfaces.
+[ws2]: https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws2.png
