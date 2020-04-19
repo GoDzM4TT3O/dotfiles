@@ -21,6 +21,7 @@ Htop, cmus and cli-visualizer
 - Terminal color scheme: [Nord](http://nordtheme.com/)
 - Terminal font: [Fira Code](https://github.com/tonsky/FiraCode)
 - Terminal config creator: [kitty-cat](https://github.com/adi1090x/kitty-cat)
+- Terminal file manager: `vifm`
 
 NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created.
 
@@ -28,6 +29,30 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is
 - Bash prompt: [powerline](https://github.com/powerline/powerline)
 - Terminal startup script: [shell-color-scripts](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
+
+## vifm
+Installation instructions:
+- Debian/Mint/Ubuntu: `sudo apt install vifm ffmpegthumbnailer poppler* imagemagick xdotool fzf sxiv`
+- Arch Linux/Manjaro: `sudo pacman -S vifm ffmpegthumbnailer poppler* imagemagick xdotool fzf sxiv`
+
+Install dependencies:
+
+```bash
+sudo pip3 install ueberzug # ueberzug
+git clone https://github.com/marianosimone/epub-thumbnailer # epub-thumbnailer
+cd epub-thumbnailer
+pip install pillow
+sudo python install.py install
+git clone https://github.com/sdushantha/fontpreview # fontpreview
+cd fontpreview
+sudo make install
+```
+
+Finally copy `vifmrun` to `/usr/bin`:
+```
+cd dotfiles
+sudo cp .config/vifm/vifmrun /usr/bin
+```
 
 ## powerline
 Installation instructions:
