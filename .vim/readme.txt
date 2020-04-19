@@ -18,5 +18,5 @@ DOCUMENT SYNTAX
 ! To delete a line, type dd
 ----------------------------------------------------
 INSTALL VIM PACKAGES
-First of all install vim-plug and vim-pathogen
-Then run ":PlugInstall" inside vim.
+vim-plug and vim-pathogen are already included.
+Simply run ":PlugInstall" inside vim.
