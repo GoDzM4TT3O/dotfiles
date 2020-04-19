@@ -23,7 +23,7 @@ Htop, cmus and cli-visualizer
 - Terminal config creator: [kitty-cat](https://github.com/adi1090x/kitty-cat)
 - Terminal file manager: `vifm`
 
-NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created.
+NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created. Also, to run `kitty`, you need OpenGL 3.3 or newer.
 
 - Terminal clock: `tty-clock`
 - Bash prompt: [powerline](https://github.com/powerline/powerline)
