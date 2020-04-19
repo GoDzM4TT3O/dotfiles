@@ -1,6 +1,8 @@
+DOCUMENT SYNTAX
 # before lines means modes 
 // before lines means commands inside modes
 ! before lines means commands in command mode (ESC)
+----------------------------------------------------
 ! To enter command mode, type ESC
 # To select lines, type SHIFT+V
 # To select text, type v
@@ -14,3 +16,7 @@
 # To enter insert mode, type i
 # To enter replace mode, type SHIFT+R
 ! To delete a line, type dd
+----------------------------------------------------
+INSTALL VIM PACKAGES
+First of all install vim-plug and vim-pathogen
+Then run ":PlugInstall" inside vim.
