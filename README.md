@@ -93,7 +93,15 @@ If they aren't automatically installed, install them.
 
 Install additional packages:
 - Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock`
-- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi xsettingsd lxappearance scrot viewnior feh kitty`
+- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior feh kitty`
+
+To install `fonts-mplus` on Arch Linux, use `yay -S ttf-mplus` or:
+
+```
+git clone https://aur.archlinux.org/ttf-mplus
+cd ttf-mplus
+makepkg -si
+```
 
 ## Copying configurations
 ```
