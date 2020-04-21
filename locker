@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# change this line below to choose a custom locker
+i3lock -i ~/wallpaper.png -t
