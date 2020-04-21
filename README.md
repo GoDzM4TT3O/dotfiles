@@ -3,7 +3,23 @@
 - [Sections](#sections)
 - [Previews](#previews)
 - [Others (not included)](#others-not-included)
+- [Terminal](#terminal)
 - [Terminal addons](#terminal-addons)
+	- [Vifm](#vifm)
+	- [Powerline](#powerline)
+	- [Shell Color Scripts](#shell-color-scripts)
+- [Window Manager](#window-manager)
+- [Window Manager addons](#window-manager-addons)
+	- [Screen Saver](#xscreensaver)
+	- [Automatic lock](#xautolock)
+- [Extras](#extras)
+	- [Image Viewer](#image-viewer)
+	- [Music](#music)
+	- [Text editor](#text-editor)
+- [Installation](#installation)
+	- [Copying the configurations](#copying-configurations)
+	- [Modifying the configurations](#modifying-configurations)
+
 
 ***
 
@@ -139,7 +155,7 @@ Install `xautolock`:
 
 NOTE: to launch cli-visualizer, run `vis`
 
-## Text editor
+### Text editor
 - Text editor: `vim`
 - Vim color scheme: deus
 - Vim package managers: vim-plug, vim-pathogen
@@ -169,7 +185,7 @@ cd ttf-mplus
 makepkg -si
 ```
 
-## Copying configurations
+### Copying configurations
 WARNING: THIS WILL REPLACE YOUR EXISTING CONFIGURATIONS!!!
 
 ```
@@ -179,7 +195,7 @@ cp -r .{config,vim*,bash*,x*,X*} ~ # copy the dotfiles
 cp {locker,wallpaper.png} ~ # copy locker and the wallpaper
 ```
 
-## Modifying configurations
+### Modifying configurations
 You should modify `~/.config/i3status/config`, because it contains network interfaces that might be different from yours.
 Change `wlp4s0` and `enp2s0` with your network interfaces.
 You can find yours by running the command `ip link | grep -oE "^[2-9]: [e-w]....."`, then you will likely have two results.
