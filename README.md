@@ -23,7 +23,7 @@ Htop, cmus and cli-visualizer
 - Terminal config creator: [kitty-cat](https://github.com/adi1090x/kitty-cat)
 - Terminal file manager: `vifm`
 
-NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created. Also, to run `kitty`, you need OpenGL 3.3 or newer.
+NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created. Also, to run `kitty`, you need OpenGL 3.3 or newer. If you have OpenGL 3.2 or older, use `urxvt`, the config files are already included.
 
 - Terminal clock: `tty-clock`
 - Bash prompt: [powerline](https://github.com/powerline/powerline)
@@ -54,6 +54,8 @@ cd dotfiles
 chmod 777 vifrmrun
 sudo cp .config/vifm/vifmrun /usr/bin
 ```
+
+If you want to use `vifm`, just run it from the terminal.
 
 ## powerline
 Installation instructions:
@@ -89,6 +91,20 @@ sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 - Status bar: `i3bar`
 - Status bar font: [FontAwesome](https://github.com/fontawesome/fontawesome)
 - Lock screen: `i3lock`
+- Screensaver: `xscreensaver`
+- Automatic lock: `xautolock`
+
+## xscreensaver
+Install `xscreensaver`:
+
+- Debian/Mint/Ubuntu: `sudo apt install xscreeensaver xscreensaver-gl*`
+- Arch Linux/Manjaro: `sudo pacman -S xscreeensaver xscreensaver-gl*`
+
+## xautolock
+Install `xautolock`:
+
+- Debian/Mint/Ubuntu: `sudo apt install xautolock`
+- Arch Linux/Manjaro: `sudo pacman -S xautolock`
 
 ## Image viewer
 - Image viewer: `feh`
@@ -148,6 +164,7 @@ For example, if your results are "2: eth0" and "3: wlan0", replace "enp3s0" with
 
 I also removed CPU temperature from the i3bar. To add it back, replace "~/.config/i3status/config" with the lines below:
 
+
 ```
 general {
         output_format = "i3bar"
@@ -155,8 +172,8 @@ general {
         markup = pango
         interval = 5
         color_good = '#2f343f'
-                color_degraded = '#ebcb8b'
-                color_bad = '#ba5e57'
+		color_degraded = '#ebcb8b'
+		color_bad = '#ba5e57'
 }
 
 order += "cpu_temperature 0"
@@ -174,54 +191,53 @@ cpu_temperature 0 {
 }
 
 load {
-        format = "<span background='#f59335'>  %5min Load </span>"
+        format = "<span background='#f59335'>  %5min Load </span>"
 }
 
 disk "/" {
-        format = "<span background='#fec7cd'>  %free Free </span>"
+        format = "<span background='#fec7cd'>  %free Free </span>"
 }
 
 memory {
         format = "%used"
-        threshold_degraded = "10%"
-        format_degraded = "MEMORY: %free"
+	threshold_degraded = "10%"
+	format_degraded = "MEMORY: %free"
 }
 
 ethernet enp3s0 {
-	format_up = "<span background='#88c0d0'>  %ip </span>"
-        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+        format_up = "<span background='#88c0d0'>  %ip </span>"
+        format_down = "<span background='#88c0d0'>  Disconnected </span>"
 }
 
 wireless wlp4s0 {
-        format_up = "<span background='#b48ead'>  %essid </span>"
+        format_up = "<span background='#b48ead'>  %essid </span>"
         format_down = "<span background='#b48ead'>  Disconnected </span>"
 }
 
 volume master {
-        format = "<span background='#ebcb8b'>  %volume </span>"
-        format_muted = "<span background='#ebcb8b'>  Muted </span>"
+        format = "<span background='#ebcb8b'>  %volume </span>"
+        format_muted = "<span background='#ebcb8b'>  Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
 
 battery 1 {
-        last_full_capacity = true
+	last_full_capacity = true
         format = "<span background='#a3be8c'> %status %percentage </span>"
         format_down = "  No Battery"
         status_chr = "  Charging"
         status_bat = "  Battery"
-        status_unk = "  Unknown"
+        status_unk = " Unknown"
         status_full = "  Charged"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
 
 tztime local {
-                format = "<span background='#81a1c1'> %time </span>"
-                format_time = " %a %-d %b %H:%M"
+		format = "<span background='#81a1c1'> %time </span>"
+		format_time = " %A %-d %B %Y %R"
 }
-
 ```
 
 Make sure to replace the network interfaces.
