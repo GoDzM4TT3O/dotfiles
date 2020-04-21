@@ -130,10 +130,13 @@ makepkg -si
 ```
 
 ## Copying configurations
+WARNING: THIS WILL REPLACE YOUR EXISTING CONFIGURATIONS!!!
+
 ```
 git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
 cd dotfiles # go into the dotfiles directory
-cp -r * ~ # this will copy all of the dotfiles into /home/$USER
+cp -r .{config,vim*,bash*,x*,X*} ~ # copy the dotfiles
+cp {locker,wallpaper.png} ~ # copy locker and the wallpaper
 ```
 
 ## Modifying configurations
