@@ -1,5 +1,13 @@
 # My dotfiles
-## Preview
+## Sections:
+- [Sections](#sections)
+- [Previews](#previews)
+- [Others (not included)](#others-not-included)
+- [Terminal addons](#terminal-addons)
+
+***
+
+## Previews
 Kitty
 ![ws2](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws2.png)
 
@@ -38,7 +46,8 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is
 - Terminal startup script: [shell-color-scripts](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
 
-## vifm
+## Terminal addons
+### vifm
 Installation instructions:
 - Debian/Mint/Ubuntu: `sudo apt install vifm ffmpegthumbnailer poppler* imagemagick xdotool fzf sxiv`
 - Arch Linux/Manjaro: `sudo pacman -S vifm ffmpegthumbnailer poppler* imagemagick xdotool fzf sxiv`
@@ -65,7 +74,7 @@ sudo cp .config/vifm/vifmrun /usr/bin
 
 If you want to use `vifm`, just run it from the terminal.
 
-## powerline
+### powerline
 Installation instructions:
 - Debian/Mint/Ubuntu: `sudo apt install powerline python-pip python3; pip install powerline-status`
 - Arch Linux/Manjaro: `sudo pacman -S powerline python-pip python3; pip install powerline-status`
@@ -80,7 +89,7 @@ Now we need to apply the themes.
 - `cd` into the directory above (should be like `~/.local/lib/python3.8/site-packages/powerline`)
 - `cd config_files; powerline_lint` this will apply the powerline themes.
 
-## shell-color-scripts
+### shell-color-scripts
 Installation instructions:
 
 ```bash
@@ -94,7 +103,9 @@ sudo cp colorscript.sh /usr/bin/colorscript
 sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 ```
 
-## WM
+***
+
+## Window Manager
 - Window Manager: `i3`
 - Status bar: `i3bar`
 - Status bar font: [FontAwesome](https://github.com/fontawesome/fontawesome)
@@ -102,28 +113,33 @@ sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 - Screensaver: `xscreensaver`
 - Automatic lock: `xautolock`
 
-## xscreensaver
+## Window Manager addons
+
+### xscreensaver
 Install `xscreensaver`:
 
 - Debian/Mint/Ubuntu: `sudo apt install xscreeensaver xscreensaver-gl*`
 - Arch Linux/Manjaro: `sudo pacman -S xscreeensaver xscreensaver-gl*`
 
-## xautolock
+### xautolock
 Install `xautolock`:
 
 - Debian/Mint/Ubuntu: `sudo apt install xautolock`
 - Arch Linux/Manjaro: `sudo pacman -S xautolock`
 
-## Image viewer
+***
+
+## Extras
+### Image viewer
 - Image viewer: `feh`
 
-## Music
+### Music
 - Music player: `cmus`
 - Music visualizer: [cli-visualizer](https://github.com/dpayne/cli-visualizer)
 
 NOTE: to launch cli-visualizer, run `vis`
 
-## Vim
+## Text editor
 - Text editor: `vim`
 - Vim color scheme: deus
 - Vim package managers: vim-plug, vim-pathogen
