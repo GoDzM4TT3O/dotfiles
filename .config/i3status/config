@@ -17,11 +17,11 @@ order += "battery 1"
 order += "tztime local"
 
 load {
-        format = "<span background='#f59335'>  %5min Load </span>"
+        format = "<span background='#f59335'>  %5min Load </span>"
 }
 
 disk "/" {
-        format = "<span background='#fec7cd'>  %free Free </span>"
+        format = "<span background='#fec7cd'>  %free Free </span>"
 }
 
 memory {
@@ -31,18 +31,18 @@ memory {
 }
 
 ethernet enp3s0 {
-        format_up = "<span background='#88c0d0'>  %ip </span>"
-        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+        format_up = "<span background='#88c0d0'>  %ip </span>"
+        format_down = "<span background='#88c0d0'>  Disconnected </span>"
 }
 
 wireless wlp4s0 {
-        format_up = "<span background='#b48ead'>  %essid </span>"
+        format_up = "<span background='#b48ead'>  %essid </span>"
         format_down = "<span background='#b48ead'>  Disconnected </span>"
 }
 
 volume master {
-        format = "<span background='#ebcb8b'>  %volume </span>"
-        format_muted = "<span background='#ebcb8b'>  Muted </span>"
+        format = "<span background='#ebcb8b'>  %volume </span>"
+        format_muted = "<span background='#ebcb8b'>  Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -54,7 +54,7 @@ battery 1 {
         format_down = "  No Battery"
         status_chr = "  Charging"
         status_bat = "  Battery"
-        status_unk = "  Unknown"
+        status_unk = " Unknown"
         status_full = "  Charged"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
@@ -62,6 +62,5 @@ battery 1 {
 
 tztime local {
 		format = "<span background='#81a1c1'> %time </span>"
-		format_time = " %a %-d %b %H:%M"
+		format_time = " %A %-d %B %Y %R"
 }
-
