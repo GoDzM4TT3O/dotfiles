@@ -16,6 +16,8 @@ Htop, cmus and cli-visualizer
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
 - Icon theme: [Paper](https://github.com/snwh/paper-icon-theme)
 
+NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
+
 ## Terminal
 - Terminal: `kitty`
 - Terminal color scheme: [Nord](http://nordtheme.com/)
