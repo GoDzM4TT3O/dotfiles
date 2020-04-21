@@ -9,6 +9,12 @@ Three kitty terminals
 Htop, cmus and cli-visualizer
 ![ws4](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws4.png)
 
+Floating layout
+![floating](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/floating.png)
+
+Tiling layout
+![tiling](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/tiling.png)
+
 ***
 
 ## Others (not included)
