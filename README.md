@@ -1,4 +1,4 @@
-# My dotfiles
+# GoDzM4TT3O's dotfiles
 ## Sections:
 - [Sections](#sections)
 - [Previews](#previews)
