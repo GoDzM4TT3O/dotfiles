@@ -38,7 +38,8 @@ exec --no-startup-id kdeconnect-indicator
 # enable energy star
 exec --no-startup-id xset dmps 600
 # after 5 minutes of inactivity, lock the screen
-exec --no-startup-id xautolock -time 5 -detectsleep -locker "~/locker" -notify 1 -notifier "notify-send XAutoLock 'Automatically locking...'"
+# comment the line below if you don't want a screensaver
+exec --no-startup-id xautolock -time 55555 -detectsleep -locker "xscreensaver-command -lock" 
 
 # start a terminal
 # I use kitty as a terminal emulator
