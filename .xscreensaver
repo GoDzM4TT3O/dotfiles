@@ -1,5 +1,4 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.42 for matteo on Tue Apr 21 16:58:45 2020.
 # https://www.jwz.org/xscreensaver/
 # godzm4tt3o/dotfiles: I currently use GLmatrix
 # install this package: xscreensaver-gl
@@ -7,7 +6,7 @@
 # Arch Linux/Manjaro: sudo pacman -S xscreensaver-gl*
 
 timeout:	0:05:00
-cycle:		0:05:00
+cycle:		0:01:00
 lock:		False
 lockTimeout:	0:00:00
 passwdTimeout:	0:00:30
