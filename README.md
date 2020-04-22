@@ -115,7 +115,9 @@ rm -rf /opt/shell-color-scripts || return 1
 sudo mkdir -p /opt/shell-color-scripts/colorscripts || return 1
 sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
 sudo cp colorscript.sh /usr/bin/colorscript
-# If you use zsh:
+```
+Add this line if you use zsh:
+```
 sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 ```
 
