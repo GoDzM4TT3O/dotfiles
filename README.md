@@ -169,15 +169,12 @@ PLEASE see [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/
 
 ## Installation
 Get i3:
-- Debian/Mint/Ubuntu: `sudo apt install i3`
-- Arch Linux/Manjaro: `sudo pacman -S i3`
-
-The packages that need to be installed are: `i3-wm dunst i3lock i3status`.
-If they aren't automatically installed, install them.
+- Debian/Mint/Ubuntu: `sudo apt install i3-wm dunst i3lock i3status`
+- Arch Linux/Manjaro: `sudo pacman -S i3-wm dunst i3lock i3status`
 
 Install additional packages:
-- Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock`
-- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior feh kitty`
+- Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock xinit`
+- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior feh kitty xorg-xinit`
 
 To install `fonts-mplus` on Arch Linux, use `yay -S ttf-mplus` or:
 
@@ -187,8 +184,15 @@ cd ttf-mplus
 makepkg -si
 ```
 
+NOTE: if you don't use a display manager (such as LightDM or GDM), add the following line to `~/.xinitrc`:
+
+```
+exec i3
+```
+
 ### Copying configurations
 WARNING: THIS WILL REPLACE YOUR EXISTING CONFIGURATIONS!!!
+If you don't want to replace your existing configurations, please append the lines of my files to your files (if they exist already)
 
 ```
 git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
