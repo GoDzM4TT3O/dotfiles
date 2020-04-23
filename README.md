@@ -45,6 +45,7 @@ Tiling layout
 - Grub theme: [Slaze](https://github.com/vinceliuice/grub2-themes)
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
 - Icon theme: [Paper](https://github.com/snwh/paper-icon-theme)
+- Firefox theme: [Firefox-mod](https://github.com/datttran/Firefox-mod)
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
 
