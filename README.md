@@ -46,6 +46,9 @@ Tiling layout
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
 - Icon theme: [Paper](https://github.com/snwh/paper-icon-theme)
 - Firefox theme: [Firefox-mod](https://github.com/datttran/Firefox-mod)
+- Terminal meme generator: [`memethesis-cli`](https://github.com/fakefred/memethesis-cli)
+- Mirror phone screen: [`scrcpy`](https://github.com/Genymobile/scrcpy)
+- `scrcpy` user interface: [`scrcpy-gui`](https://github.com/Tomotoes/scrcpy-gui)
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
 
@@ -53,15 +56,15 @@ NOTE: If you want to change graphical settings, such as the cursor theme or the 
 - Terminal: `kitty`
 - Terminal color scheme: [Nord](http://nordtheme.com/)
 - Terminal font: [Fira Code](https://github.com/tonsky/FiraCode)
-- Terminal config creator: [kitty-cat](https://github.com/adi1090x/kitty-cat)
-- Terminal file manager: `vifm`
-- Terminal history: [resh](https://github.com/curusarn/resh)
+- Terminal config creator: [`kitty-cat`](https://github.com/adi1090x/kitty-cat)
 
 NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created. Also, to run `kitty`, you need OpenGL 3.3 or newer. If you have OpenGL 3.2 or older, use `urxvt`, the config files are already included.
 
+- Terminal file manager: `vifm`
+- Terminal history: [`resh`](https://github.com/curusarn/resh)
 - Terminal clock: `tty-clock`
-- Bash prompt: [powerline](https://github.com/powerline/powerline)
-- Terminal startup script: [shell-color-scripts](https://gitlab.com/dwt1/shell-color-scripts)
+- Bash prompt: [`powerline`](https://github.com/powerline/powerline)
+- Terminal startup script: [`shell-color-scripts`](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
 
 ## Terminal addons
