@@ -179,7 +179,7 @@ Get i3:
 
 Install additional packages:
 - Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock xinit`
-- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior feh kitty xorg-xinit`
+- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior feh kitty xorg-xinit ttf-font-awesome ttf-fira-code`
 
 To install `fonts-mplus` on Arch Linux, use `yay -S ttf-mplus` or:
 
