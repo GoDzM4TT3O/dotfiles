@@ -131,7 +131,7 @@ sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 ## Window Manager
 - Window Manager: `i3`
 - Status bar: `i3bar`
-- Status bar font: [FontAwesome](https://github.com/fontawesome/fontawesome)
+- Status bar font: [FontAwesome](https://github.com/fortawesome/fontawesome)
 - Lock screen: `i3lock`
 - Screensaver: `xscreensaver`
 - Automatic lock: `xautolock`
