@@ -71,7 +71,7 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is
 ### vifm
 Installation instructions:
 - Debian/Mint/Ubuntu: `sudo apt install vifm ffmpegthumbnailer poppler* imagemagick xdotool fzf sxiv`
-- Arch Linux/Manjaro: `sudo pacman -S vifm ffmpegthumbnailer poppler* imagemagick xdotool fzf sxiv`
+- Arch Linux/Manjaro: `sudo pacman -S vifm ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv`
 
 Install dependencies:
 
