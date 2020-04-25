@@ -24,8 +24,8 @@ bindsym $mod+n border normal
 exec --no-startup-id hsetroot -center ~/wallpaper.png
 # x settings daemon
 exec --no-startup-id xsettingsd &
-# compton
-exec --no-startup-id compton -b
+# picom
+exec --no-startup-id picom -b
 # network manaher
 exec --no-startup-id nm-applet
 # import gnome settings
