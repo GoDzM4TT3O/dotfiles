@@ -168,7 +168,18 @@ NOTE: to launch cli-visualizer, run `vis`
 - Vim package managers: vim-plug, vim-pathogen
 - Vim status bar: vim-airline
 
-PLEASE see [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/master/.vim/readme.txt)
+How to configure `vim` properly:
++ Open Vim: `vim`
++ Run `:PlugInstall` inside Vim
++ Quit Vim: `:q`
++ Clone the `vim-airline` repositories:
+	- `git clone https://github.com/vim-airline/vim-airline`
+	- `mv vim-airline ~/.vim/bundle/vim-airline`
+	- `git clone https://github.com/vim-airline/vim-airline-themes`
+	- `mv vim-airline ~/.vim/bundle/vim-airline-themes`
++ After this, everything should be working properly.
+
+Vim usage instructions: [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/master/.vim/readme.txt)
 
 ***
 
