@@ -262,7 +262,7 @@ ethernet enp3s0 {
 
 wireless wlp4s0 {
         format_up = "<span background='#b48ead'>  %essid </span>"
-        format_down = "<span background='#b48ead'>  Disconnected </span>"
+        format_down = "<span background='#b48ead'>  Disconnected </span>"
 }
 
 volume master {
