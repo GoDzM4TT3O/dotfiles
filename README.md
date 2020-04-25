@@ -49,6 +49,7 @@ Tiling layout
 - Terminal meme generator: [`memethesis-cli`](https://github.com/fakefred/memethesis-cli)
 - Mirror phone screen: [`scrcpy`](https://github.com/Genymobile/scrcpy)
 - `scrcpy` user interface: [`scrcpy-gui`](https://github.com/Tomotoes/scrcpy-gui)
+- Display manager: `lightdm`
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
 
