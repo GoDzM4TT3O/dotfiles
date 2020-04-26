@@ -10,8 +10,9 @@
 	- [Shell Color Scripts](#shell-color-scripts)
 - [Window Manager](#window-manager)
 - [Window Manager addons](#window-manager-addons)
-	- [Screen Saver](#xscreensaver)
 	- [Automatic lock](#xautolock)
+	- [LightDM](#lightdm)
+	- [LightDM theme](#lightdm-theme)
 - [Extras](#extras)
 	- [Image Viewer](#image-viewer)
 	- [Music](#music)
@@ -48,8 +49,6 @@ Tiling layout
 - Firefox theme: [Firefox-mod](https://github.com/datguypiko/Firefox-mod)
 - Terminal meme generator: [`memethesis-cli`](https://github.com/fakefred/memethesis-cli)
 - Mirror phone screen: [`scrcpy`](https://github.com/Genymobile/scrcpy)
-- `scrcpy` user interface: [`scrcpy-gui`](https://github.com/Tomotoes/scrcpy-gui)
-- Display manager: `lightdm`
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
 
@@ -134,22 +133,55 @@ sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 - Status bar: `i3bar`
 - Status bar font: [FontAwesome](https://github.com/fortawesome/fontawesome)
 - Lock screen: `i3lock`
-- Screensaver: `xscreensaver`
-- Automatic lock: `xautolock`
 
 ## Window Manager addons
-
-### xscreensaver
-Install `xscreensaver`:
-
-- Debian/Mint/Ubuntu: `sudo apt install xscreeensaver xscreensaver-gl*`
-- Arch Linux/Manjaro: `sudo pacman -S xscreeensaver xscreensaver-gl*`
+- Automatic lock: `xautolock`
+- Display manager: `lightdm`
+- LightDM theme: `lightdm-webkit-theme-aether`
 
 ### xautolock
 Install `xautolock`:
 
 - Debian/Mint/Ubuntu: `sudo apt install xautolock`
 - Arch Linux/Manjaro: `sudo pacman -S xautolock`
+
+### LightDM
+Install `lightdm`:
+
+- Debian/Mint/Ubuntu: `sudo apt install lightdm`
+- Arch Linux/Manjaro: `sudo pacman -S lightdm`
+
+### LightDM theme
+Install the required packages:
+
+- Debian/Mint/Ubuntu: `sudo apt install lightdm-webkit*-greeter`
+- Arch Linux/Manjaro: `sudo pacman -S lightdm-webkit2-greeter`
+
+Custom theme installation.
+
+- Debian/Mint/Ubuntu:
+```
+# If you prefer the last stable release, download from the releases page instead: https://github.com/NoiSek/Aether/releases/latest
+git clone git@github.com:NoiSek/Aether.git
+sudo cp --recursive Aether /usr/share/lightdm-webkit/themes/Aether
+
+# Set default lightdm-webkit2-greeter theme to Aether
+sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = lightdm-webkit-theme-aether #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+
+# Set default lightdm greeter to lightdm-webkit2-greeter
+sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
+```
+
+- Arch Linux/Manjaro: `sudo pacman -S yay --needed; yay -S lightdm-webkit-theme-aether`
+
+Enabling LightDM: `sudo systemctl enable lightdm.service`
+
+[Replace current display manager with LightDM](https://github.com/NoiSek/Aether#installation):
+```
+sudo systemctl disable gdm
+sudo systemctl disable sddm
+sudo systemctl disable lxdm
+```
 
 ***
 
@@ -249,7 +281,7 @@ order += "battery 1"
 order += "tztime local"
 
 cpu_temperature 0 {
-	format = "<span background='#ff5555'>  </span><span background='#e5e9f0'> %degrees °C </span>"
+	format = "<span background='#ff5555'>  </span><span background='#e5e9f0'> %degrees °C </span>"
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
