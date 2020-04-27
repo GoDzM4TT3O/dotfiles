@@ -160,6 +160,7 @@ Install the required packages:
 Custom theme installation.
 
 - Debian/Mint/Ubuntu:
+
 ```
 # If you prefer the last stable release, download from the releases page instead: https://github.com/NoiSek/Aether/releases/latest
 git clone git@github.com:NoiSek/Aether.git
