@@ -88,11 +88,13 @@ cd fontpreview
 sudo make install # install fontpreview
 ```
 
-Finally copy `vifmrun` to `/usr/bin`:
+Configure vifm image previews and use custom vifm run script:
 ```
-cd dotfiles
-chmod 777 vifmrun
+cd dotfiles/.config/vifm
+chmod 777 {vifmrun,scripts/vifmimg}
 sudo cp .config/vifm/vifmrun /usr/bin
+# add alias vifm="vifmrun" to .bash_aliases
+# in my config it is already done
 ```
 
 If you want to use `vifm`, just run it from the terminal.
