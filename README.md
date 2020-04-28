@@ -76,20 +76,22 @@ Installation instructions:
 Install dependencies:
 
 ```bash
+cd ~ # go into /home/$USER
 sudo pip3 install ueberzug # ueberzug
 git clone https://github.com/marianosimone/epub-thumbnailer # epub-thumbnailer
 cd epub-thumbnailer
-pip install pillow
-sudo python install.py install
+pip install pillow # install/update python pillow
+sudo python install.py install # install epub-thumbnailer
+cd ~ # go into /home/$USER
 git clone https://github.com/sdushantha/fontpreview # fontpreview
 cd fontpreview
-sudo make install
+sudo make install # install fontpreview
 ```
 
 Finally copy `vifmrun` to `/usr/bin`:
 ```
 cd dotfiles
-chmod 777 vifrmrun
+chmod 777 vifmrun
 sudo cp .config/vifm/vifmrun /usr/bin
 ```
 
