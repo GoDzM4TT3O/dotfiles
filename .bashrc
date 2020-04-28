@@ -199,6 +199,12 @@ rm-apk() {
 github() {
 	git clone https://github.com/$1
 }
+
+# show the current weather in a city
+# usage: weather CityName
+weather() {
+	curl wttr.in/$1
+}
 ## END custom functions
 
 # https://github.com/curusarn/resh
