@@ -315,7 +315,7 @@ ethernet enp3s0 {
 }
 
 wireless wlp4s0 {
-        format_up = "<span background='#b48ead'>  %essid </span>"
+        format_up = "<span background='#b48ead'>  %essid | IP: %ip </span>"
         format_down = "<span background='#b48ead'>  Disconnected </span>"
 }
 
