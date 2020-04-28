@@ -1,29 +1,29 @@
-# add ghidra alias
-alias ghidra="~/Desktop/Tools/Hex\ Editors/ghidra/ghidraRun"
-
-# add youtube-dl alias
-alias youtube-dl="/usr/local/bin/youtube-dl"
-
-# add weather alias
-alias weather="curl wttr.in/Modica"
-
-# add translate alias
+# rename trans to translate
 alias translate="trans"
 
-# add tts alias
 # usage: tts "your text goes here"
 # if you have some text in a foreign language, you can add the following to your text:
 # "-from LANGUAGE". for example: tts "ciao prova" -from it
-alias tts="echo $@ | trans -speak -player vlc -no-translate"
+# uses mpv. change it to vlc if you'd like to use vlc
+alias tts="echo $@ | trans -speak -player mpv -no-translate"
 
-# add protonvpn alias
-alias vpn="protonvpn"
-
-# add interjection alias (praise rms)
+# I'd just like to interject for a moment
 alias interjection="echo I\'d just like to interject for a moment. What you\'re referring to Linux, is in fact, GNU/Linux, or as I\'ve recently taken to calling it, GNU plus Linux."
 
-# add vim browser alias (needs tabbed: https://tools.suckless.org/tabbed/)
+# add tabs to vimb (needs tabbed: https://tools.suckless.org/tabbed/)
 alias vimb="tabbed -c vimb -e"
 
-# add vim file manager alias
+# vifm alias to preview images/videos
 alias vifm="vifmrun"
+
+# update-grub alias (not present in arch linux by default)
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+# connect to wifi (I use the Arch Wiki's wpa_supplicant config)
+alias wifi="sudo wpa_supplicant -Bi wlp4s0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlp4s0"
+
+# kill picom/compton before starting obs, otherwise the recording won't look right
+alias obs="pkill picom; obs"
+
+# show custom arch logo with neofetch & disable color blocks
+alias neofetch='neofetch --color_blocks off --ascii "$(cat ~/archlogo.txt)"'
