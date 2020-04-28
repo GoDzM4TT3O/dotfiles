@@ -138,7 +138,7 @@ export NVM_DIR="$HOME/.nvm"
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+. ~/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 # powerline - END
 
 ## START custom functions
@@ -215,3 +215,16 @@ _pip_completion()
 }
 complete -o default -F _pip_completion pip
 
+# Bash command-not-found
+# READ: https://github.com/godzm4tt3o/Arch#25-command-not-found
+source /usr/share/doc/pkgfile/command-not-found.bash
+
+# Auto cd
+# READ: https://github.com/godzm4tt3o/Arch#26-automatically-enter-a-directory
+shopt -s autocd
+
+# show a big text containing the user's name (from $USER)
+# install figlet:
+# Debian/Mint/Ubuntu: sudo apt install figlet
+# Arch Linux/Manjaro: sudo pacman -S figlet
+figlet $USER
