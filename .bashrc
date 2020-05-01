@@ -136,13 +136,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # powerline - START
 # enable powerline only on graphical terminal
-if [[ 'tty | sed -e "s:/dev/pts/::"' =~ [0-9] ]]
-then
-	powerline-daemon -q
-	POWERLINE_BASH_CONTINUATION=1
-	POWERLINE_BASH_SELECT=1
-	. ~/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
-fi
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. ~/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 # powerline - END
 
 ## START custom functions
