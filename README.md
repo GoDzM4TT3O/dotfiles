@@ -51,6 +51,14 @@ Tiling layout
 - Mirror phone screen: [`scrcpy`](https://github.com/Genymobile/scrcpy)
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
+You can now install everything in this list by simply running the [archinst](https://github.com/GoDzM4TT3O/dotfiles/blob/master/archinst.sh) script! Run it with the following commands:
+
+```bash
+cd ~
+wget https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/archinst.sh
+chmod +x archinst.sh
+./archinst.sh
+```
 
 ## Terminal
 - Terminal: `kitty`
