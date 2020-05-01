@@ -136,7 +136,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # powerline - START
 # enable powerline only on graphical terminal
-if [ "tty" = "/dev/pts/0" ]
+if [[ 'tty | sed -e "s:/dev/pts/::"' =~ [0-9] ]]
 then
 	powerline-daemon -q
 	POWERLINE_BASH_CONTINUATION=1
