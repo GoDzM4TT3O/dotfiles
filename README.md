@@ -266,14 +266,15 @@ git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
 cd dotfiles # go into the dotfiles directory
 cp -r .{config,vim*,bash*,x*,X*} ~ # copy the dotfiles
 cp {wallpaper.png,archlogo.txt} ~ # copy wallpaper and ascii arch linux logo
+cp {u,}mount ~ # copy mount/unmount scripts
 ```
 
 ### Modifying configurations
 You should modify `~/.config/i3status/config`, because it contains network interfaces that might be different from yours.
-Change `wlp4s0` and `enp2s0` with your network interfaces.
+Change `wlan0` and `enp3s0` with your network interfaces.
 You can find yours by running the command `ip link | grep -oE "^[2-9]: [e-w]....."`, then you will likely have two results.
-My results are "2: enp3s0" and "3: wlp4s0". You need to copy the interface names (after the number and the colon) respectively over the existing interfaces.
-For example, if your results are "2: eth0" and "3: wlan0", replace "enp3s0" with "eth0", and "wlp4s0" with "wlan0".
+My results are "2: enp3s0" and "3: wlan0". You need to copy the interface names (after the number and the colon) respectively over the existing interfaces.
+For example, if your results are "2: eth0" and "3: wlp4s0", replace "enp3s0" with "eth0", and "wlan0" with "wlp4s0".
 
 I also removed CPU temperature from the i3bar. To add it back, replace "~/.config/i3status/config" with the lines below:
 
@@ -322,7 +323,7 @@ ethernet enp3s0 {
         format_down = "<span background='#88c0d0'>  Disconnected </span>"
 }
 
-wireless wlp4s0 {
+wireless wlan0 {
         format_up = "<span background='#b48ead'>  %essid | IP: %ip </span>"
         format_down = "<span background='#b48ead'>  Disconnected </span>"
 }
