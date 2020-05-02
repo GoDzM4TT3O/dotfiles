@@ -14,6 +14,10 @@ floating_modifier $mod
 # hide borders
 hide_edge_borders none
 
+# mount and unmount drives
+bindsym $super+m exec kitty -e sudo ~/mount 
+bindsym $super+u exec kitty -e sudo ~/umount
+
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 3
@@ -27,7 +31,7 @@ exec --no-startup-id xsettingsd &
 # start picom as a daemon
 exec --no-startup-id picom -b
 # network manager applet - uncomment if you use it
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 # import gnome settings - uncomment if you use gnome
 #exec --no-startup-id gnome-settings-daemon
 # kde connect indicator
