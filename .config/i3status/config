@@ -11,7 +11,7 @@ general {
 order += "load"
 order += "disk /"
 order += "ethernet enp3s0"
-order += "wireless wlp4s0"
+order += "wireless wlan0"
 order += "volume master"
 order += "battery 1"
 order += "tztime local"
@@ -35,7 +35,7 @@ ethernet enp3s0 {
         format_down = "<span background='#88c0d0'>  Disconnected </span>"
 }
 
-wireless wlp4s0 {
+wireless wlan0 {
         format_up = "<span background='#b48ead'>  %essid | IP: %ip </span>"
         format_down = "<span background='#b48ead'>  Disconnected </span>"
 }
