@@ -25,7 +25,7 @@ bindsym $mod+n border normal
 
 # autostart
 # set wallpaper
-exec --no-startup-id hsetroot -center ~/wallpaper.png
+exec --no-startup-id ~/randomwall.sh &
 # x settings daemon
 exec --no-startup-id xsettingsd &
 # start picom as a daemon
