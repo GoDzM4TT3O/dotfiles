@@ -1,9 +1,10 @@
+" to rename a file, type "cw" (change word)
 
 " {{{ General config 
 " This is the actual command used to start vi.  The default is vim.
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
-set vicmd=nvim
+set vicmd=vim
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
