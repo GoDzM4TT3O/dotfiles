@@ -63,7 +63,8 @@ fi
 
 # Copy configurations [6]
 printf '\e[1;4m[6] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles;cd dotfiles; cp -r .{config,vim*,bash*,x*,X*} ~; cp {wallpaper.png,archlogo.txt} ~; cp {u,}mount ~
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles;cd dotfiles; cp -r .{config,vim*,bash*,x*,X*} ~; cp -r {wallpapers,archlogo.txt,randomwall.sh} ~; cp {u,}mount ~
+cp {u,}mount ~ # copy mount/unmount scripts
 if [ $? -eq 0 ]; then
 	printf '\e[1;42m[6] Success!\e[0m\n'
 else
