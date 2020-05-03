@@ -265,7 +265,7 @@ If you don't want to replace your existing configurations, please append the lin
 git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
 cd dotfiles # go into the dotfiles directory
 cp -r .{config,vim*,bash*,x*,X*} ~ # copy the dotfiles
-cp {wallpaper.png,archlogo.txt} ~ # copy wallpaper and ascii arch linux logo
+cp -r {wallpapers,archlogo.txt,randomwall.sh} ~ # copy wallpaper stuff and ascii arch linux logo
 cp {u,}mount ~ # copy mount/unmount scripts
 ```
 
