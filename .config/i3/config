@@ -24,18 +24,17 @@ bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
 
 # autostart
-# set wallpaper
+# set random wallpaper
 exec --no-startup-id ~/randomwall.sh &
 # x settings daemon
 exec --no-startup-id xsettingsd &
 # start picom as a daemon
 exec --no-startup-id picom -b
-# network manager applet - uncomment if you use it
+# network manager applet - comment if you don't use it
 exec --no-startup-id nm-applet
 # import gnome settings - uncomment if you use gnome
 #exec --no-startup-id gnome-settings-daemon
-# kde connect indicator
-# comment the line below if you don't use gnome
+# kde connect indicator - comment if you don't use the indicator
 exec --no-startup-id kdeconnect-indicator
 # x screen saver
 # enable energy star
