@@ -8,6 +8,7 @@ general {
 		color_bad = '#ba5e57'
 }
 
+order += "cpu_temperature 0"
 order += "load"
 order += "disk /"
 order += "ethernet enp3s0"
@@ -16,18 +17,17 @@ order += "volume master"
 order += "battery 1"
 order += "tztime local"
 
+cpu_temperature 0 {
+	format = "<span background='#ff5555'>  %degrees °C </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
 load {
         format = "<span background='#f59335'>  %5min Load </span>"
 }
 
 disk "/" {
         format = "<span background='#fec7cd'>  %free Free </span>"
-}
-
-memory {
-        format = "%used"
-	threshold_degraded = "10%"
-	format_degraded = "MEMORY: %free"
 }
 
 ethernet enp3s0 {
