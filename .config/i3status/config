@@ -18,7 +18,7 @@ order += "battery 1"
 order += "tztime local"
 
 cpu_temperature 0 {
-	format = "<span background='#ff5555'>  %degrees °C </span>"
+	format = "<span background='#ff5555'>  %degrees °C </span>"
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
