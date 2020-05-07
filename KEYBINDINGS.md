@@ -33,7 +33,7 @@ SUPER+H: split focused window horizontally
 
 SUPER+V: split focused window vertically
 
-ALT+E: toggle the window split (for example from horizontal to vertical)
+SUPER+E: toggle the window split (for example from horizontal to vertical)
 
 ALT+F: enter fullscreen mode
 
