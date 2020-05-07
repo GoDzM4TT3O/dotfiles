@@ -2,6 +2,7 @@
 ## Sections:
 - [Sections](#sections)
 - [Previews](#previews)
+- [Help](#help)
 - [Others (not included)](#others-not-included)
 - [Terminal](#terminal)
 - [Terminal addons](#terminal-addons)
@@ -41,6 +42,11 @@ Tiling layout
 ![tiling](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/tiling.png)
 
 ***
+
+## Help
+It is recommended that you please check [this page](https://godzm4tt3o.js.org/dotfiles/KEYBINDINGS).
+
+It contains all of the custom keybindings that I use with i3wm.
 
 ## Others (not included)
 - Grub theme: [Slaze](https://github.com/vinceliuice/grub2-themes)
