@@ -1,4 +1,5 @@
 # i3wm keybindings
+PLEASE NOTE: the SUPER key is also known as the "Windows" key.
 
 ## Terminal keybindings
 ALT+ENTER: open the kitty terminal
@@ -28,9 +29,9 @@ ALT+N: set the window border to normal
 
 ALT+F4: close the current window
 
-ALT+G: split focused window horizontally (ALT+H is already taken)
+SUPER+H: split focused window horizontally
 
-ALT+V: split focused window vertically
+SUPER+V: split focused window vertically
 
 ALT+E: toggle the window split (for example from horizontal to vertical)
 
