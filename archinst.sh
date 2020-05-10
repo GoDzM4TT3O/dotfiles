@@ -35,7 +35,7 @@ fi
 
 # Install additional packages [3]
 printf '\e[1;4m[3] Installing additional packages...\e[0m\n'
-sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior cmus feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake
+sudo pacman -S git compton hsetroot zsh rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior cmus feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake
 if [ $? -eq 0 ]; then
 	printf '\e[1;42m[3] Success!\e[0m\n'
 else
@@ -63,7 +63,7 @@ fi
 
 # Copy configurations [6]
 printf '\e[1;4m[6] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles;cd dotfiles; cp -r .{config,vim*,bash*,x*,X*} ~; cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~; cp {u,}mount ~
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles;cd dotfiles; cp -r .{config,vim*,z*,x*,X*} ~; cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~; cp {u,}mount ~
 cp {u,}mount ~ # copy mount/unmount scripts
 if [ $? -eq 0 ]; then
 	printf '\e[1;42m[6] Success!\e[0m\n'
@@ -80,13 +80,13 @@ else
 	printf "\e[1;41m[7] Error! Could not install vifm\'s configurations or their dependencies!\e[0m\n"; exit
 fi
 
-# Install powerline [8]
-printf '\e[1;4m[8] Installing powerline...\e[0m\n'
-sudo pacman -S powerline python-pip python3; pip install powerline-status; cd ~/.local/lib/python3.8/site-packages/powerline/config_files; powerline-lint
+# Install oh-my-zsh [8]
+printf '\e[1;4m[8] Installing oh-my-zsh...\e[0m\n'
+yay -S oh-my-zsh-git
 if [ $? -eq 0 ]; then
 	printf '\e[1;42m[8] Success!\e[0m\n'
 else
-	printf '\e[1;41m[8] Error! Could not install powerline!\e[0m\n'; exit
+	printf '\e[1;41m[8] Error! Could not install oh-my-zsh!\e[0m\n'; exit
 fi
 
 # Install shell-color-scripts [9]
