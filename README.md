@@ -89,6 +89,11 @@ I use `zsh`. To make it work, you need to install zsh and oh-my-zsh:
 
 Make `zsh` the default shell: `chsh -s /bin/zsh`
 
+I also use `zsh-autosuggestions`. To install it, run:
+
+- Debian/Mint/Ubuntu: `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+- Arch Linux/Manjaro: `yay -S zsh-autosuggestions`
+
 ## Terminal addons
 ### vifm
 Installation instructions:
