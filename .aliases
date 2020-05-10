@@ -1,3 +1,4 @@
+# compatible with any shell
 # rename trans to translate
 alias translate="trans"
 
@@ -28,5 +29,5 @@ alias wifi="sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.
 alias obs="pkill picom; obs"
 
 # show custom arch logo with neofetch & disable color blocks
-alias neofetch='neofetch --color_blocks off --ascii "$(cat ~/archlogo.txt)"'
+alias neofetch='neofetch --color_blocks off --ascii ~/archlogo.txt'
 
