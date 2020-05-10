@@ -87,6 +87,8 @@ I use `zsh`. To make it work, you need to install zsh and oh-my-zsh:
 - Debian/Mint/Ubuntu: `sudo apt install zsh; cd ~; sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - Arch Linux/Manjaro: `sudo pacman -S zsh; yay -S oh-my-zsh-git # replace yay with any other AUR helper`
 
+Make `zsh` the default shell: `chsh -s /bin/zsh`
+
 ## Terminal addons
 ### vifm
 Installation instructions:
