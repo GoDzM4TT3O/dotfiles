@@ -5,9 +5,9 @@
 - [Help](#help)
 - [Others (not included)](#others-not-included)
 - [Terminal](#terminal)
+	- [Shell](#shell)
 - [Terminal addons](#terminal-addons)
 	- [Vifm](#vifm)
-	- [Powerline](#powerline)
 	- [Shell Color Scripts](#shell-color-scripts)
 - [Window Manager](#window-manager)
 - [Window Manager addons](#window-manager-addons)
@@ -81,6 +81,12 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is
 - Terminal startup script: [`shell-color-scripts`](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
 
+### Shell
+I use `zsh`. To make it work, you need to install zsh and oh-my-zsh:
+
+- Debian/Mint/Ubuntu: `sudo apt install zsh; cd ~; sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+- Arch Linux/Manjaro: `sudo pacman -S zsh; yay -S oh-my-zsh-git # replace yay with any other AUR helper`
+
 ## Terminal addons
 ### vifm
 Installation instructions:
@@ -113,26 +119,6 @@ sudo cp .config/vifm/vifmrun /usr/bin
 
 If you want to use `vifm`, just run it from the terminal.
 
-### powerline
-Installation instructions:
-- Debian/Mint/Ubuntu: `sudo apt install powerline python-pip python3; pip install powerline-status`
-- Arch Linux/Manjaro: `sudo pacman -S powerline python-pip python3; pip install powerline-status`
-
-
-If you use Python 3.8 ignore these 5 lines below, otherwise follow what they say:
-
-- After this, check where powerline is installed: `pip show powerline-status | grep -E "^Location:"`
-- Copy the directory (should be like `/home/$USER/.local/lib/...`).
-- Modify `~/.bashrc`
-- Find `. ~/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh`
-- Replace `~/.local/lib/python3.8/site-packages` with the new location you found.
-
-
-Now we need to apply the themes:
-
-- `cd` into the directory above (should be like `~/.local/lib/python3.8/site-packages/powerline` if you use python 3.8)
-- `cd config_files; powerline_lint` this will apply the powerline themes.
-
 ### shell-color-scripts
 Installation instructions:
 
@@ -143,9 +129,6 @@ rm -rf /opt/shell-color-scripts || return 1
 sudo mkdir -p /opt/shell-color-scripts/colorscripts || return 1
 sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
 sudo cp colorscript.sh /usr/bin/colorscript
-```
-Add this line if you use zsh:
-```
 sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 ```
 
