@@ -27,19 +27,16 @@
 
 ## Previews
 Kitty
-![ws2](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws2.png)
+![ws2](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/kitty.png)
 
-Three kitty terminals
-![ws3](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws3.png)
+Three kitty terminals (neofetch, vifm, tty-clock)
+![ws3](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/three.png)
 
-Htop, cmus and cli-visualizer
-![ws4](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/ws4.png)
+Htop and cli-visualizer
+![ws4](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/two.png)
 
 Floating layout
 ![floating](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/floating.png)
-
-Tiling layout
-![tiling](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/tiling.png)
 
 ***
 
