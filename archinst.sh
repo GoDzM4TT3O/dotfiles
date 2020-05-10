@@ -80,13 +80,13 @@ else
 	printf "\e[1;41m[7] Error! Could not install vifm\'s configurations or their dependencies!\e[0m\n"; exit
 fi
 
-# Install oh-my-zsh [8]
+# Install zsh plugins [8]
 printf '\e[1;4m[8] Installing oh-my-zsh...\e[0m\n'
-yay -S oh-my-zsh-git && echo "Making zsh the default shell..." && chsh -s /bin/zsh
+yay -S oh-my-zsh-git && echo "Making zsh the default shell..." && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && chsh -s /bin/zsh
 if [ $? -eq 0 ]; then
 	printf '\e[1;42m[8] Success!\e[0m\n'
 else
-	printf '\e[1;41m[8] Error! Could not install oh-my-zsh!\e[0m\n'; exit
+	printf '\e[1;41m[8] Error! Could not install zsh plugins!\e[0m\n'; exit
 fi
 
 # Install shell-color-scripts [9]
