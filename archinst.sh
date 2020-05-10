@@ -82,7 +82,7 @@ fi
 
 # Install oh-my-zsh [8]
 printf '\e[1;4m[8] Installing oh-my-zsh...\e[0m\n'
-yay -S oh-my-zsh-git
+yay -S oh-my-zsh-git && echo "Making zsh the default shell..." && chsh -s /bin/zsh
 if [ $? -eq 0 ]; then
 	printf '\e[1;42m[8] Success!\e[0m\n'
 else
