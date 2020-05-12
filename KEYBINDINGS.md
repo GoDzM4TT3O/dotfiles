@@ -19,6 +19,8 @@ SUPER+M: open dmenu to show mountable drives
 
 SUPER+U: open dmenu to show unmountable drives
 
+ALT+SHIFT+W: open firefox
+
 ## Window keybindings
 ### Window borders
 ALT+U: hide the window borders
