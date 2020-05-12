@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -79,8 +79,6 @@ promptinit
 # Command not found
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
-# Add aliases
-source ~/.aliases
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -217,6 +215,9 @@ weather() {
 	curl wttr.in/$1
 }
 ## END custom functions
+
+# Add aliases
+source ~/.aliases
 
 # https://github.com/curusarn/resh
 [[ -f ~/.resh/shellrc ]] && source ~/.resh/shellrc
