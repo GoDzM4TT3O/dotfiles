@@ -1,5 +1,5 @@
 #
-# ~/.zsh_profile
+# ~/.zprofile
 #
 
 [[ -f ~/.zshrc ]] && . ~/.zshrc
