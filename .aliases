@@ -1,6 +1,5 @@
-# compatible with any shell
 # rename trans to translate
-alias translate="trans"
+alias translate='trans'
 
 # usage: tts "your text goes here"
 # if you have some text in a foreign language, you can add the following to your text:
@@ -12,10 +11,10 @@ alias tts="echo $@ | trans -speak -player mpv -no-translate"
 alias interjection="echo I\'d just like to interject for a moment. What you\'re referring to Linux, is in fact, GNU/Linux, or as I\'ve recently taken to calling it, GNU plus Linux."
 
 # add tabs to vimb (needs tabbed: https://tools.suckless.org/tabbed/)
-alias vimb="tabbed -c vimb -e"
+alias vimb='tabbed -c vimb -e'
 
 # vifm alias to preview images/videos
-alias vifm="vifmrun"
+alias vifm='vifmrun'
 
 # update-grub alias (not present in arch linux by default)
 # usually these commands are run after a kernel upgrade
@@ -23,11 +22,13 @@ alias vifm="vifmrun"
 alias update-grub='sudo mkinitcpio -P; sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # connect to wifi (I use the Arch Wiki's wpa_supplicant config)
-alias wifi="sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0"
+alias wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0'
 
 # kill picom/compton before starting obs, otherwise the recording won't look right
-alias obs="pkill picom; obs"
+alias obs='pkill picom; obs'
 
 # show custom arch logo with neofetch & disable color blocks
-alias neofetch='neofetch --color_blocks off --ascii ~/archlogo.txt'
+alias neofetch='neofetch --color_blocks off --ascii "$(cat ~/archlogo.txt)"'
 
+# replace ls with exa
+alias ls='exa'
