@@ -9,6 +9,7 @@
 - [Terminal addons](#terminal-addons)
 	- [Vifm](#vifm)
 	- [Shell Color Scripts](#shell-color-scripts)
+	- [Exa](#exa)
 - [Window Manager](#window-manager)
 - [Window Manager addons](#window-manager-addons)
 	- [Automatic lock](#xautolock)
@@ -132,6 +133,16 @@ sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
 sudo cp colorscript.sh /usr/bin/colorscript
 sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
 ```
+
+### Exa
+Exa is a replacement for ls. It is more beautiful, and it is better than ls.
+
+Installation instructions:
+
+- Debian/Mint/Ubuntu: `sudo apt install exa`
+(if it doesn't work please check https://the.exa.website/)
+
+- Arch Linux/Manjaro: `sudo pacman -S exa`
 
 ***
 
