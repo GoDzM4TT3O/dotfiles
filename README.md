@@ -75,7 +75,6 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is
 - Terminal file manager: `vifm`
 - Terminal history: [`resh`](https://github.com/curusarn/resh)
 - Terminal clock: `tty-clock`
-- Bash prompt: [`powerline`](https://github.com/powerline/powerline)
 - Terminal startup script: [`shell-color-scripts`](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
 
@@ -115,7 +114,7 @@ Configure vifm image previews and use custom vifm run script:
 cd dotfiles/.config/vifm
 chmod 777 {vifmrun,scripts/vifmimg}
 sudo cp .config/vifm/vifmrun /usr/bin
-# add alias vifm="vifmrun" to .bash_aliases
+# add alias vifm="vifmrun" to .aliases
 # in my config it is already done
 ```
 
@@ -265,7 +264,7 @@ If you don't want to replace your existing configurations, please append the lin
 ```
 git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
 cd dotfiles # go into the dotfiles directory
-cp -r .{config,vim*,bash*,x*,X*,alias*} ~ # copy the dotfiles
+cp -r .{config,vim*,z*,x*,X*,alias*} ~ # copy the dotfiles
 cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~ # copy wallpaper stuff and ascii arch linux logo
 cp {u,}mount ~ # copy mount/unmount scripts
 ```
