@@ -53,6 +53,7 @@ It contains all of the custom keybindings that I use with i3wm.
 - Firefox theme: [Firefox-mod](https://github.com/datguypiko/Firefox-mod)
 - Terminal meme generator: [`memethesis-cli`](https://github.com/fakefred/memethesis-cli)
 - Mirror phone screen: [`scrcpy`](https://github.com/Genymobile/scrcpy)
+- System security hardening: [`firejail`](https://wiki.archlinux.org/index.php/Firejail)
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
 You can now install everything in this list by simply running the [archinst](https://github.com/GoDzM4TT3O/dotfiles/blob/master/archinst.sh) script! Run it with the following commands:
