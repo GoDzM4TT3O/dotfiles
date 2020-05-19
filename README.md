@@ -19,6 +19,7 @@
 	- [Image Viewer](#image-viewer)
 	- [Music](#music)
 	- [Text editor](#text-editor)
+	- [Network Manager](#network-manager)
 - [Installation](#installation)
 	- [Copying the configurations](#copying-configurations)
 	- [Modifying the configurations](#modifying-configurations)
@@ -232,6 +233,14 @@ git clone https://github.com/vim-airline/vim-airline-themes && mv vim-airline ~/
 + After this, everything should be working properly.
 
 Vim usage instructions: [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/master/.vim/readme.txt)
+
+### Network manager
+I use [networkmanager-dmenu](https://github.com/firecat53/networkmanager-dmenu). It's a network manager that integrates with dmenu. To launch it, press SUPER+N (n for network).
+
+Installation instructions:
+
+- Arch Linux/Manjaro: `yay -S networkmanager-dmenu-git`
+- All of the other distros: https://github.com/firecat53/networkmanager-dmenu#installation
 
 ***
 
