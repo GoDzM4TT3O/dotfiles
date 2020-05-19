@@ -35,10 +35,9 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id picom -b
 # network manager applet - uncomment if you use it
 exec --no-startup-id nm-applet
-# import gnome settings - uncomment if you use gnome
+# import gnome settings - uncomment if you have gnome
 #exec --no-startup-id gnome-settings-daemon
-# kde connect indicator
-# comment the line below if you don't use gnome
+# kde connect indicator - comment the line below if you don't use it
 exec --no-startup-id kdeconnect-indicator
 # x screen saver
 # enable energy star
