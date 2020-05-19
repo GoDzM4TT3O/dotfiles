@@ -18,6 +18,9 @@ hide_edge_borders none
 bindsym $super+m exec kitty -e sudo ~/mount 
 bindsym $super+u exec kitty -e sudo ~/umount
 
+# network dialog using networkmanager-dmenu
+bindsym $super+n exec networkmanager_dmenu
+
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 3
