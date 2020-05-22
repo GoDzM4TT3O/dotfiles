@@ -46,11 +46,17 @@ exec --no-startup-id kdeconnect-indicator
 # x screen saver
 # enable energy star
 exec --no-startup-id xset dmps 600
-# after 5 minutes of inactivity, lock the screen with lightdm
-# comment the line below if you don't want a screensaver
-# the line below uses LightDM to lock the screen
+
+# screen locker
+# to use a screen locker, for example LightDM, comment the line with slock, and uncomment the line with lightdm.
+# after 10 minutes of inactivity, lock the screen
+# the line below uses lightdm to lock the screen
+# uncomment the line below to use LightDM as a screen locker
 #exec --no-startup-id xautolock -time 10 -detectsleep -locker "dm-tool lock" 
-# The line below uses slock to lock the screen
+# the line below uses i3lock to lock the screen
+# uncomment the line below to use i3lock as a screen locker
+#exec --no-startup-id xautolock -time 10 -detectsleep -locker "i3lock"
+# the line below uses slock to lock the screen
 # it shows when the screen was locked and displays a random quote (requires fortune)
 exec --no-startup-id xautolock -time 10 -detectsleep -locker 'slock -m "Locked at $(date "+%a %d, %H:%M:%S") $(printf "\nRandom quote: ") $(fortune)"'
 
