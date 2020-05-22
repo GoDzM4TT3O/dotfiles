@@ -18,6 +18,10 @@ hide_edge_borders none
 bindsym $super+m exec kitty -e sudo ~/mount 
 bindsym $super+u exec kitty -e sudo ~/umount
 
+# create a new blank window
+# emulates dwm behavior
+bindsym $super+b exec i3-msg open
+
 # network dialog using networkmanager-dmenu
 bindsym $super+n exec networkmanager_dmenu
 
@@ -37,8 +41,7 @@ exec --no-startup-id picom -b
 exec --no-startup-id nm-applet
 # import gnome settings - uncomment if you use gnome
 #exec --no-startup-id gnome-settings-daemon
-# kde connect indicator
-# comment the line below if you don't use gnome
+# kde connect indicator - comment the line below if you don't use it
 exec --no-startup-id kdeconnect-indicator
 # x screen saver
 # enable energy star
