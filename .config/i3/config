@@ -35,16 +35,21 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id picom -b
 # network manager applet - uncomment if you use it
 exec --no-startup-id nm-applet
-# import gnome settings - uncomment if you have gnome
+# import gnome settings - uncomment if you use gnome
 #exec --no-startup-id gnome-settings-daemon
-# kde connect indicator - comment the line below if you don't use it
+# kde connect indicator
+# comment the line below if you don't use gnome
 exec --no-startup-id kdeconnect-indicator
 # x screen saver
 # enable energy star
 exec --no-startup-id xset dmps 600
 # after 5 minutes of inactivity, lock the screen with lightdm
 # comment the line below if you don't want a screensaver
-exec --no-startup-id xautolock -time 5 -detectsleep -locker "dm-tool lock" 
+# the line below uses LightDM to lock the screen
+#exec --no-startup-id xautolock -time 10 -detectsleep -locker "dm-tool lock" 
+# The line below uses slock to lock the screen
+# it shows when the screen was locked and displays a random quote (requires fortune)
+exec --no-startup-id xautolock -time 10 -detectsleep -locker 'slock -m "Locked at $(date "+%a %d, %H:%M:%S") $(printf "\nRandom quote: ") $(fortune)"'
 
 # start a terminal
 # I use kitty as a terminal emulator
