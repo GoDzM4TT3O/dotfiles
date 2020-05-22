@@ -203,6 +203,25 @@ sudo systemctl disable sddm
 sudo systemctl disable lxdm
 ```
 
+### Slock
+I have included my own build of [slock](https://tools.suckless.org/slock) with two patches:
+
+- Caps color: turns the screen bright red to alert the user that caps lock is on
+
+- Message: include a custom message; with my custom build you can see when the screen was locked & a random quote, using fortune.
+
+You also need to install fortune, or you can modify the [i3config](https://github.com/GoDzM4TT3O/dotfiles/blob/master/.config/i3/config#L55) file. You can install fortune using [these instructions](https://github.com/GoDzM4TT3O/dotfiles/tree/master/slock).
+
+Alternatively, you can use LightDM or i3lock as a screen locker, instead of Slock, if you don't like Slock.
+
+To install Slock, run:
+
+```bash
+cd ~/dotfiles # I assume you cloned this repo in your home directory
+cd slock
+sudo make install
+```
+
 ***
 
 ## Extras
