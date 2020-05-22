@@ -1,6 +1,7 @@
 These are the patches I applied to slock:
 
 -> Caps color
+
 -> Message
 
 You can add any other patch you like by downloading a patch from https://tools.suckless.org/slock/patches, 
