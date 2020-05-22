@@ -75,6 +75,8 @@ ALT+SHIFT+[h/j/k/l]: move window
 
 ALT+SHIFT+[Arrow keys]: move window
 
+SUPER+B: create a new blank/invisible window (emulates dwm behavior)
+
 ## Workspaces
 ALT+[1/2/3...]: change workspace
 
