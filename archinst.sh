@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 # GoDzM4TT3O's dotfiles
 # Arch Linux installer
 # This installer works on distributions based on Arch Linux
@@ -7,6 +7,16 @@
 
 # Check if root
 ! [[ "$EUID" -ne 0 ]] && printf '\e[1;41m[ERROR] DO NOT RUN AS ROOT!\e[0m\n'; exit
+
+printf "
+    _             _     ___           _    
+   / \   _ __ ___| |__ |_ _|_ __  ___| |_
+  / _ \ | '__/ __| '_ \ | || '_ \/ __| __|
+ / ___ \| | | (__| | | || || | | \__ \ |_
+/_/   \_\_|  \___|_| |_|___|_| |_|___/\__|
+@ https://github.com/GoDzM4TT3O/dotfiles
+Starting installation...
+"
 
 # Check for available updates [1]
 printf '\e[1;4m[1] Checking for updates...\e[0m\n'
@@ -65,4 +75,16 @@ cd ~; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercon
 printf '\e[1;4m[13] Installing networkmanager-dmenu...\e[0m\n'
 yay -S networkmanager-dmenu-git && printf '\e[1;42m[13] Success!\e[0m\n' || printf '\e[1;41m[13] Error! Could not install networkmanager-dmenu!\e[0m\n'; exit
 
-printf '\e[1;42mThe installation finished without errors! It is recommended you modify "~/.config/i3status/config" following the guide over at https://godzm4tt3o.js.org/dotfiles/#modifying-configurations\e[0m\n'
+# Install slock [14]
+printf '\e[1;4m[14] Installing slock...\e[0m\n'
+cd ~/dotfiles/slock && sudo make install && printf '\e[1;42m[14] Success!\e[0m\n' || printf '\e[1;41m[14] Error! Could not install slock!\e[0m\n'; exit
+
+printf "
+    _             _     ___           _    
+   / \   _ __ ___| |__ |_ _|_ __  ___| |_
+  / _ \ | '__/ __| '_ \ | || '_ \/ __| __|
+ / ___ \| | | (__| | | || || | | \__ \ |_
+/_/   \_\_|  \___|_| |_|___|_| |_|___/\__|
+@ https://github.com/GoDzM4TT3O/dotfiles
+\e[1;42mThe installation finished without errors! It is recommended you modify "~/.config/i3status/config" following the guide over at https://godzm4tt3o.js.org/dotfiles/#modifying-configurations\e[0m\n
+"
