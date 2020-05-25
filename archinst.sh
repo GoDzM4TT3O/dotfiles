@@ -6,7 +6,7 @@
 # When required, enter your password for sudo.
 
 # Check if root
-! [[ "$EUID" -ne 0 ]] && printf '\e[1;41m[ERROR] DO NOT RUN AS ROOT!\e[0m\n'; exit
+! [[ "$EUID" -ne 0 ]] && printf '\e[1;41m[ERROR] DO NOT RUN AS ROOT!\e[0m\n' && exit
 
 printf "
     _             _     ___           _    
@@ -40,7 +40,7 @@ yay -S tty-clock && printf '\e[1;42m[5] Success!\e[0m\n' || printf '\e[1;41m[5] 
 
 # Copy configurations [6]
 printf '\e[1;4m[6] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*} ~ && cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~ && cp {u,}mount ~ && printf '\e[1;42m[6] Success!\e[0m\n' || printf '\e[1;41m[6] Error! Could not copy configurations!\e[0m\n'; exit
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && printf '\e[1;42m[6] Success!\e[0m\n' || printf '\e[1;41m[6] Error! Could not copy configurations!\e[0m\n'; exit
 
 # Install vifm configuration dependencies [7]
 printf '\e[1;4m[7] Installing vifm configuration dependencies...\e[0m\n'
