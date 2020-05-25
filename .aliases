@@ -28,7 +28,10 @@ alias wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.
 alias obs='pkill picom; obs'
 
 # show custom arch logo with neofetch & disable color blocks
-alias neofetch='neofetch --color_blocks off --ascii "$(cat ~/archlogo.txt)"'
+# uncomment the line below for ASCII Arch Linux logo
+#alias neofetch='neofetch --color_blocks off --ascii ~/archlogo.txt)'
+# show Italian Arch logo I made
+alias neofetch='neofetch --color_blocks off --kitty italiarch.png'
 
 # replace ls with exa
 alias ls='exa'
