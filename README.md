@@ -291,14 +291,16 @@ exec i3
 
 ### Copying configurations
 WARNING: THIS WILL REPLACE YOUR EXISTING CONFIGURATIONS!!!
-If you don't want to replace your existing configurations, please append the lines of my files to your files (if they exist already)
+If you don't want to replace your existing configurations, please manually edit your files!
 
-```
-git clone https://github.com/GoDzM4TT3O/dotfiles # clone the repo
-cd dotfiles # go into the dotfiles directory
-cp -r .{config,vim*,z*,x*,X*,alias*} ~ # copy the dotfiles
-cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~ # copy wallpaper stuff and ascii arch linux logo
-cp {u,}mount ~ # copy mount/unmount scripts
+```bash
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*} ~ && cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~ && cp {u,}mount ~
+# this one liner does the following:
+# clone this repo
+# go into the cloned repo
+# copy the config directories and their contents into /home/$USER (~)
+# copy the wallpaper(s) & the random wallpaper chooser and the various arch logos into ~
+# copy the mount/unmount scripts into ~
 ```
 
 ### Modifying configurations
