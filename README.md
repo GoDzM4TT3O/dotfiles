@@ -11,6 +11,7 @@
 	- [Shell Color Scripts](#shell-color-scripts)
 	- [Exa](#exa)
 - [Window Manager](#window-manager)
+	- [Polybar](#polybar)
 - [Window Manager addons](#window-manager-addons)
 	- [Automatic lock](#xautolock)
 	- [LightDM](#lightdm)
@@ -149,9 +150,17 @@ Installation instructions:
 
 ## Window Manager
 - Window Manager: `i3`
-- Status bar: `i3bar`
+- Status bar: `polybar` (`i3status` config is available, see .config/i3/config)
 - Status bar font: [FontAwesome](https://github.com/fortawesome/fontawesome)
-- Lock screen: `i3lock`
+- Lock screen: `i3lock` (SUPER+L), `slock` (after 10 minutes of inactivity)
+
+### polybar
+I use polybar. It's far better than i3bar and i3status.
+
+Installation instructions:
+
+- Arch Linux/Manjaro: `yay -S polybar`
+- Other distros: please refer [to this guide](https://github.com/polybar/polybar#getting-started)
 
 ## Window Manager addons
 - Automatic lock: `xautolock`
