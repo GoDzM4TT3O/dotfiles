@@ -62,6 +62,7 @@ You can also check [this file](https://github.com/GoDzM4TT3O/dotfiles/blob/maste
 - System security hardening: [`apparmor`](https://wiki.archlinux.org/index.php/Apparmor); I also use [`linux-hardened`](https://wiki.archlinux.org/index.php/Security#Kernel_hardening)
 - Simply mount android: [`simple-mtpfs`](https://wiki.archlinux.org/index.php/Media_Transfer_Protocol#simple-mtpfs)
 - Check disk usage: [`ncdu`](https://dev.yorhel.nl/ncdu)
+- Luke Smith's [domain blocklist](https://github.com/LukeSmithxyz/etc)
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
 You can now install everything in this list by simply running the [archinst](https://github.com/GoDzM4TT3O/dotfiles/blob/master/archinst.sh) script! Run it with the following commands:
