@@ -4,6 +4,7 @@
 - [Previews](#previews)
 - [Help](#help)
 - [Others (not included)](#others-not-included)
+	- [Firefox Addons](#firefox-addons)
 - [Terminal](#terminal)
 	- [Shell](#shell)
 - [Terminal addons](#terminal-addons)
@@ -66,6 +67,17 @@ You can now install everything in this list by simply running the [archinst](htt
 ```bash
 cd ~; wget https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/archinst.sh && chmod +x archinst.sh && ./archinst.sh
 ```
+
+### Firefox addons
+Here's a list of the firefox addons I use:
+- Facebook Container
+- GitZip
+- HTTPS Everywhere
+- NoScript
+- Privacy Badger
+- uBlock Origin
+- Universal Bypass
+- Vim Vixen
 
 ## Terminal
 - Terminal: `kitty`
