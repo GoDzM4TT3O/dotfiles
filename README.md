@@ -50,6 +50,8 @@ It is recommended that you please check [this page](https://godzm4tt3o.js.org/do
 
 It contains all of the custom keybindings that I use with i3wm.
 
+You can also check [this file](https://github.com/GoDzM4TT3O/dotfiles/blob/master/.vim/tips.md), it contains a few Vim tricks you didn't know!
+
 ## Others (not included)
 - Grub theme: [Arch Silence](https://github.com/fghibellini/arch-silence); I previously used [Slaze](https://github.com/vinceliuice/grub2-themes)
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
