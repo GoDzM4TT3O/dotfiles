@@ -322,7 +322,9 @@ cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .
 ```
 
 ### Modifying configurations
-You should modify `~/.config/i3status/config`, because it contains network interfaces that might be different from yours.
+Currently, I use polybar instead of i3status, but the information below is still relevant. The configuration file is located in `.config/polybar/config`. Customize it however you want, enable/disable any module you want ;)
+
+If you want to use i3status, you should modify `~/.config/i3status/config`, because it contains network interfaces that might be different from yours.
 Change `wlan0` and `enp3s0` with your network interfaces.
 You can find yours by running the command `ip link | grep -oE "^[2-9]: [e-w]....."`, then you will likely have two results.
 My results are "2: enp3s0" and "3: wlan0". You need to copy the interface names (after the number and the colon) respectively over the existing interfaces.
