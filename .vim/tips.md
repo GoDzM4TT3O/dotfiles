@@ -28,4 +28,4 @@
 
 **`:1,10norm Atext`** = from lines 1 to 10 append the text "text"
 
-While in normal mode, if you press `m` + a random letter, like `a`, you will set a bookmark of your current position to `a`. If you want to access the bookmark saved in `a`, press `'` + `a`.
+While in normal mode, if you press <kbd>m</kbd> + a random letter, like <kbd>a</kbd>, you will set a bookmark of your current position to <kbd>a</kbd>. If you want to access the bookmark saved in <kbd>a</kbd>, press <kbd>'</kbd>+<kbd>a</kbd>.
