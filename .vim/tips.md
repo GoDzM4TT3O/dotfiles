@@ -27,3 +27,5 @@
 **`:1,10norm itext`** = from lines 1 to 10 prepend the text "text"
 
 **`:1,10norm Atext`** = from lines 1 to 10 append the text "text"
+
+While in normal mode, if you press `m` + a random letter, like `a`, you will set a bookmark of your current position to `a`. If you want to access the bookmark saved in `a`, press `'` + `a`.
