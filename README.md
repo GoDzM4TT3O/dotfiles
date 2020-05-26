@@ -40,7 +40,7 @@ Htop and cli-visualizer
 ![ws4](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/two.png)
 
 Floating layout (tty-clock, cli-visualizer and htop)
-![floating](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/floating-new.png)
+![floating](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/floating.png)
 
 ***
 
