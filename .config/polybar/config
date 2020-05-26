@@ -58,20 +58,25 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=9;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = "Font Awesome 5 Free:style=Regular:size=10;3"
 font-4 = "Font Awesome 5 Free:style=Solid:size=10;3"
 font-5 = "Font Awesome 5 Brands:style=Regular:size=10;3"
 
-;The bar structure is like this:
-;workspaces - filesystem usage, backlight, volume, keyboard layout, CPU usage, wifi hotspot, battery, temperature, date
+; The bar structure is like this:
+; workspaces, filesystem usage, brightness, volume, RAM usage, CPU usage, wifi, battery, temperature, date, systray
+
 modules-left = i3 
+
 ;modules-center = mpd
-; I removed alsa from modules-right
+
+; I removed alsa, xkeyboard and powermenu from modules-right
 ; If you don't use pulseaudio, enable alsa
-modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+; xkeyboard shows your current keyboard layout and if CAPS LOCK is on
+; powermenu doesn't work on i3 for me, so I'll disable it
+modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date 
 
 ; show systray on the right
 tray-position = right
@@ -128,7 +133,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -138,11 +143,17 @@ label-focused-background = ${colors.background-alt}
 label-focused-foreground = #88c0d0
 ;label-focused-underline= ${colors.primary}
 label-focused-underline= #88c0d0
+; adjust the value below accordingly
+; >2: have less screen space, blocks will slide to the right if there isn't enough space
+; ~1 to 1.9: have more screen space, unfocused workspaces will occupy less space
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+; adjust the value below accordingly
+; >2: have less screen space, blocks will slide to the right if there isn't enough space
+; ~1 to 1.9: have more screen space, unfocused workspaces will occupy less space
+label-unfocused-padding = 1.8
 label-unfocused-foreground = #4c566a
 
 ; visible = Active workspace on unfocused monitor
@@ -154,6 +165,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
+; usually you don't need to modify this value
 label-urgent-padding = 2
 
 ; Separator in between workspaces
@@ -183,7 +195,8 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#0a81f5} %{F-}%percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -221,7 +234,7 @@ format-volume = <label-volume> <bar-volume>
 label-volume = Volume %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -232,10 +245,11 @@ bar-volume-foreground-3 = #88c0d0
 bar-volume-foreground-4 = #88c0d0
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 ;bar-volume-fill = ─
+; "=" is the volume bar fill symbol
 bar-volume-fill = =
 bar-volume-fill-font = 2
 bar-volume-empty = ─
@@ -252,20 +266,23 @@ label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted =  muted
+label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = #88c0d0
+bar-volume-foreground-1 = #88c0d0
+bar-volume-foreground-2 = #88c0d0
+bar-volume-foreground-3 = #88c0d0
+bar-volume-foreground-4 = #88c0d0
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+;bar-volume-fill = ─
+; "=" is the volume bar fill symbol
+bar-volume-fill = =
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
@@ -295,7 +312,7 @@ label-indicator-underline = #d08770
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 format-underline = #8fbcbb
@@ -305,13 +322,13 @@ label = RAM: %percentage_used%%
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
 format-underline = #bf616a
 label = CPU: %percentage:2%%
 
-; wpa module
+; wireless module
 [module/wlan]
 type = internal/network
 ;replace wlan0 with your wireless network interface
@@ -327,14 +344,14 @@ label-connected = %essid%
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-label-disconnected = Wi-Fi disconnected
+label-disconnected =  Disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 =  
+ramp-signal-1 =  
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 =  
 ramp-signal-foreground = ${colors.foreground-alt}
 
 ; ethernet module
@@ -348,13 +365,13 @@ interval = 3.0
 format-connected-underline = #a3be8c
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected =  %local_ip%
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-label-disconnected = Ethernet disconnected
+label-disconnected =   Disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
 ; battery module
@@ -394,10 +411,12 @@ animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
 animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+animation-discharging-framerate = 600
 
 ; temperature module
 [module/temperature]
@@ -415,23 +434,31 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 ; date module
 [module/date]
 type = internal/date
-interval = 5
+; update seconds every 1 second
+interval = 1
 
-date =
-date-alt = " %Y-%m-%d"
+; for example Tue 26/05/2020 (day/month/year)
+date = "%a %d/%m/%Y"
+; for example Tuesday, 26 May 2020
+date-alt = "%A, %d %B %Y"
 
+; for example 19:50
 time = %H:%M
+; for example 19:50:15
 time-alt = %H:%M:%S
 
-format-prefix = 
+# compact date example: Tue 26/05/2020 19:50
+# full date example: Tuesday, 26 May 2020 19:50:15
+
+format-prefix =   
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 format-underline = #5e81ac
