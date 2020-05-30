@@ -85,12 +85,8 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
-else
-	export EDITOR='nano'
-fi
+# Preferred editor 
+export EDITOR='vim'
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -214,6 +210,12 @@ github() {
 weather() {
 	curl wttr.in/$1
 }
+
+mkcd() {
+	mkdir "$1"
+	cd "$1"
+}
+
 ## END custom functions
 
 # Add aliases
