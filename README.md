@@ -23,6 +23,7 @@
 	- [Music](#music)
 	- [Text editor](#text-editor)
 	- [Network Manager](#network-manager)
+	- [Low battery notifier](#low-battery-notifier)
 - [Installation](#installation)
 	- [Copying the configurations](#copying-configurations)
 	- [Modifying the configurations](#modifying-configurations)
@@ -284,6 +285,26 @@ Installation instructions:
 
 - Arch Linux/Manjaro: `yay -S networkmanager-dmenu-git`
 - All of the other distros: https://github.com/firecat53/networkmanager-dmenu#installation
+
+### Low battery notifier
+I wrote my own low battery notifier. If one of your batteries' capacity is less than 20%, it will send a critical notification, containing said battery name and its capacity. To make this work, you need to install a cron manager.
+
+Installation instructions:
+
+- Debian/Mint/Ubuntu: cron should already be installed;
+- Arch Linux/Manjaro: `sudo pacman -S cronie`;
+
+I don't know if Manjaro ships with a cron manager.
+
+After you're done, run this command: `crontab -e`, then add this line:
+
+`* * * * * XDG_RUNTIME_DIR=/run/user/$(id -u) ~/.config/scripts/bat-warn.sh`
+
+You're done! I also have this in my root crontab (`sudo crontab -e`):
+
+`*/30 * * * * /usr/bin/updatedb`
+
+Every 30 minutes the command "updatedb" will run, so that the next time you run "locate FILE" it will be very fast to show you where a file is.
 
 ***
 
