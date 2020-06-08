@@ -32,3 +32,12 @@ alias neofetch='neofetch --color_blocks off --kitty italiarch.png'
 
 # replace ls with exa
 alias ls='exa'
+
+# show ANSI color escapes and avoid line wrapping
+alias less='less -RS'
+
+# when I type too fast
+alias vmi='vim'
+
+# force kill a process
+alias force-kill='killall -9 $1'
