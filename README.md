@@ -336,7 +336,7 @@ WARNING: THIS WILL REPLACE YOUR EXISTING CONFIGURATIONS!!!
 If you don't want to replace your existing configurations, please manually edit your files!
 
 ```bash
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*} ~ && cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~ && cp {u,}mount ~
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh} ~ && cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~ && cp {u,}mount ~
 # this one liner does the following:
 # clone this repo
 # go into the cloned repo
