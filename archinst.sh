@@ -40,7 +40,7 @@ yay -S tty-clock && printf '\e[1;42m[5] Success!\e[0m\n' || printf '\e[1;41m[5] 
 
 # Copy configurations [6]
 printf '\e[1;4m[6] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && printf '\e[1;42m[6] Success!\e[0m\n' || printf '\e[1;41m[6] Error! Could not copy configurations!\e[0m\n' && exit
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && printf '\e[1;42m[6] Success!\e[0m\n' || printf '\e[1;41m[6] Error! Could not copy configurations!\e[0m\n' && exit
 
 # Install vifm configuration dependencies [7]
 printf '\e[1;4m[7] Installing vifm configuration dependencies...\e[0m\n'
@@ -82,6 +82,10 @@ cd ~/dotfiles/slock && sudo make install && printf '\e[1;42m[14] Success!\e[0m\n
 # Install polybar [15]
 printf '\e[1;4m[15] Installing polybar...\e[0m\n'
 yay -S polybar && printf '\e[1;42m[15] Success!\e[0m\n' || printf '\e[1;41m[15] Error! Could not install polybar!\e[0m\n' && exit
+
+# Install Powerlevel10k [16]
+printf '\e[1;4m[16] Installing Powerlevel10k...\e[0m\n'
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k && printf '\e[1;42m[16] Success!\e[0m\n' || printf '\e[1;41m[16] Error! Could not install Powerlevel10k!\e[0m\n' && exit
 
 printf "
     _             _     ___           _    
