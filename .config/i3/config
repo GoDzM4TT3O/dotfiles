@@ -26,6 +26,9 @@ bindsym $super+b exec i3-msg open
 bindsym $super+n exec networkmanager_dmenu
 
 # change borders
+# $mod+u hides borders and titlebars
+# $mod+y shows borders of 3px and hides titlebars
+# $mod+n shows 4px borders and shows titlebars
 bindsym $mod+u border none
 bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
@@ -240,7 +243,7 @@ bindsym $mod+r mode "resize"
 #}
 
 # window rules, you can find the window class using xprop
-for_window [class=".*"] border pixel 4
+for_window [class=".*"] border pixel 3
 assign [class=URxvt] 1
 assign [class=Firefox|Transmission-gtk] 2
 assign [class=Thunar|File-roller] 3
@@ -250,7 +253,7 @@ assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|E
 for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
 for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
-for_window [class=kitty] floating enable; focus
+for_window [class=kitty] floating enable, focus, border none 0
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
