@@ -65,31 +65,21 @@ map <C-v> "+P
 " mv vim-airline ~/.vim/bundle/vim-airline
 " git clone https://github.com/vim-airline/vim-airline-themes
 " mv vim-airline ~/.vim/bundle/vim-airline-themes
-" Install vim-css-color:
-" git clone https://github.com/ap/vim-css-color
-" mv vim-css-color/{after,autoload,syntax}/* ~/.vim
 execute pathogen#infect()
 " vim plug: https://github.com/vim-plug
 " install packages by running :PlugInstall inside Vim
 call plug#begin('~/.vim/plugged')
-Plug 'chrisbra/Colorizer'
 " nord-vim color scheme
 Plug 'arcticicestudio/nord-vim'
 " vim status bar
 " After running ":PlugInstall" run ":AirlineTheme deus"
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Install Colorizer
-" wget https://raw.github.com/chrisbra/color_highlight/master/Colorizer.vmb
-" vim Colorizer.vmb
-" :so %
-" reopen vim
 " }}}
 
 " Plugin Options {{{
 let g:airline_powerline_fonts = 1
 let g:airline_theme='deus'
-let g:colorizer_auto_filetype='css,html,js,php,conf,config,ini'
 " }}}
 
 " DO NOT REMOVE THIS LINE
