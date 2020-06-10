@@ -24,10 +24,11 @@ alias update-grub='sudo mkinitcpio -P; sudo grub-mkconfig -o /boot/grub/grub.cfg
 # connect to wifi (I use the Arch Wiki's wpa_supplicant config)
 alias wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0'
 
+# kill picom/compton before starting obs, otherwise the recording won't look right
+alias obs='pkill picom; obs'
+
 # show custom arch logo with neofetch & disable color blocks
-# uncomment the line below for ASCII Arch Linux logo
-#alias neofetch='neofetch --color_blocks off --ascii ~/archlogo.txt)'
-# show Italian Arch logo I made
+#alias neofetch='neofetch --color_blocks off --kitty archlogo.png'
 alias neofetch='neofetch --color_blocks off --kitty italiarch.png'
 
 # replace ls with exa
@@ -41,3 +42,6 @@ alias vmi='vim'
 
 # force kill a process
 alias force-kill='killall -9 $1'
+
+# rot13 encryption
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'

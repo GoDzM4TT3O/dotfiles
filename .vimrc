@@ -59,22 +59,20 @@ map <C-v> "+P
 " }}}
 
 " Plugins {{{
-" vim pathogen: https://github.com/tpope/vim-pathogen
-" Install vim-airline and vim-airline-themes:
-" git clone https://github.com/vim-airline/vim-airline
-" mv vim-airline ~/.vim/bundle/vim-airline
-" git clone https://github.com/vim-airline/vim-airline-themes
-" mv vim-airline ~/.vim/bundle/vim-airline-themes
-execute pathogen#infect()
 " vim plug: https://github.com/vim-plug
 " install packages by running :PlugInstall inside Vim
 call plug#begin('~/.vim/plugged')
 " nord-vim color scheme
 Plug 'arcticicestudio/nord-vim'
 " vim status bar
-" After running ":PlugInstall" run ":AirlineTheme deus"
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" markdown table helper
+Plug 'dhruvasagar/vim-table-mode'
+" vim-airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
 " }}}
 
 " Plugin Options {{{
