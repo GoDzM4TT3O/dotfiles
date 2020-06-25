@@ -32,7 +32,7 @@ alias obs='pkill picom; obs'
 alias neofetch='neofetch --color_blocks off --kitty italiarch.png'
 
 # replace ls with exa
-alias ls='exa'
+alias ls='exa --icons --group-directories-first'
 
 # show ANSI color escapes and avoid line wrapping
 alias less='less -RS'
@@ -45,3 +45,6 @@ alias force-kill='killall -9 $1'
 
 # rot13 encryption
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# screen locking using slock
+alias lockscreen='slock -m "Locked at $(date "+%a %d, %H:%M:%S") $(printf "\nRandom quote: ") $(fortune)"'
