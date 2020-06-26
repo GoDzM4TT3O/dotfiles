@@ -143,8 +143,8 @@ label-focused = %index%
 label-focused-background = #295573 
 label-focused-foreground = #88c0d0
 ;label-focused-underline= ${colors.primary}
-;label-focused-underline= #88c0d0
-label-focused-underline = #295573 
+label-focused-underline= #88c0d0
+;label-focused-underline = #295573 
 ; adjust the value below accordingly
 ; >2: have less screen space, blocks will slide to the right if there isn't enough space
 ; ~1 to 1.9: have more screen space, unfocused workspaces will occupy less space
