@@ -111,8 +111,8 @@ Make `zsh` the default shell: `chsh -s /bin/zsh`
 + `zsh-autosuggestions`
 	- To install it, run: `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
-+ `zsh-syntax-highlighting`
-	- To install it, run: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
++ `fast-syntax-highlighting`
+	- To install it, run: `git clone https://github.com/zdharma/fast-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting`
 
 + `Powerleve10k` (shell prompt)
 	- To install it, run: `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k`

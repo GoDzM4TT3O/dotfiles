@@ -87,9 +87,9 @@ yay -S polybar && printf '\e[1;42m[15] Success!\e[0m\n' || printf '\e[1;41m[15] 
 printf '\e[1;4m[16] Installing Powerlevel10k...\e[0m\n'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k && printf '\e[1;42m[16] Success!\e[0m\n' || printf '\e[1;41m[16] Error! Could not install Powerlevel10k!\e[0m\n' && exit
 
-# Install zsh-syntax-highlighting [17]
-printf '\e[1;4m[17] Installing zsh-syntax-highlighting...\e[0m\n'
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && printf '\e[1;42m[17] Success!\e[0m\n' || printf '\e[1;41m[17] Error! Could not install zsh-syntax-highlighting!\e[0m\n' && exit
+# Install fast-syntax-highlighting [17]
+printf '\e[1;4m[17] Installing fast-syntax-highlighting...\e[0m\n'
+git clone https://github.com/zdharma/fast-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting && printf '\e[1;42m[17] Success!\e[0m\n' || printf '\e[1;41m[17] Error! Could not install fast-syntax-highlighting!\e[0m\n' && exit
 
 # Install newsboat [18]
 printf '\e[1;4m[18] Installing newsboat...\e[0m\n'
