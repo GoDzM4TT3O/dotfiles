@@ -24,6 +24,7 @@
 	- [Text editor](#text-editor)
 	- [Network Manager](#network-manager)
 	- [Low battery notifier](#low-battery-notifier)
+	- [RSS Reader](#rss-reader)
 - [Installation](#installation)
 	- [Copying the configurations](#copying-configurations)
 	- [Modifying the configurations](#modifying-configurations)
@@ -105,9 +106,16 @@ I use `zsh`. To make it work, you need to install zsh and oh-my-zsh:
 
 Make `zsh` the default shell: `chsh -s /bin/zsh`
 
-I also use `zsh-autosuggestions`. To install it, run: `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+#### Plugins
 
-I use Powerleve10k as a shell prompt. To install it, run: `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k`
++ `zsh-autosuggestions`
+	- To install it, run: `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+
++ `zsh-syntax-highlighting`
+	- To install it, run: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+
++ `Powerleve10k` (shell prompt)
+	- To install it, run: `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k`
 
 ## Terminal addons
 ### vifm
@@ -307,6 +315,14 @@ You're done! I also have this in my root crontab (`sudo crontab -e`):
 `*/30 * * * * /usr/bin/updatedb`
 
 Every 30 minutes the command "updatedb" will run, so that the next time you run "locate FILE" it will be very fast to show you where a file is.
+
+### RSS Reader
+
+I use Newsboat, with Luke Smith's custom config and my own URLs.
+You can use Newsboat to open Youtube videos in `mpv`, but first you need to install `urlscan`:
+
+- Debian/Mint/Ubuntu: `sudo apt install urlscan`
+- Arch Linux/Manjaro: `sudo pacman -S urlscan`
 
 ***
 
