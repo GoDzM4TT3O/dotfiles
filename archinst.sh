@@ -95,7 +95,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 printf '\e[1;4m[18] Installing newsboat...\e[0m\n'
 sudo pacman -S newsboat urlscan && printf '\e[1;42m[18] Success!\e[0m\n' || printf '\e[1;41m[18] Error! Could not install newsboat!\e[0m\n' && exit
 
-
+# Successfully set up dotfiles
 printf "
     _             _     ___           _    
    / \   _ __ ___| |__ |_ _|_ __  ___| |_
