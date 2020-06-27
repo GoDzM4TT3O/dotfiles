@@ -244,8 +244,9 @@ complete -o default -F _pip_completion pip
 
 # https://gitlab.com/dwt1/shell-color-scripts
 # random colors
-colorscript -r
+#colorscript -r
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+echo "Successfully started zsh"
