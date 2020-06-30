@@ -247,7 +247,7 @@ for_window [class=".*"] border pixel 3
 for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
 for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
-for_window [class=kitty] floating enable, focus, border none 0
+#for_window [class=kitty] floating enable, focus, border none 0
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
