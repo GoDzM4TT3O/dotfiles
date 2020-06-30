@@ -59,7 +59,7 @@ map <C-v> "+P
 " }}}
 
 " Plugins {{{
-" vim plug: https://github.com/vim-plug
+" vim plug: https://github.com/junegunn/vim-plug
 " install packages by running :PlugInstall inside Vim
 call plug#begin('~/.vim/plugged')
 " nord-vim color scheme
