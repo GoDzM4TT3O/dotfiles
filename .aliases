@@ -54,3 +54,6 @@ alias preventlock='while true; do xdotool mousemove 100 100; sleep 20; xdotool m
 
 # rickroll
 alias rickroll='mpv https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+
+# use neovim instead of vim
+alias vim='nvim'
