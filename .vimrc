@@ -8,9 +8,11 @@
 " Colors {{{
 " enable 256bit colors
 set t_Co=256
-set termguicolors
+" set termguicolors
 " set colorscheme to nord
-colorscheme nord
+" colorscheme nord
+" set colorscheme to monokai
+colorscheme monokai
 " }}}
 
 " Visual Options {{{
@@ -29,7 +31,18 @@ filetype plugin indent on
 " enable syntax
 syntax on
 set laststatus=2
-set encoding=utf-8
+set encoding=UTF-8
+" don't show the current mode
+" (it is shown in the status bar)
+set noshowmode
+set lcs=extends:❯,precedes:❮,tab:>-
+set ruler
+set cursorline
+set smartindent
+set autoindent
+set wrap
+set linebreak
+set showmatch
 " }}}
 
 " Search {{{
@@ -64,20 +77,44 @@ map <C-v> "+P
 call plug#begin('~/.vim/plugged')
 " nord-vim color scheme
 Plug 'arcticicestudio/nord-vim'
-" vim status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 " markdown table helper
 Plug 'dhruvasagar/vim-table-mode'
-" vim-airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" vim dev-icons
+Plug 'ryanoasis/vim-devicons'
+" vim status bar (lightline)
+Plug 'itchyny/lightline.vim'
+Plug 'sainnhe/lightline_foobar.vim'
+" vim status bar (vim-airline)
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 " }}}
 
 " Plugin Options {{{
+" vim-airline options
 let g:airline_powerline_fonts = 1
 let g:airline_theme='deus'
+" lightline options
+" 'colorscheme': 'neodark_alter',
+let g:lightline = {
+      \ 'colorscheme': 'neodark_alter',
+      \ 'component_function': {
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \ }
+      \ }
+let g:lightline_foobar_bold = 1
+
+function! MyFiletype()
+	  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+	return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+" enable vim dev-icons
+let g:webdevicons_enable = 1
 " }}}
 
 " DO NOT REMOVE THIS LINE
