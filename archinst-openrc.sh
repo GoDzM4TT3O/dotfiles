@@ -70,7 +70,7 @@ cd ~; git clone https://github.com/dpayne/cli-visualizer && cd cli-visualizer &&
 
 # Install vim plugins [12]
 printf '\e[1;4m[12] Installing vim plugins...\e[0m\n'
-cd ~; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && git clone https://github.com/vim-airline/vim-airline && mv vim-airline ~/.vim/bundle/vim-airline && git clone https://github.com/vim-airline/vim-airline-themes && mv vim-airline ~/.vim/bundle/vim-airline-themes && printf '\e[1;42m[12] Success! Now please open vim and run :PlugInstall' || printf '\e[1;41m[12] Error! Could not install the necessary vim plugins!\e[0m\n' || exit
+cd ~; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && mkdir -p ~/.vim/autoload ~/.vim/bundle && printf '\e[1;42m[12] Success! Now please open vim and run :PlugInstall' || printf '\e[1;41m[12] Error! Could not install the necessary vim plugins!\e[0m\n' || exit
 
 # Install networkmanager-dmenu [13]
 printf '\e[1;4m[13] Installing networkmanager-dmenu...\e[0m\n'
