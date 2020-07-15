@@ -42,6 +42,7 @@ set smartindent
 set autoindent
 set wrap
 set linebreak
+" show matching opening/closing brackets
 set showmatch
 " }}}
 
