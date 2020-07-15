@@ -33,7 +33,7 @@ set encoding=UTF-8
 " (it is shown in the status bar)
 set noshowmode
 " show the top status bar
-set showtabline=2
+"set showtabline=2
 set ruler
 set cursorline
 set smartindent
@@ -103,6 +103,13 @@ colorscheme monokai
 " }}}
 
 " Plugin Options {{{
+
+" automatically load neodark_alter theme on vim startup (VimEnter)
+autocmd VimEnter * let g:lightline.colorscheme = "neodark_alter"
+autocmd VimEnter * call lightline#init()
+autocmd VimEnter * call lightline#colorscheme()
+autocmd VimEnter * call lightline#update()
+
 " vim-airline options
 "let g:airline_powerline_fonts = 1
 "let g:airline_theme='deus'
@@ -110,12 +117,6 @@ colorscheme monokai
 " lightline-delphinus options
 let g:lightline_delphinus_use_powerline_glyphs = 1
 let g:lightline_delphinus_colorscheme = "nord_improved"
-
-let g:lightline = {
-      \ 'colorscheme': 'neodark_alter',
-      \ }
-
-" TODO: fix lightline theme
 
 " lightline_foobar options
 let g:lightline_foobar_bold = 1
