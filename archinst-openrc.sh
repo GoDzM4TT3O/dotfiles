@@ -2,6 +2,7 @@
 # GoDzM4TT3O's dotfiles
 # Arch Linux installer
 # This installer works on distributions based on Arch Linux
+# NOTE: This is the OpenRC version. If you use Arch/Manjaro, DON'T use this script!
 # You shouldn't run this as root.
 # When required, enter your password for sudo.
 
