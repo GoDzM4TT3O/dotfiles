@@ -3,7 +3,6 @@
 # Arch Linux installer
 # This installer works on distributions based on Arch Linux
 # NOTE: This is the Systemd version. If you use Arch/Manjaro, USE this script!
----
 # You shouldn't run this as root.
 # When required, enter your password for sudo.
 
@@ -16,6 +15,14 @@ printf "
   / _ \ | '__/ __| '_ \ | || '_ \/ __| __|
  / ___ \| | | (__| | | || || | | \__ \ |_
 /_/   \_\_|  \___|_| |_|___|_| |_|___/\__|
+
+ ____            _                     _ 
+/ ___| _   _ ___| |_ ___ _ __ ___   __| |
+\___ \| | | / __| __/ _ \ '_ ' _ \ / _' |
+ ___) | |_| \__ \ ||  __/ | | | | | (_| |
+|____/ \__, |___/\__\___|_| |_| |_|\__,_| version (for Arch Linux/Manjaro)
+       |___/                             
+
 @ https://github.com/GoDzM4TT3O/dotfiles
 Starting installation...
 "
