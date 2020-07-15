@@ -95,6 +95,11 @@ git clone https://github.com/zdharma/fast-syntax-highlighting ${ZSH_CUSTOM:-~/.o
 printf '\e[1;4m[18] Installing newsboat...\e[0m\n'
 sudo pacman -S newsboat urlscan && printf '\e[1;42m[18] Success!\e[0m\n' || printf '\e[1;41m[18] Error! Could not install newsboat!\e[0m\n' && exit
 
+# Install st (suckless terminal) [19]
+printf '\e[1;4m[19] Installing st (suckless terminal)...\e[0m\n'
+yay -S st-luke-git && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install st!\e[0m\n' && exit
+
+
 # Successfully set up dotfiles
 printf "
     _             _     ___           _    

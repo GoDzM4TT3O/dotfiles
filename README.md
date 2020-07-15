@@ -85,7 +85,7 @@ Here's a list of the firefox addons I use:
 - Vim Vixen
 
 ## Terminal
-- Terminal: `kitty`
+- Terminal: `st` (luke's build) and `kitty` (my own config)
 - Terminal color scheme: [Nord](http://nordtheme.com/)
 - Terminal font: [Fira Code](https://github.com/tonsky/FiraCode)
 - Terminal config creator: [`kitty-cat`](https://github.com/adi1090x/kitty-cat)
@@ -97,6 +97,8 @@ NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is
 - Terminal clock: `tty-clock`
 - Terminal startup script: [`shell-color-scripts`](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
+
+Please install [`st`](https://github.com/LukeSmithxyz/st), otherwise the default i3 config might not work for you, unless you modify it.
 
 ### Shell
 I use `zsh`. To make it work, you need to install zsh and oh-my-zsh:

@@ -2,7 +2,9 @@
 PLEASE NOTE: the SUPER key is also known as the "Windows" key.
 
 ## Terminal keybindings
-ALT+ENTER: open the kitty terminal
+ALT+ENTER: open the suckless terminal (st)
+
+ALT+SHIFT+ENTER: open the kitty terminal
 
 CTRL+SHIFT+T: open a new kitty terminal tab
 
