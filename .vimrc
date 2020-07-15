@@ -3,16 +3,13 @@
 " To toggle a fold, press "za"
 " To open all folds, press "zR"
 " To close all folds, press "zM"
-
+" ----------------------------- "
 
 " Colors {{{
 " enable 256bit colors
 set t_Co=256
+" use terminal's colors
 " set termguicolors
-" set colorscheme to nord
-" colorscheme nord
-" set colorscheme to monokai
-colorscheme monokai
 " }}}
 
 " Visual Options {{{
@@ -35,7 +32,8 @@ set encoding=UTF-8
 " don't show the current mode
 " (it is shown in the status bar)
 set noshowmode
-set lcs=extends:❯,precedes:❮,tab:>-
+" show the top status bar
+set showtabline=2
 set ruler
 set cursorline
 set smartindent
@@ -76,45 +74,55 @@ map <C-v> "+P
 " vim plug: https://github.com/junegunn/vim-plug
 " install packages by running :PlugInstall inside Vim
 call plug#begin('~/.vim/plugged')
-" nord-vim color scheme
+" Color schemes
+" nord
 Plug 'arcticicestudio/nord-vim'
-" markdown table helper
-Plug 'dhruvasagar/vim-table-mode'
+" -------------------- "
+" UI
 " vim dev-icons
 Plug 'ryanoasis/vim-devicons'
 " vim status bar (lightline)
 Plug 'itchyny/lightline.vim'
 Plug 'sainnhe/lightline_foobar.vim'
+Plug 'delphinus/lightline-delphinus'
 " vim status bar (vim-airline)
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
+" -------------------- "
+" Utilies
+" markdown table helper
+Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
+" }}}
+
+" Color schemes {{{
+" set colorscheme to nord
+" colorscheme nord
+" set colorscheme to monokai
+colorscheme monokai
 " }}}
 
 " Plugin Options {{{
 " vim-airline options
-let g:airline_powerline_fonts = 1
-let g:airline_theme='deus'
-" lightline options
+"let g:airline_powerline_fonts = 1
+"let g:airline_theme='deus'
+
+" lightline-delphinus options
+let g:lightline_delphinus_use_powerline_glyphs = 1
+let g:lightline_delphinus_colorscheme = "nord_improved"
+
 let g:lightline = {
       \ 'colorscheme': 'neodark_alter',
-      \ 'component_function': {
-      \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat',
       \ }
-      \ }
+
+" TODO: fix lightline theme
+
+" lightline_foobar options
 let g:lightline_foobar_bold = 1
-
-function! MyFiletype()
-	  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-
-function! MyFileformat()
-	return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-endfunction
 
 " enable vim dev-icons
 let g:webdevicons_enable = 1
+
 " }}}
 
 " DO NOT REMOVE THIS LINE
