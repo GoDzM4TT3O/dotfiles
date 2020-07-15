@@ -27,9 +27,15 @@ alias wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.
 # kill picom/compton before starting obs, otherwise the recording won't look right
 alias obs='pkill picom; obs'
 
-# show custom arch logo with neofetch & disable color blocks
-#alias neofetch='neofetch --color_blocks off --kitty archlogo.png'
-alias neofetch='neofetch --color_blocks off --kitty italiarch.png'
+# neofetch
+# if we use st don't show distro logo
+[[ $TERM = "st-256color" ]] && alias neofetch='neofetch --color_blocks off'
+
+# if we use kitty use kitty backend and show custom distro logo
+[[ $TERM = "xterm-kitty" ]] && alias neofetch='neofetch --color_blocks off --kitty archlogo.png'
+
+# if we use urxvt use w3m backend and show custom distro logo
+[[ $TERM = "rxvt-256color" ]] && alias neofetch='neofetch --color_blocks off --w3m archlogo.png'
 
 # replace ls with exa
 alias ls='exa --icons --group-directories-first'
@@ -53,7 +59,7 @@ alias lockscreen='slock -m "Locked at $(date "+%a %d, %H:%M:%S") $(printf "\nRan
 alias preventlock='while true; do xdotool mousemove 100 100; sleep 20; xdotool mousemove 500 500; done'
 
 # rickroll
-alias rickroll='mpv https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+alias rickroll='mpv "https://www.youtube.com/watch?v=dQw4w9WgXcQ"'
 
-# use neovim instead of vim
-alias vim='nvim'
+# use neovim instead of vim if nvim is installed
+[[ -f "/usr/bin/nvim" ]] && alias vim="nvim" 

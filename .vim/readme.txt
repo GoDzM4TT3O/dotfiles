@@ -20,3 +20,12 @@ DOCUMENT SYNTAX
 INSTALL VIM PACKAGES
 vim-plug and vim-pathogen are already included.
 Simply run ":PlugInstall" inside vim.
+----------------------------------------------------
+CUSTOM KEYBINDINGS / REMAPS
+
+I also remapped a few keys:
+
+CTRL+C -> (needs gvim) copy selected text to global clipboard
+CTRL+V -> paste text into vim
+QQ -> quit without saving (same as ZQ)
+WS -> save the file but don't quit (same as :w)

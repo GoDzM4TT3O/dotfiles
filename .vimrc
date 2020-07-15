@@ -62,12 +62,25 @@ set foldenable
 set foldlevelstart=10
 " }}}
 
+" Remaps {{{
+"
+" NOTE: <CR> means line break/enter
+"
 " Clipboard {{{
 " NOTE: needs gvim for clipboard capabilities
 " Using CTRL+C, copy the text to global clipboard and active selection
 vnoremap <C-c> "*y :let @+=@*<CR>
 " Using CTRL+V, paste the text from global clipboard
 map <C-v> "+P
+" }}}
+
+" Misc {{{
+" If we press QQ quit Vim without saving (ZQ)
+map QQ ZQ
+" If we press WS write and stay in Vim, without closing (:w)
+map WS :w<CR>
+" }}}
+
 " }}}
 
 " Plugins {{{
