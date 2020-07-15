@@ -95,7 +95,6 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 let g:airline_theme='deus'
 " lightline options
-" 'colorscheme': 'neodark_alter',
 let g:lightline = {
       \ 'colorscheme': 'neodark_alter',
       \ 'component_function': {
