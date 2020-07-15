@@ -129,10 +129,10 @@ Install dependencies:
 
 ```bash
 cd ~ # go into /home/$USER
-sudo pip3 install ueberzug # ueberzug
+sudo pip3 install --upgrade ueberzug # ueberzug
 git clone https://github.com/marianosimone/epub-thumbnailer # epub-thumbnailer
 cd epub-thumbnailer
-pip install pillow # install/update python pillow
+pip install --upgrade pillow # install/update python pillow
 sudo python install.py install # install epub-thumbnailer
 cd ~ # go into /home/$USER
 git clone https://github.com/sdushantha/fontpreview # fontpreview
