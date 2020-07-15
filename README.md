@@ -292,20 +292,14 @@ sudo make install
 NOTE: to launch cli-visualizer, run `vis`
 
 ### Text editor
-- Text editor: `vim`
-- Vim color scheme: deus
-- Vim package managers: vim-plug, vim-pathogen
-- Vim status bar: vim-airline
+- Text editor: `vim` / `nvim` (neovim)
+- Vim color scheme: monokai
+- Vim package manager: vim-plug
+- Vim status bar: lightline.vim
 
 How to configure `vim` properly:
 + Open Vim: `vim`
 + Run `:PlugInstall` inside Vim
-+ Quit Vim: `:q`
-+ Clone the `vim-airline` repositories:
-```
-git clone https://github.com/vim-airline/vim-airline && mv vim-airline ~/.vim/bundle/vim-airline || return 1
-git clone https://github.com/vim-airline/vim-airline-themes && mv vim-airline ~/.vim/bundle/vim-airline-themes || return 1
-```
 + After this, everything should be working properly.
 
 Vim usage instructions: [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/master/.vim/readme.txt)
@@ -354,16 +348,8 @@ Get i3:
 - Arch Linux/Manjaro: `sudo pacman -S i3-wm dunst i3lock i3status`
 
 Install additional packages:
-- Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior feh kitty tty-clock xinit`
-- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior feh kitty xorg-xinit ttf-font-awesome ttf-fira-code`
-
-To install `fonts-mplus` on Arch Linux, use `yay -S ttf-mplus` or:
-
-```
-git clone https://aur.archlinux.org/ttf-mplus
-cd ttf-mplus
-makepkg -si
-```
+- Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto xsettingsd lxappearance vim nvim scrot viewnior feh kitty tty-clock xinit`
+- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance vim nvim scrot viewnior feh kitty xorg-xinit ttf-font-awesome ttf-fira-code`
 
 NOTE: if you don't use a display manager (such as LightDM or GDM), add the following line to `~/.xinitrc`:
 
