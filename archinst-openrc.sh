@@ -33,11 +33,11 @@ sudo pacman -Syu && printf '\e[1;42m[1] Success!\e[0m\n' || printf '\e[1;41m[1] 
 
 # Install necessary packages [2]
 printf '\e[1;4m[2] Installing necessary packages...\e[0m\n'
-sudo pacman -S --needed i3-wm dunst i3lock i3status && printf '\e[1;42m[2] Success!\e[0m\n' || printf '\e[1;41m[2] Error! Could not install necessary packages!\e[0m\n' 
+sudo pacman -S --needed i3-gaps dunst i3lock i3status && printf '\e[1;42m[2] Success!\e[0m\n' || printf '\e[1;41m[2] Error! Could not install necessary packages!\e[0m\n' 
 
 # Install additional packages [3]
 printf '\e[1;4m[3] Installing additional packages...\e[0m\n'
-sudo pacman -S --needed git fortune-mod compton hsetroot exa zsh rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior cmus feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
+sudo pacman -S --needed git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
 
 # Install yay (AUR Helper) [4]
 printf '\e[1;4m[4] Installing yay (AUR Helper)...\e[0m\n'
@@ -105,8 +105,8 @@ printf '\e[1;4m[18] Installing st (suckless terminal)...\e[0m\n'
 yay -S --norebuild --noredownload st-luke-git && printf '\e[1;42m[18] Success!\e[0m\n' || printf '\e[1;41m[18] Error! Could not install st!\e[0m\n' 
 
 # Install required fonts [19]
-printf '\e[1;4m[19] Installing  ttf-font-awesome and ttf-meslo-nerd-font-powerlevel10k\e[0m\n'
-yay -S --norebuild --noredownload  ttf-font-awesome ttf-meslo-nerd-font-powerlevel10k && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install the required fonts!\e[0m\n' 
+printf '\e[1;4m[19] Installing required fonts...\e[0m\n'
+yay -S --norebuild --noredownload  ttf-font-awesome ttf-meslo-nerd-font-powerlevel10k powerline-fonts && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install the required fonts!\e[0m\n' 
 
 # Copy configurations [20]
 printf '\e[1;4m[20] Copying configurations...\e[0m\n'

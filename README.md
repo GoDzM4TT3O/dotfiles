@@ -197,9 +197,8 @@ Installation instructions:
 ***
 
 ## Window Manager
-- Window Manager: `i3`
+- Window Manager: `i3-gaps`
 - Status bar: `polybar` (`i3status` config is available, see .config/i3/config)
-- Status bar font: [FontAwesome](https://github.com/fortawesome/fontawesome)
 - Lock screen: `i3lock` (SUPER+L), `slock` (after 10 minutes of inactivity)
 
 ### polybar
@@ -343,13 +342,13 @@ You can use Newsboat to open Youtube videos in `mpv`, but first you need to inst
 ***
 
 ## Installation
-Get i3:
-- Debian/Mint/Ubuntu: `sudo apt install i3-wm dunst i3lock i3status`
-- Arch Linux/Manjaro: `sudo pacman -S i3-wm dunst i3lock i3status`
+Get i3-gaps:
+- Debian/Mint/Ubuntu: `sudo apt install i3-gaps dunst i3lock i3status`
+- Arch Linux/Manjaro: `sudo pacman -S --needed i3-gaps dunst i3lock i3status`
 
 Install additional packages:
-- Debian/Mint/Ubuntu: `sudo apt install git compton hsetroot rxvt-unicode xsel rofi fonts-noto xsettingsd lxappearance vim nvim scrot viewnior feh kitty tty-clock xinit`
-- Arch Linux/Manjaro: `sudo pacman -S git compton hsetroot rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance vim nvim scrot viewnior feh kitty xorg-xinit ttf-font-awesome ttf-fira-code`
+- Debian/Mint/Ubuntu: `sudo apt install git fortune-mod picom hsetroot exa zsh xsel rofi fonts-noto xsettingsd lxappearance scrot feh kitty xinit fonts-font-awesome fonts-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim`
+- Arch Linux/Manjaro: `sudo pacman -S --needed git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim`
 
 NOTE: if you don't use a display manager (such as LightDM or GDM), add the following line to `~/.xinitrc`:
 

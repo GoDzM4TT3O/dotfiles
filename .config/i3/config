@@ -63,6 +63,15 @@ exec --no-startup-id xset dmps 600
 # it shows when the screen was locked and displays a random quote (requires fortune)
 exec --no-startup-id xautolock -time 10 -detectsleep -locker 'slock -m "Locked at $(date "+%a %d, %H:%M:%S") $(printf "\nRandom quote: ") $(fortune)"'
 
+# gaps
+gaps inner 10
+gaps outer 10
+# increase/decrease gaps
+bindsym $mod+z gaps inner all plus 10; gaps outer all plus 10;
+bindsym $mod+x gaps inner all minus 10; gaps outer all minus 10;
+# enable/disable gaps
+bindsym $super+g gaps inner all toggle 10; gaps outer all toggle 10
+
 # statusbar
 # I use polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -81,7 +90,7 @@ bindsym $mod+Return exec /usr/bin/st
 bindsym $mod+F4 kill
 
 # start dmenu (program launcher)
-bindsym $mod+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
+bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
 
 # start rofi (improved dmenu)
 bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
