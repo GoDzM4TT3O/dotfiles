@@ -6,14 +6,11 @@ echo "Have you already fetched the latest files from GitHub? (git pull)"
 printf "[y/n] > "
 read -r inp
 
-[[ $inp = "y" || $inp = "Y" || $inp = "yes" ]] && export gitPulled=1
-[[ $inp = "n" || $inp = "N" || $inp = "no" ]] && export gitPulled=0
-
-[[ $gitPulled = 1 ]] &&
+[[ $inp = "y" || $inp = "Y" || $inp = "yes" ]] &&
 # Copy configurations
 printf '\e[1;4mCopying configurations...\e[0m\n' && cd ~/dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && export dotsCopied=1 || export dotsCopied=0
 
-[[ $gitPulled = 0 ]] &&
+[[ $inp = "n" || $inp = "N" || $inp = "no" ]] &&
 # Run git pull on this repo
 printf '\e[1;4mFetching latest files...\e[0m\n' && cd ~/dotfiles && git pull && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && export dotsCopied=1 || export dotsCopied=0
 
