@@ -41,14 +41,11 @@ sudo pacman -S --needed git compton hsetroot exa zsh rxvt-unicode xsel rofi noto
 
 # Install yay (AUR Helper) [4]
 printf '\e[1;4m[4] Installing yay (AUR Helper)...\e[0m\n'
-# check if yay is installed
-[[ -f "/usr/bin/yay" ]] && yayExists=1 || yayExists=0
-[[ $yayExists=1 ]] && printf '\e[1;4m[4] Skipping yay (already installed)\e[0m\n'
-[[ $yayExists=0 ]] && cd ~; git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && printf '\e[1;42m[4] Success!\e[0m\n' || printf '\e[1;41m[4] Error! Could not install yay!\e[0m\n' 
+cd ~; git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && printf '\e[1;42m[4] Success!\e[0m\n' || printf '\e[1;41m[4] Error! Could not install yay!\e[0m\n' 
 
 # Install tty-clock [5]
 printf '\e[1;4m[5] Installing tty-clock...\e[0m\n'
-yay -S --needed tty-clock && printf '\e[1;42m[5] Success!\e[0m\n' || printf '\e[1;41m[5] Error! Could not install tty-clock!\e[0m\n' 
+yay -S --norebuild --noredownload tty-clock && printf '\e[1;42m[5] Success!\e[0m\n' || printf '\e[1;41m[5] Error! Could not install tty-clock!\e[0m\n' 
 
 # Copy configurations [6]
 printf '\e[1;4m[6] Copying configurations...\e[0m\n'
@@ -64,7 +61,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Install shell-color-scripts [9]
 printf '\e[1;4m[9] Installing shell-color-scripts...\e[0m\n'
-yay -S --needed shell-color-scripts && printf '\e[1;42m[9] Success!\e[0m\n' || printf '\e[1;41m[9] Error! Could not install shell-color-scripts!\e[0m\n' 
+yay -S --norebuild --noredownload shell-color-scripts && printf '\e[1;42m[9] Success!\e[0m\n' || printf '\e[1;41m[9] Error! Could not install shell-color-scripts!\e[0m\n' 
 
 # Install xautolock and LightDM [10]
 printf '\e[1;4m[10] Installing xautolock and LightDM...\e[0m\n'
@@ -85,7 +82,7 @@ cd ~; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercon
 
 # Install networkmanager-dmenu [13]
 printf '\e[1;4m[13] Installing networkmanager-dmenu...\e[0m\n'
-yay -S --needed networkmanager-dmenu-git && printf '\e[1;42m[13] Success!\e[0m\n' || printf '\e[1;41m[13] Error! Could not install networkmanager-dmenu!\e[0m\n' 
+yay -S --norebuild --noredownload networkmanager-dmenu-git && printf '\e[1;42m[13] Success!\e[0m\n' || printf '\e[1;41m[13] Error! Could not install networkmanager-dmenu!\e[0m\n' 
 
 # Install slock [14]
 printf '\e[1;4m[14] Installing slock...\e[0m\n'
@@ -93,7 +90,7 @@ cd ~/dotfiles/slock && sudo make install && printf '\e[1;42m[14] Success!\e[0m\n
 
 # Install polybar [15]
 printf '\e[1;4m[15] Installing polybar...\e[0m\n'
-yay -S --needed polybar && printf '\e[1;42m[15] Success!\e[0m\n' || printf '\e[1;41m[15] Error! Could not install polybar!\e[0m\n' 
+yay -S --norebuild --noredownload polybar && printf '\e[1;42m[15] Success!\e[0m\n' || printf '\e[1;41m[15] Error! Could not install polybar!\e[0m\n' 
 
 # Install Powerlevel10k [16]
 printf '\e[1;4m[16] Installing Powerlevel10k...\e[0m\n'
@@ -109,7 +106,7 @@ sudo pacman -S --needed newsboat urlscan && printf '\e[1;42m[18] Success!\e[0m\n
 
 # Install st (suckless terminal) [19]
 printf '\e[1;4m[19] Installing st (suckless terminal)...\e[0m\n'
-yay -S --needed st-luke-git && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install st!\e[0m\n' 
+yay -S --norebuild --noredownload st-luke-git && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install st!\e[0m\n' 
 
 
 # Successfully set up dotfiles
