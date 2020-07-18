@@ -104,9 +104,13 @@ sudo pacman -S --needed newsboat urlscan && printf '\e[1;42m[17] Success!\e[0m\n
 printf '\e[1;4m[18] Installing st (suckless terminal)...\e[0m\n'
 yay -S --norebuild --noredownload st-luke-git && printf '\e[1;42m[18] Success!\e[0m\n' || printf '\e[1;41m[18] Error! Could not install st!\e[0m\n' 
 
-# Copy configurations [19]
-printf '\e[1;4m[19] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not copy configurations!\e[0m\n' 
+# Install required fonts [19]
+printf '\e[1;4m[19] Installing  ttf-font-awesome and ttf-meslo-nerd-font-powerlevel10k\e[0m\n'
+yay -S --norebuild --noredownload  ttf-font-awesome ttf-meslo-nerd-font-powerlevel10k && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install the required fonts!\e[0m\n' 
+
+# Copy configurations [20]
+printf '\e[1;4m[20] Copying configurations...\e[0m\n'
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && printf '\e[1;42m[20] Success!\e[0m\n' || printf '\e[1;41m[20] Error! Could not copy configurations!\e[0m\n' 
 
 # Successfully set up dotfiles
 printf "
