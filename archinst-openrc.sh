@@ -33,19 +33,22 @@ sudo pacman -Syu && printf '\e[1;42m[1] Success!\e[0m\n' || printf '\e[1;41m[1] 
 
 # Install necessary packages [2]
 printf '\e[1;4m[2] Installing necessary packages...\e[0m\n'
-sudo pacman -S i3-wm dunst i3lock i3status && printf '\e[1;42m[2] Success!\e[0m\n' || printf '\e[1;41m[2] Error! Could not install necessary packages!\e[0m\n' 
+sudo pacman -S --needed i3-wm dunst i3lock i3status && printf '\e[1;42m[2] Success!\e[0m\n' || printf '\e[1;41m[2] Error! Could not install necessary packages!\e[0m\n' 
 
 # Install additional packages [3]
 printf '\e[1;4m[3] Installing additional packages...\e[0m\n'
-sudo pacman -S git compton hsetroot exa zsh rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior cmus feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
+sudo pacman -S --needed git compton hsetroot exa zsh rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior cmus feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
 
 # Install yay (AUR Helper) [4]
 printf '\e[1;4m[4] Installing yay (AUR Helper)...\e[0m\n'
-cd ~; git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && printf '\e[1;42m[4] Success!\e[0m\n' || printf '\e[1;41m[4] Error! Could not install yay!\e[0m\n' 
+# check if yay is installed
+[[ -f "/usr/bin/yay" ]] && yayExists=1 || yayExists=0
+[[ $yayExists=1 ]] && printf '\e[1;4m[4] Skipping yay (already installed)\e[0m\n'
+[[ $yayExists=0 ]] && cd ~; git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && printf '\e[1;42m[4] Success!\e[0m\n' || printf '\e[1;41m[4] Error! Could not install yay!\e[0m\n' 
 
 # Install tty-clock [5]
 printf '\e[1;4m[5] Installing tty-clock...\e[0m\n'
-yay -S tty-clock && printf '\e[1;42m[5] Success!\e[0m\n' || printf '\e[1;41m[5] Error! Could not install tty-clock!\e[0m\n' 
+yay -S --needed tty-clock && printf '\e[1;42m[5] Success!\e[0m\n' || printf '\e[1;41m[5] Error! Could not install tty-clock!\e[0m\n' 
 
 # Copy configurations [6]
 printf '\e[1;4m[6] Copying configurations...\e[0m\n'
@@ -53,7 +56,7 @@ cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .
 
 # Install vifm configuration dependencies [7]
 printf '\e[1;4m[7] Installing vifm configuration dependencies...\e[0m\n'
-cd ~; sudo pip3 install ueberzug pillow && git clone https://github.com/marianosimone/epub-thumbnailer && cd epub-thumbnailer && sudo python install.py install && cd ~ && git clone https://github.com/sdushantha/fontpreview && cd fontpreview && sudo make install && cd ~/dotfiles/.config/vifm && chmod 777 vifmrun && cd scripts && chmod 777 vifmimg && sudo cp ~/dotfiles/.config/vifm/vifmrun /usr/bin && printf '\e[1;42m[7] Success!\e[0m\n' || printf "\e[1;41m[7] Error! Could not install vifm\'s configurations or their dependencies!\e[0m\n" 
+cd ~; sudo pip3 install --upgrade ueberzug pillow && git clone https://github.com/marianosimone/epub-thumbnailer && cd epub-thumbnailer && sudo python install.py install && cd ~ && git clone https://github.com/sdushantha/fontpreview && cd fontpreview && sudo make install && cd ~/dotfiles/.config/vifm && chmod 777 vifmrun && cd scripts && chmod 777 vifmimg && sudo cp ~/dotfiles/.config/vifm/vifmrun /usr/bin && printf '\e[1;42m[7] Success!\e[0m\n' || printf "\e[1;41m[7] Error! Could not install vifm\'s configurations or their dependencies!\e[0m\n" 
 
 # Install zsh plugins [8]
 printf '\e[1;4m[8] Installing oh-my-zsh...\e[0m\n'
@@ -61,11 +64,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Install shell-color-scripts [9]
 printf '\e[1;4m[9] Installing shell-color-scripts...\e[0m\n'
-yay -S shell-color-scripts && printf '\e[1;42m[9] Success!\e[0m\n' || printf '\e[1;41m[9] Error! Could not install shell-color-scripts!\e[0m\n' 
+yay -S --needed shell-color-scripts && printf '\e[1;42m[9] Success!\e[0m\n' || printf '\e[1;41m[9] Error! Could not install shell-color-scripts!\e[0m\n' 
 
 # Install xautolock and LightDM [10]
 printf '\e[1;4m[10] Installing xautolock and LightDM...\e[0m\n'
-sudo pacman -S xautolock lightdm && yay -S lightdm-webkit2-greeter && sudo rc-service lightdm enable && printf '\e[1;42m[10] Success!\e[0m\n' || printf '\e[1;41m[10] Error! Could not install xautolock or lightdm!\e[0m\n' 
+sudo pacman -S --needed xautolock lightdm && yay -S lightdm-webkit2-greeter && sudo systemctl enable lightdm && printf '\e[1;42m[10] Success!\e[0m\n' || printf '\e[1;41m[10] Error! Could not install xautolock or lightdm!\e[0m\n' 
 
 # Disable other display managers (allowed to fail) [10]
 sudo rc-service gdm disable && printf '\e[1;42m[10] Successfully disabled gdm!\e[0m\n' || printf "\e[1;41m[10] Could not disable GDM (don't worry!)\e[0m\n"
@@ -82,7 +85,7 @@ cd ~; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercon
 
 # Install networkmanager-dmenu [13]
 printf '\e[1;4m[13] Installing networkmanager-dmenu...\e[0m\n'
-yay -S networkmanager-dmenu-git && printf '\e[1;42m[13] Success!\e[0m\n' || printf '\e[1;41m[13] Error! Could not install networkmanager-dmenu!\e[0m\n' 
+yay -S --needed networkmanager-dmenu-git && printf '\e[1;42m[13] Success!\e[0m\n' || printf '\e[1;41m[13] Error! Could not install networkmanager-dmenu!\e[0m\n' 
 
 # Install slock [14]
 printf '\e[1;4m[14] Installing slock...\e[0m\n'
@@ -90,7 +93,7 @@ cd ~/dotfiles/slock && sudo make install && printf '\e[1;42m[14] Success!\e[0m\n
 
 # Install polybar [15]
 printf '\e[1;4m[15] Installing polybar...\e[0m\n'
-yay -S polybar && printf '\e[1;42m[15] Success!\e[0m\n' || printf '\e[1;41m[15] Error! Could not install polybar!\e[0m\n' 
+yay -S --needed polybar && printf '\e[1;42m[15] Success!\e[0m\n' || printf '\e[1;41m[15] Error! Could not install polybar!\e[0m\n' 
 
 # Install Powerlevel10k [16]
 printf '\e[1;4m[16] Installing Powerlevel10k...\e[0m\n'
@@ -102,11 +105,11 @@ git clone https://github.com/zdharma/fast-syntax-highlighting ${ZSH_CUSTOM:-~/.o
 
 # Install newsboat [18]
 printf '\e[1;4m[18] Installing newsboat...\e[0m\n'
-sudo pacman -S newsboat urlscan && printf '\e[1;42m[18] Success!\e[0m\n' || printf '\e[1;41m[18] Error! Could not install newsboat!\e[0m\n' 
+sudo pacman -S --needed newsboat urlscan && printf '\e[1;42m[18] Success!\e[0m\n' || printf '\e[1;41m[18] Error! Could not install newsboat!\e[0m\n' 
 
 # Install st (suckless terminal) [19]
 printf '\e[1;4m[19] Installing st (suckless terminal)...\e[0m\n'
-yay -S st-luke-git && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install st!\e[0m\n' 
+yay -S --needed st-luke-git && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install st!\e[0m\n' 
 
 
 # Successfully set up dotfiles
