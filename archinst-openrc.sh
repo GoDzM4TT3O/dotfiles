@@ -37,7 +37,7 @@ sudo pacman -S --needed i3-wm dunst i3lock i3status && printf '\e[1;42m[2] Succe
 
 # Install additional packages [3]
 printf '\e[1;4m[3] Installing additional packages...\e[0m\n'
-sudo pacman -S --needed git compton hsetroot exa zsh rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior cmus feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
+sudo pacman -S --needed git fortune-mod compton hsetroot exa zsh rxvt-unicode xsel rofi noto-fonts xsettingsd lxappearance scrot viewnior cmus feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
 
 # Install yay (AUR Helper) [4]
 printf '\e[1;4m[4] Installing yay (AUR Helper)...\e[0m\n'
