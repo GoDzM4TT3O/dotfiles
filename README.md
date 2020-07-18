@@ -40,30 +40,30 @@
 (suckless terminal)
 
 Floating st window with zsh prompt
-![st-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/previews/st-float.png)
+![st-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-float.png)
 
 Two st windows (programs: `htop` and cli-visualizer, the command for the latter is `vis`)
-![st-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/previews/st-two.png)
+![st-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-two.png)
 
 Three st windows (programs: neofetch, vifm and tty-clock)
-![st-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/previews/st-three.png)
+![st-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-three.png)
 
 Three st windows with floating layout (programs: `tty-clock`, cli-visualizer (`vis`) and `htop`)
-![st-three-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/previews/st-three-float.png)
+![st-three-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-three-float.png)
 
 ### kitty
 
 Floating kitty window with zsh prompt
-![kitty-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/previews/kitty-float.png)
+![kitty-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/kitty-float.png)
 
 Two kitty windows (programs: `htop` and cli-visualizer, the command for the latter is `vis`)
-![kitty-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/previews/kitty-two.png)
+![kitty-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/kitty-two.png)
 
 Three kitty windows (programs: neofetch, vifm and tty-clock)
-![kitty-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/previews/kitty-three.png)
+![kitty-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/kitty-three.png)
 
 Three kitty windows with floating layout (programs: `tty-clock`, cli-visualizer (`vis`) and `htop`)
-![kitty-three-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/previews/kitty-three-float.png)
+![kitty-three-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/kitty-three-float.png)
 
 ***
 
