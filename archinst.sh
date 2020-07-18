@@ -57,7 +57,7 @@ cd ~; sudo pip3 install ueberzug pillow && git clone https://github.com/marianos
 
 # Install zsh plugins [8]
 printf '\e[1;4m[8] Installing oh-my-zsh...\e[0m\n'
-yay -S oh-my-zsh-git && echo "Making zsh the default shell..." && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && chsh -s /bin/zsh && printf '\e[1;42m[8] Success!\e[0m\n' || printf '\e[1;41m[8] Error! Could not install zsh plugins!\e[0m\n' 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && echo "Making zsh the default shell..." && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && chsh -s /bin/zsh && printf '\e[1;42m[8] Success!\e[0m\n' || printf '\e[1;41m[8] Error! Could not install zsh plugins!\e[0m\n' 
 
 # Install shell-color-scripts [9]
 printf '\e[1;4m[9] Installing shell-color-scripts...\e[0m\n'
