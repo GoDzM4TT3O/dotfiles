@@ -61,12 +61,7 @@ yay -S --norebuild --noredownload shell-color-scripts && printf '\e[1;42m[8] Suc
 
 # Install xautolock and LightDM [9]
 printf '\e[1;4m[9] Installing xautolock and LightDM...\e[0m\n'
-sudo pacman -S --needed xautolock lightdm && yay -S lightdm-webkit2-greeter && sudo systemctl enable lightdm && printf '\e[1;42m[9] Success!\e[0m\n' || printf '\e[1;41m[9] Error! Could not install xautolock or lightdm!\e[0m\n' 
-
-# Disable other display managers (allowed to fail) [9]
-sudo rc-service gdm disable && printf '\e[1;42m[9] Successfully disabled gdm!\e[0m\n' || printf "\e[1;41m[9] Could not disable GDM (don't worry!)\e[0m\n"
-sudo rc-service sddm disable && printf '\e[1;42m[9] Successfully disabled sddm!\e[0m\n' || printf "\e[1;41m[9] Could not disable SDDM (don't worry!)\e[0m\n"
-sudo rc-service lxdm disable && printf '\e[1;42m[9] Successfully disabled lxdm!\e[0m\n' || printf "\e[1;41m[9] Could not disable LXDM (don't worry!)\e[0m\n"
+sudo pacman -S --needed xautolock lightdm displaymanager-openrc && yay -S lightdm-webkit2-greeter && sed -i 's/DISPLAYMANAGER="[a-zA-Z]*"/DISPLAYMANAGER="lightdm"/' /etc/conf.d/xdm  && printf '\e[1;42m[9] Success!\e[0m\n' || printf '\e[1;41m[9] Error! Could not install xautolock or lightdm!\e[0m\n' 
 
 # Install cli-visualizer [10]
 printf '\e[1;4m[10] Installing cli-visualizer...\e[0m\n'
