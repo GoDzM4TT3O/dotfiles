@@ -15,8 +15,8 @@ floating_modifier $mod
 hide_edge_borders none
 
 # mount and unmount drives
-bindsym $super+m exec kitty -e sudo ~/mount 
-bindsym $super+u exec kitty -e sudo ~/umount
+bindsym $super+m exec st ~/mount 
+bindsym $super+u exec st ~/umount
 
 # create a new blank window
 # emulates dwm behavior
@@ -79,14 +79,13 @@ bindsym $super+g gaps inner all toggle 10; gaps outer all toggle 10
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # start a terminal
-# I use kitty as a terminal emulator
 # uncomment the line below to use any other terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 # if the above line is uncommented, comment the line below
 bindsym $mod+Shift+Return exec kitty
 
 # st (suckless terminal)
-bindsym $mod+Return exec /usr/bin/st
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+F4 kill
