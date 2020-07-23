@@ -49,6 +49,8 @@ exec --no-startup-id kdeconnect-indicator
 # x screen saver
 # enable energy star
 exec --no-startup-id xset dmps 600
+# start pulseaudio
+exec --no-startup-id pulseaudio --start
 
 # screen locker
 # to use a screen locker, for example LightDM, comment the line with slock, and uncomment the line with lightdm.
