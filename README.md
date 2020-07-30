@@ -346,8 +346,8 @@ Get i3-gaps:
 - Arch Linux/Manjaro: `sudo pacman -S --needed i3-gaps dunst i3lock i3status`
 
 Install additional packages:
-- Debian/Mint/Ubuntu: `sudo apt install git fortune-mod picom hsetroot exa zsh xsel rofi fonts-noto xsettingsd lxappearance scrot feh kitty xinit fonts-font-awesome fonts-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim`
-- Arch Linux/Manjaro: `sudo pacman -S --needed git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim`
+- Debian/Mint/Ubuntu: `sudo apt install copyq git fortune-mod picom hsetroot exa zsh xsel rofi fonts-noto xsettingsd lxappearance scrot feh kitty xinit fonts-font-awesome fonts-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim`
+- Arch Linux/Manjaro: `sudo pacman -S --needed copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim`
 
 NOTE: if you don't use a display manager (such as LightDM or GDM), add the following line to `~/.xinitrc`:
 

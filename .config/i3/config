@@ -15,8 +15,14 @@ floating_modifier $mod
 hide_edge_borders none
 
 # mount and unmount drives
-bindsym $super+m exec st ~/mount 
-bindsym $super+u exec st ~/umount
+bindsym $super+m exec st ~/.config/scripts/mount 
+bindsym $super+u exec st ~/.config/scripts/umount
+
+# select a display
+bindsym $super+d exec st ~/.config/scripts/displayselect
+
+# emoji selector
+bindsym $super+Shift+e exec st ~/.config/scripts/dmenuunicode
 
 # create a new blank window
 # emulates dwm behavior
@@ -35,22 +41,24 @@ bindsym $mod+n border normal
 
 # autostart
 # set wallpaper
-exec --no-startup-id ~/randomwall.sh &
+exec --no-startup-id ~/.config/scripts/randomwall &
 # x settings daemon
 exec --no-startup-id xsettingsd &
 # start picom as a daemon
-exec --no-startup-id picom -b
+exec --no-startup-id picom -b &
 # network manager applet - uncomment if you use it
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet &
 # import gnome settings - uncomment if you use gnome
 #exec --no-startup-id gnome-settings-daemon
 # kde connect indicator - comment the line below if you don't use it
-exec --no-startup-id kdeconnect-indicator
+exec --no-startup-id kdeconnect-indicator &
 # x screen saver
 # enable energy star
-exec --no-startup-id xset dmps 600
+exec --no-startup-id xset dpms 600 &
 # start pulseaudio
-exec --no-startup-id pulseaudio --start
+exec --no-startup-id pulseaudio --start &
+# start copyQ (clipboard manager)
+exec --no-startup-id copyq &
 
 # screen locker
 # to use a screen locker, for example LightDM, comment the line with slock, and uncomment the line with lightdm.
@@ -76,7 +84,7 @@ bindsym $super+g gaps inner all toggle 10; gaps outer all toggle 10
 
 # statusbar
 # I use polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # start a terminal
 # uncomment the line below to use any other terminal
