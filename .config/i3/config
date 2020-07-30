@@ -40,6 +40,8 @@ bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
 
 # autostart
+# start pulseaudio
+exec --no-startup-id pulseaudio --start &
 # set wallpaper
 exec --no-startup-id ~/.config/scripts/randomwall &
 # x settings daemon
@@ -55,8 +57,6 @@ exec --no-startup-id kdeconnect-indicator &
 # x screen saver
 # enable energy star
 exec --no-startup-id xset dpms 600 &
-# start pulseaudio
-exec --no-startup-id pulseaudio --start &
 # start copyQ (clipboard manager)
 exec --no-startup-id copyq &
 
