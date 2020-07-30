@@ -110,7 +110,7 @@ yay -S --norebuild --noredownload  ttf-font-awesome ttf-meslo-nerd-font-powerlev
 
 # Copy configurations [20]
 printf '\e[1;4m[20] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ && printf '\e[1;42m[20] Success!\e[0m\n' || printf '\e[1;41m[20] Error! Could not copy configurations!\e[0m\n' 
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ && printf '\e[1;42m[20] Success!\e[0m\n' || printf '\e[1;41m[20] Error! Could not copy configurations!\e[0m\n' 
 
 # Successfully set up dotfiles
 printf "

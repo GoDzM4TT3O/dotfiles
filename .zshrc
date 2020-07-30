@@ -230,9 +230,6 @@ mkcd() {
 # Add aliases
 source ~/.aliases
 
-# https://github.com/curusarn/resh
-[[ -f ~/.resh/shellrc ]] && source ~/.resh/shellrc
-
 # pip bash completion
 _pip_completion()
 {
@@ -250,3 +247,6 @@ complete -o default -F _pip_completion pip
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 echo "Successfully started zsh"
+
+# fzf for reverse history searching
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
