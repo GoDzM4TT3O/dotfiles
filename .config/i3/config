@@ -41,7 +41,7 @@ bindsym $mod+n border normal
 
 # autostart
 # start pulseaudio
-exec --no-startup-id pulseaudio --start &
+exec --no-startup-id pulseaudio --start
 # set wallpaper
 exec --no-startup-id ~/.config/scripts/randomwall &
 # x settings daemon
