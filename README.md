@@ -113,7 +113,6 @@ Here's a list of the firefox addons I use:
 NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created. Also, to run `kitty`, you need OpenGL 3.3 or newer. If you have OpenGL 3.2 or older, use `urxvt`, the config files are already included.
 
 - Terminal file manager: `vifm`
-- Terminal history: [`resh`](https://github.com/curusarn/resh)
 - Terminal clock: `tty-clock`
 - Terminal startup script: [`shell-color-scripts`](https://gitlab.com/dwt1/shell-color-scripts)
 - Get system info: `neofetch`
@@ -361,13 +360,7 @@ WARNING: THIS WILL REPLACE YOUR EXISTING CONFIGURATIONS!!!
 If you don't want to replace your existing configurations, please manually edit your files!
 
 ```bash
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh} ~ && cp -r {wallpaper*,archlogo.txt,randomwall.sh} ~ && cp {u,}mount ~
-# this one liner does the following:
-# clone this repo
-# go into the cloned repo
-# copy the config directories and their contents into /home/$USER (~)
-# copy the wallpaper(s) & the random wallpaper chooser and the various arch logos into ~
-# copy the mount/unmount scripts into ~
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ 
 ```
 
 ### Modifying configurations
