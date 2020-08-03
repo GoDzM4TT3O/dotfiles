@@ -76,7 +76,7 @@ modules-left = i3
 ; If you don't use pulseaudio, enable alsa
 ; xkeyboard shows your current keyboard layout and if CAPS LOCK is on
 ; powermenu doesn't work on i3 for me, so I'll disable it
-modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date 
+modules-right = filesystem xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date 
 
 ; show systray on the right
 tray-position = right
@@ -233,7 +233,7 @@ card = intel_backlight
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = Volume %percentage%%
+label-volume = Volume (P) %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted =  muted
@@ -263,7 +263,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
-label-volume = Volume
+label-volume = Volume (A) %percentage%%
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -318,7 +318,8 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 ;format-underline = #8fbcbb
-format-underline = #81a1c1
+;format-underline = #81a1c1
+format-underline = #88c0d0
 label = RAM: %percentage_used%%
 
 ; cpu module
@@ -329,7 +330,8 @@ format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
 ;format-underline = #bf616a
-format-underline = #81a1c1
+;format-underline = #81a1c1
+format-underline = #88c0d0
 label = CPU: %percentage:2%%
 
 ; wireless module
@@ -342,7 +344,8 @@ interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
 ;format-connected-underline = #b48ead
-format-connected-underline = #81a1c1
+;format-connected-underline = #81a1c1
+format-connected-underline = #88c0d0
 label-connected = %essid%
 
 ;format-disconnected =
@@ -368,7 +371,8 @@ interval = 3.0
 
 ;format-connected-underline = #55aa55
 ;format-connected-underline = #a3be8c
-format-connected-underline = #81a1c1
+;format-connected-underline = #81a1c1
+format-connected-underline = #88c0d0
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected =  %local_ip%
@@ -391,7 +395,8 @@ label-full =   %percentage%
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
 ;format-charging-underline = #ebcb8b
-format-charging-underline = #81a1c1
+;format-charging-underline = #81a1c1
+format-charging-underline = #88c0d0
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -434,7 +439,8 @@ warn-temperature = 60
 format = <ramp> <label>
 ;format-underline = #f50a4d
 ;format-underline = #bf616a
-format-underline = #81a1c1
+;format-underline = #81a1c1
+format-underline = #88c0d0
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -470,7 +476,8 @@ format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 ;format-underline = #5e81ac
-format-underline = #81a1c1
+;format-underline = #81a1c1
+format-underline = #88c0d0
 
 label = %date% %time%
 

@@ -24,6 +24,9 @@ bindsym $super+d exec st ~/.config/scripts/displayselect
 # emoji selector
 bindsym $super+Shift+e exec st ~/.config/scripts/dmenuunicode
 
+# set a new random wallpaper
+bindsym $super+w exec st ~/.config/scripts/randomwall-now
+
 # create a new blank window
 # emulates dwm behavior
 bindsym $super+b exec i3-msg open
