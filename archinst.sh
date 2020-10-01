@@ -108,7 +108,11 @@ yay -S --norebuild --noredownload st-luke-git && printf '\e[1;42m[18] Success!\e
 printf '\e[1;4m[19] Installing required fonts...\e[0m\n'
 yay -S --norebuild --noredownload  ttf-font-awesome ttf-meslo-nerd-font-powerlevel10k powerline-fonts && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install the required fonts!\e[0m\n' 
 
-# Copy configurations [20]
+# Install fzf [20]
+printf '\e[1;4m[20] Installing fzf...\e[0m\n'
+cd ~/.config && git clone https://github.com/junegunn/fzf && printf '\e[1;4m[20] FZF: Please accept both choices by typing "y" two times! DO NOT update your shell configuration!\e[0m\n' && ./fzf/install && printf '\e[1;42m[20] Success!\e[0m\n' || printf '\e[1;41m[20] Error! Could not install fzf!\e[0m\n'
+
+# Copy configurations [21]
 printf '\e[1;4m[20] Copying configurations...\e[0m\n'
 cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ && printf '\e[1;42m[20] Success!\e[0m\n' || printf '\e[1;41m[20] Error! Could not copy configurations!\e[0m\n' 
 
@@ -120,5 +124,5 @@ printf "
  / ___ \| | | (__| | | || || | | \__ \ |_
 /_/   \_\_|  \___|_| |_|___|_| |_|___/\__|
 @ https://github.com/GoDzM4TT3O/dotfiles
-\e[1;42mThe installation finished without errors! It is recommended you modify "~/.config/i3status/config" following the guide over at https://godzm4tt3o.js.org/dotfiles/#modifying-configurations\e[0m\n
+\e[1;42mThe installation finished without errors! It is recommended you modify "~/.config/polybar/config" following the guide over at https://godzm4tt3o.js.org/dotfiles/#modifying-configurations\e[0m\n
 "

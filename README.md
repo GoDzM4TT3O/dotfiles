@@ -366,13 +366,13 @@ cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .
 ### Modifying configurations
 Currently, I use polybar instead of i3status, but the information below is still relevant. The configuration file is located in `.config/polybar/config`. Customize it however you want, enable/disable any module you want ;)
 
+NOTE: on some laptops, you should modify the battery name. For example, instead of being called "BAT1", the battery on my Thinkpad T440p is called "BAT0". You can find the available batteries under "/sys/class/power_supply/BAT?". If you have more than one battery (such as Thinkpads with an internal and external battery), try to duplicate the battery indicator, giving it another name (such as "modules/battery-int" or "modules/battery-ext").
+You also need to modify the wireless interface and the wired interface names, found in the same configuration file, under their appropriate module categories (modules/wlan and modules/eth). The info below can help you.
+
 If you want to use i3status, you should modify `~/.config/i3status/config`, because it contains network interfaces that might be different from yours.
 Change `wlan0` and `enp3s0` with your network interfaces.
-You can find yours by running the command `ip link | grep -oE "^[2-9]: [e-w]....."`, then you will likely have two results.
+You can find yours by running the command `ip link | grep -oE "^[2-9]: [e-w]......"`, then you will likely have two results.
 My results are "2: enp3s0" and "3: wlan0". You need to copy the interface names (after the number and the colon) respectively over the existing interfaces.
 For example, if your results are "2: eth0" and "3: wlp4s0", replace "enp3s0" with "eth0", and "wlan0" with "wlp4s0".
-
-~~I also removed CPU temperature from the i3bar. To add it back, replace "~/.config/i3status/config" with the lines below:~~
-Now it is enabled by default. Turns out ubuntu wouldn't show CPU temperature, but Arch does.
 
 Make sure to replace the network interfaces and the battery (my battery is BAT1 but for you it could be BAT0).
