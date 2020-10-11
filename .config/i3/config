@@ -14,6 +14,12 @@ floating_modifier $mod
 # hide borders
 hide_edge_borders none
 
+# move the mouse automatically to prevent inactivity
+bindsym $super+i exec st ~/.config/scripts/inactivity
+
+# monitor a disk's usage
+bindsym $super+Shift+u exec st ~/.config/scripts/disk-usage
+
 # mount and unmount drives
 bindsym $super+m exec st ~/.config/scripts/mount 
 bindsym $super+u exec st ~/.config/scripts/umount

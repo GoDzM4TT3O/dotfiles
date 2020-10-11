@@ -72,11 +72,11 @@ modules-left = i3
 
 ;modules-center = mpd
 
-; I removed alsa, xkeyboard and powermenu from modules-right
+; I removed filesystem, alsa, xkeyboard and powermenu from modules-right
 ; If you don't use pulseaudio, enable alsa
 ; xkeyboard shows your current keyboard layout and if CAPS LOCK is on
 ; powermenu doesn't work on i3 for me, so I'll disable it
-modules-right = filesystem xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date 
+modules-right = xbacklight alsa xkeyboard memory cpu wlan eth battery temperature date
 
 ; show systray on the right
 tray-position = right
@@ -148,14 +148,14 @@ label-focused-underline= #88c0d0
 ; adjust the value below accordingly
 ; >2: have less screen space, blocks will slide to the right if there isn't enough space
 ; ~1 to 1.9: have more screen space, unfocused workspaces will occupy less space
-label-focused-padding = 2
+label-focused-padding = 3
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 ; adjust the value below accordingly
 ; >2: have less screen space, blocks will slide to the right if there isn't enough space
 ; ~1 to 1.9: have more screen space, unfocused workspaces will occupy less space
-label-unfocused-padding = 1.8
+label-unfocused-padding = 2
 label-unfocused-foreground = #4c566a
 
 ; visible = Active workspace on unfocused monitor
@@ -207,9 +207,9 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/xbacklight
 
 format = <label> <bar>
-label = Brightness
+label = Brightness %percentage%%
 
-bar-width = 10
+bar-width = 15
 bar-indicator = |
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
@@ -218,7 +218,7 @@ bar-fill = =
 bar-fill-font = 2
 ;bar-fill-foreground = #9f78e1
 bar-fill-foreground = #bf616a
-bar-empty = ─
+bar-empty = =
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
@@ -239,7 +239,7 @@ label-volume-foreground = ${root.foreground}
 label-muted =  muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 15
 bar-volume-foreground-0 = #88c0d0
 bar-volume-foreground-1 = #88c0d0
 bar-volume-foreground-2 = #88c0d0
@@ -254,7 +254,7 @@ bar-volume-indicator-font = 2
 ; "=" is the volume bar fill symbol
 bar-volume-fill = =
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = =
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -271,7 +271,7 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted =  muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 15
 bar-volume-foreground-0 = #88c0d0
 bar-volume-foreground-1 = #88c0d0
 bar-volume-foreground-2 = #88c0d0
@@ -286,7 +286,7 @@ bar-volume-indicator-font = 2
 ; "=" is the volume bar fill symbol
 bar-volume-fill = =
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = =
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -338,7 +338,7 @@ label = CPU: %percentage:2%%
 [module/wlan]
 type = internal/network
 ;replace wlan0 with your wireless network interface
-interface = wlan0
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -366,16 +366,16 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 type = internal/network
 ;replace enp3s0 with your wired network adapter
-interface = enp3s0
+interface = enp0s25
 interval = 3.0
 
 ;format-connected-underline = #55aa55
 ;format-connected-underline = #a3be8c
 ;format-connected-underline = #81a1c1
 format-connected-underline = #88c0d0
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected =  %local_ip%
+label-connected = %local_ip%
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
@@ -387,7 +387,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 ; battery module
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = ACAD
 full-at = 99
 label-full =   %percentage%
