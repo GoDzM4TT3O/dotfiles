@@ -125,4 +125,5 @@ printf "
 /_/   \_\_|  \___|_| |_|___|_| |_|___/\__|
 @ https://github.com/GoDzM4TT3O/dotfiles
 \e[1;42mThe installation finished without errors! It is recommended you modify "~/.config/polybar/config" following the guide over at https://godzm4tt3o.js.org/dotfiles/#modifying-configurations\e[0m\n
+\e[1;40mDon't worry if Vim/Neovim spits out some errors the first time you open it, but remember to run ':PlugInstall'!\e[0m\n
 "

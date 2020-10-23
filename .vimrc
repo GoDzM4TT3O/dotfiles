@@ -9,7 +9,7 @@
 " enable 256bit colors
 set t_Co=256
 " use terminal's colors
-" set termguicolors
+set termguicolors
 " }}}
 
 " Visual Options {{{
@@ -67,18 +67,17 @@ set foldlevelstart=10
 " NOTE: <CR> means line break/enter
 "
 " Clipboard {{{
-" NOTE: needs gvim for clipboard capabilities
+" NOTE: needs gvim or neovim for clipboard capabilities
 " Using CTRL+C, copy the text to global clipboard and active selection
 vnoremap <C-c> "*y :let @+=@*<CR>
 " Using CTRL+V, paste the text from global clipboard
 map <C-v> "+P
 " }}}
 
-" Misc {{{
-" If we press QQ quit Vim without saving (ZQ)
-map QQ ZQ
-" If we press WS write and stay in Vim, without closing (:w)
-map WS :w<CR>
+" Navigation buttons {{{
+" use gj and gk to go up and down a line visually
+noremap j gj
+noremap k gk
 " }}}
 
 " }}}
@@ -90,6 +89,8 @@ call plug#begin('~/.vim/plugged')
 " Color schemes
 " nord
 Plug 'arcticicestudio/nord-vim'
+" dogrun
+Plug 'wadackel/vim-dogrun'
 " -------------------- "
 " UI
 " vim dev-icons
@@ -112,7 +113,9 @@ call plug#end()
 " set colorscheme to nord
 " colorscheme nord
 " set colorscheme to monokai
-colorscheme monokai
+" colorscheme monokai
+" set colorscheme to dogrun
+colorscheme dogrun
 " }}}
 
 " Plugin Options {{{
