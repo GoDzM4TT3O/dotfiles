@@ -95,14 +95,16 @@ cd ~; wget https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/archinst
 
 ### Firefox addons
 Here's a list of the firefox addons I use:
+- ClearURLs
+- Dark Reader
 - Facebook Container
-- GitZip
+- Google Container - with Integrations
 - HTTPS Everywhere
-- NoScript
-- Privacy Badger
+- Popup Blocker (strict)
+- Search by Image
+- SponsorBlock for YouTube
 - uBlock Origin
 - Universal Bypass
-- Vim Vixen
 
 ## Terminal
 - Terminal: `st` (luke's build) and `kitty` (my own config)
