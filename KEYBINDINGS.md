@@ -1,115 +1,115 @@
 # i3wm keybindings
-PLEASE NOTE: the SUPER key is also known as the "Windows" key.
+PLEASE NOTE: the <kbd>SUPER</kbd> key is also known as the "Windows" key.
 
 ## Terminal keybindings
-ALT+ENTER: open the suckless terminal (st)
+<kbd>ALT</kbd>+<kbd>ENTER</kbd>: open the suckless terminal (st)
 
-ALT+SHIFT+ENTER: open the kitty terminal
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>ENTER</kbd>: open the kitty terminal
 
-CTRL+SHIFT+T: open a new kitty terminal tab
+<kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+T: open a new kitty terminal tab
 
-CTRL+SHIFT+[Left/Right]: browse kitty terminal tabs
+<kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+[Left/Right]: browse kitty terminal tabs
 
-CTRL+D: close the current tab if there is an empty line
+<kbd>CTRL</kbd>+D: close the current tab if there is an empty line
 
 ## Menu keybindings
-ALT+D: open rofi to launch an application/a command
+<kbd>ALT</kbd>+D: open rofi to launch an application/a command
 
-ALT+SHIFT+D: open dmenu (same as rofi)
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+D: open dmenu (same as rofi)
 
-ALT+SHIFT+W: open firefox
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+W: open firefox
 
-SUPER+B: create a new blank window (like dwm)
+<kbd>SUPER</kbd>+B: create a new blank window (like dwm)
 
-SUPER+D: Select a display
+<kbd>SUPER</kbd>+D: Select a display
 
-SUPER+I: move the mouse automatically to prevent inactivity
+<kbd>SUPER</kbd>+I: move the mouse automatically to prevent inactivity
 
-SUPER+M: open dmenu to show mountable drives
+<kbd>SUPER</kbd>+M: open dmenu to show mountable drives
 
-SUPER+N: choose a network connection
+<kbd>SUPER</kbd>+N: choose a network connection
 
-SUPER+SHIFT+E: emoji selector
+<kbd>SUPER</kbd>+<kbd>SHIFT</kbd>+E: emoji selector
 
-SUPER+SHIFT+U: Monitor a disk's usage
+<kbd>SUPER</kbd>+<kbd>SHIFT</kbd>+U: Monitor a disk's usage
 
-SUPER+U: open dmenu to show unmountable drives
+<kbd>SUPER</kbd>+U: open dmenu to show unmountable drives
 
-SUPER+W: set a new random wallpaper
+<kbd>SUPER</kbd>+W: set a new random wallpaper
 
 ## Window keybindings
 ### Window borders
-ALT+F4: close the current window
+<kbd>ALT</kbd>+F4: close the current window
 
-ALT+F: enter fullscreen mode
+<kbd>ALT</kbd>+F: enter fullscreen mode
 
-ALT+N: set the window border to normal
+<kbd>ALT</kbd>+N: set the window border to normal
 
-ALT+U: hide the window borders
+<kbd>ALT</kbd>+U: hide the window borders
 
-ALT+Y: set the window border to 3 pixels
+<kbd>ALT</kbd>+Y: set the window border to 3 pixels
 
-SUPER+E: toggle the window split (for example from horizontal to vertical)
+<kbd>SUPER</kbd>+E: toggle the window split (for example from horizontal to vertical)
 
-SUPER+H: split focused window horizontally
+<kbd>SUPER</kbd>+H: split focused window horizontally
 
-SUPER+V: split focused window vertically
+<kbd>SUPER</kbd>+V: split focused window vertically
 
 ### Gaps
-ALT+X: decrease gaps
+<kbd>ALT</kbd>+X: decrease gaps
 
-ALT+Z: increase gaps
+<kbd>ALT</kbd>+Z: increase gaps
 
-SUPER+G: toggle gaps (enable/disable)
+<kbd>SUPER</kbd>+G: toggle gaps (enable/disable)
 
 ### Change focus
-ALT+[h/Left]: change window focus to left
+<kbd>ALT</kbd>+[h/Left]: change window focus to left
 
-ALT+[j/Down]: change window focus to down
+<kbd>ALT</kbd>+[j/Down]: change window focus to down
 
-ALT+[k/Up]: change window focus to up
+<kbd>ALT</kbd>+[k/Up]: change window focus to up
 
-ALT+[l/Right]: change window focus to right
+<kbd>ALT</kbd>+[l/Right]: change window focus to right
 
 ### Move focused window
-ALT+SHIFT+[h/Left]: move focused window left
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+[h/Left]: move focused window left
 
-ALT+SHIFT+[j/Down]: move focused window down
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+[j/Down]: move focused window down
 
-ALT+SHIFT+[k/Up]: move focused window up
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+[k/Up]: move focused window up
 
-ALT+SHIFT+[l/Right]: move focused window right
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+[l/Right]: move focused window right
 
 ### Window style
-ALT+S: set focused window style to stacking
+<kbd>ALT</kbd>+S: set focused window style to stacking
 
-ALT+W: set focused window style to tabbed
+<kbd>ALT</kbd>+W: set focused window style to tabbed
 
-ALT+SHIFT+SPACE: toggle between floating or tiling
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+SPACE: toggle between floating or tiling
 
 ### Moving and resizing windows
-ALT+R: enter resize mode (while in resize mode, resize the window either with hjkl or with the arrow keys)
+<kbd>ALT</kbd>+R: enter resize mode (while in resize mode, resize the window either with hjkl or with the arrow keys)
 
-ALT+[Mouse right]: resize a window with the mouse cursor
+<kbd>ALT</kbd>+[Mouse right]: resize a window with the mouse cursor
 
-ALT+[Mouse move]: move a window
+<kbd>ALT</kbd>+[Mouse move]: move a window
 
-ALT+SHIFT+[h/j/k/l]: move window
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+[h/j/k/l]: move window
 
-ALT+SHIFT+[Arrow keys]: move window
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+[Arrow keys]: move window
 
 ## Workspaces
-ALT+[1/2/3...]: change workspace
+<kbd>ALT</kbd>+[1/2/3...]: change workspace
 
-ALT+SHIFT+[1/2/3...]: move focused window to workspace
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+[1/2/3...]: move focused window to workspace
 
 ## Screenshots
 PRINTSCR: take a screenshot, move it to `~/Pictures` and preview it
 
 ## Locking & Logging out
-SUPER+L: lock i3 using i3locker
+<kbd>SUPER</kbd>+L: lock i3 using i3locker
 
-SUPER+SHIFT+L: end X session and go back to LightDM
+<kbd>SUPER</kbd>+<kbd>SHIFT</kbd>+L: end X session and go back to LightDM
 
 ## Special/Function keys
 You can use the special Function keys with the appropriate icon to run the according commands. On some laptops you might have to press the "Fn" button to use these special keys. Down below are listed the keybindings I have, they might be different for you. (I have a Thinkpad T440p)
@@ -131,6 +131,6 @@ Webcam:
 	- F7: toggle webcam (enable/disable)
 
 ## i3wm
-ALT+SHIFT+C: reload the i3wm config file
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+C: reload the i3wm config file
 
-ALT+SHIFT+R: reload i3wm
+<kbd>ALT</kbd>+<kbd>SHIFT</kbd>+R: reload i3wm
