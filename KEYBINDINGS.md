@@ -17,29 +17,50 @@ ALT+D: open rofi to launch an application/a command
 
 ALT+SHIFT+D: open dmenu (same as rofi)
 
+ALT+SHIFT+W: open firefox
+
+SUPER+B: create a new blank window (like dwm)
+
+SUPER+D: Select a display
+
+SUPER+I: move the mouse automatically to prevent inactivity
+
 SUPER+M: open dmenu to show mountable drives
+
+SUPER+N: choose a network connection
+
+SUPER+SHIFT+E: emoji selector
+
+SUPER+SHIFT+U: Monitor a disk's usage
 
 SUPER+U: open dmenu to show unmountable drives
 
-ALT+SHIFT+W: open firefox
+SUPER+W: set a new random wallpaper
 
 ## Window keybindings
 ### Window borders
+ALT+F4: close the current window
+
+ALT+F: enter fullscreen mode
+
+ALT+N: set the window border to normal
+
 ALT+U: hide the window borders
 
 ALT+Y: set the window border to 3 pixels
 
-ALT+N: set the window border to normal
-
-ALT+F4: close the current window
+SUPER+E: toggle the window split (for example from horizontal to vertical)
 
 SUPER+H: split focused window horizontally
 
 SUPER+V: split focused window vertically
 
-SUPER+E: toggle the window split (for example from horizontal to vertical)
+### Gaps
+ALT+X: decrease gaps
 
-ALT+F: enter fullscreen mode
+ALT+Z: increase gaps
+
+SUPER+G: toggle gaps (enable/disable)
 
 ### Change focus
 ALT+[h/Left]: change window focus to left
@@ -77,8 +98,6 @@ ALT+SHIFT+[h/j/k/l]: move window
 
 ALT+SHIFT+[Arrow keys]: move window
 
-SUPER+B: create a new blank/invisible window (emulates dwm behavior)
-
 ## Workspaces
 ALT+[1/2/3...]: change workspace
 
@@ -92,8 +111,24 @@ SUPER+L: lock i3 using i3locker
 
 SUPER+SHIFT+L: end X session and go back to LightDM
 
-## Brightness
-In my case I have Fn+F11/F12 as my brightness keys, but it may vary for you.
+## Special/Function keys
+You can use the special Function keys with the appropriate icon to run the according commands. On some laptops you might have to press the "Fn" button to use these special keys. Down below are listed the keybindings I have, they might be different for you. (I have a Thinkpad T440p)
+
+Brightness:
+	- F5: decrease
+	- F6: increase
+
+Network:
+	- F8: toggle wifi (enable/disable)
+
+Volume:
+	- F1: mute
+	- F2: decrease
+	- F3: increase
+	- F4: toggle microphone (enable/disable)
+
+Webcam:
+	- F7: toggle webcam (enable/disable)
 
 ## i3wm
 ALT+SHIFT+C: reload the i3wm config file

@@ -153,12 +153,16 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -qD pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -qD pulse sset Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer -qD pulse sset Master toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer -qD pulse sset Capture toggle
 
 # music control
 bindsym XF86AudioNext exec --no-startup-id mpc next
 bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioStop exec --no-startup-id mpc stop
+
+# webcam control
+bindsym XF86Display exec st ~/.config/scripts/webcam
 
 # split in horizontal orientation
 bindsym $super+h split h
