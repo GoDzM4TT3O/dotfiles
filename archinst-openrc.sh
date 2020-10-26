@@ -101,15 +101,15 @@ yay -S --norebuild --noredownload st-luke-git && printf '\e[1;42m[18] Success!\e
 
 # Install required fonts [19]
 printf '\e[1;4m[19] Installing required fonts...\e[0m\n'
-yay -S --norebuild --noredownload unicode-emoji libxft-bgra-git ttf-font-awesome ttf-meslo-nerd-font-powerlevel10k powerline-fonts && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install the required fonts!\e[0m\n' 
+yay -S --norebuild --noredownload unicode-emoji libxft-bgra-git ttf-font-awesome ttf-meslo-nerd-font-powerlevel10k powerline-fonts ttf-joypixels otf-openmoji ttf-symbola && printf '\e[1;42m[19] Success!\e[0m\n' || printf '\e[1;41m[19] Error! Could not install the required fonts!\e[0m\n' 
 
 # Install fzf [20]
 printf '\e[1;4m[20] Installing fzf...\e[0m\n'
 cd ~/.config && git clone https://github.com/junegunn/fzf && printf '\e[1;4m[20] FZF: Please accept both choices by typing "y" two times! DO NOT update your shell configuration!\e[0m\n' && ./fzf/install && printf '\e[1;42m[20] Success!\e[0m\n' || printf '\e[1;41m[20] Error! Could not install fzf!\e[0m\n'
 
 # Copy configurations [21]
-printf '\e[1;4m[20] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ && printf '\e[1;42m[20] Success!\e[0m\n' || printf '\e[1;41m[20] Error! Could not copy configurations!\e[0m\n' 
+printf '\e[1;4m[21] Copying configurations...\e[0m\n'
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ && printf '\e[1;42m[21] Success!\e[0m\n' || printf '\e[1;41m[21] Error! Could not copy configurations!\e[0m\n' 
 
 # Successfully set up dotfiles
 printf "
