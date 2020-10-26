@@ -1,5 +1,5 @@
 # i3wm keybindings
-PLEASE NOTE: the <kbd>SUPER</kbd> key is also known as the "Windows" key.
+PLEASE NOTE: the <kbd>SUPER</kbd> key is also known as the ["Windows" key](https://upload.wikimedia.org/wikipedia/commons/3/3c/Touche_Windows_8_10.jpg).
 
 ## Terminal keybindings
 <kbd>ALT</kbd>+<kbd>ENTER</kbd>: open the suckless terminal (st)
