@@ -114,20 +114,20 @@ PRINTSCR: take a screenshot, move it to `~/Pictures` and preview it
 ## Special/Function keys
 You can use the special Function keys with the appropriate icon to run the according commands. On some laptops you might have to press the "Fn" button to use these special keys. Down below are listed the keybindings I have, they might be different for you. (I have a Thinkpad T440p)
 
-Brightness:
++ Brightness:
 	- F5: decrease
 	- F6: increase
 
-Network:
++ Network:
 	- F8: toggle wifi (enable/disable)
 
-Volume:
++ Volume:
 	- F1: mute
 	- F2: decrease
 	- F3: increase
 	- F4: toggle microphone (enable/disable)
 
-Webcam:
++ Webcam:
 	- F7: toggle webcam (enable/disable)
 
 ## i3wm
