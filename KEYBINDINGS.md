@@ -114,21 +114,33 @@ PRINTSCR: take a screenshot, move it to `~/Pictures` and preview it
 ## Special/Function keys
 You can use the special Function keys with the appropriate icon to run the according commands. On some laptops you might have to press the "Fn" button to use these special keys. Down below are listed the keybindings I have, they might be different for you. (I have a Thinkpad T440p)
 
++ Volume:
+	- (XF86AudioRaiseVolume) F1: mute
+	- (XF86AudioLowerVolume) F2: decrease
+	- (XF86AudioMute) F3: increase
+	- (XF86AudioMicMute) F4: toggle microphone (enable/disable)
+
 + Brightness:
-	- F5: decrease
-	- F6: increase
+	- (XF86MonBrightnessUp)	F5: decrease
+	- (XF86MonBrightnessDown) F6: increase
 
 + Network:
 	- F8: toggle wifi (enable/disable)
 
-+ Volume:
-	- F1: mute
-	- F2: decrease
-	- F3: increase
-	- F4: toggle microphone (enable/disable)
-
 + Webcam:
-	- F7: toggle webcam (enable/disable)
+	- (XF86Display) F7: toggle webcam (enable/disable)
+	- (XF86Explorer) F12: fix webcam
+
++ Others:
+	- (XF86Tools) F9: cpu toolkit
+	- (XF86Search) F10: download videos from YT
+	- (XF86LaunchA) F11: choose which scripts to launch
+
++ Assigned (but not used) keybindings for mpc:
+	- XF86AudioNext: next song
+	- XF86AudioPrev: previous song
+	- XF86AudioPlay: play/pause song
+	- XF86AudioStop: stop song
 
 ## i3wm
 <kbd>ALT</kbd>+<kbd>SHIFT</kbd>+C: reload the i3wm config file
