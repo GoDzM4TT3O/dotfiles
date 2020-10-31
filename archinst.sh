@@ -37,7 +37,7 @@ sudo pacman -S --needed base-devel i3-gaps dmenu dunst i3lock i3status && printf
 
 # Install additional packages [3]
 printf '\e[1;4m[3] Installing additional packages...\e[0m\n'
-sudo pacman -S throttled htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses neovim fftw cmake vim vifm && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
+sudo pacman -S python pandoc zip throttled htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim neovim && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
 
 # Install yay (AUR Helper) [4]
 printf '\e[1;4m[4] Installing yay (AUR Helper)...\e[0m\n'
@@ -119,10 +119,13 @@ printf '\e[1;4m[21] Do you have a ThinkPad?\n[y/n]\e[0m\n' && read answer
 printf '\e[1;4m[21] Installing cpuface...\e[0m\n' && yay -S cpuface-git && printf '\e[1;42m[21] Success!\e[0m\n' || printf '\e[1;41m[21] Error! Could not install cpuface!\e[0m\n'
 printf '\e[1;4m[21] Installing intel-undervolt...\e[0m\n' && sudo pacman -S intel-undervolt && printf '\e[1;42m[21] Success!\e[0m\n' || printf '\e[1;41m[21] Error! Could not install intel-undervolt!\e[0m\n'
 
-# Copy configurations [22]
-printf '\e[1;4m[22] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && cp .cpuface_profiles.json $HOME && printf '\e[1;42m[22] Success!\e[0m\n' || printf '\e[1;41m[22] Error! Could not copy configurations!\e[0m\n' 
+# Install youtube-dlc [22]
+printf '\e[1;4m[22] Installing cpuface...\e[0m\n' && cd && git clone https://github.com/blackjack4494/yt-dlc && cd yt-dlc && make && sudo make install && printf '\e[1;42m[22] Success!\e[0m\n' || printf '\e[1;41m[22] Error! Could not install youtube-dlc!\e[0m\n'
 
+# Copy configurations [23]
+printf '\e[1;4m[23] Copying configurations...\e[0m\n'
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp-r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && cp .cpuface_profiles.json $HOME && printf '\e[1;42m[23] Success!\e[0m\n' || printf '\e[1;41m[23] Error! Could not copy configurations!\e[0m\n' 
+ 
 # Successfully set up dotfiles
 printf "
     _             _     ___           _    
