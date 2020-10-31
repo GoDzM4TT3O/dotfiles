@@ -1,0 +1,18 @@
+#!/bin/sh
+# run as root!!!
+# sometimes my webcam does not want to work
+
+rmmod uvcvideo
+rmmod videobuf2_v4l2
+rmmod videobuf2_common
+rmmod videodev
+rmmod mc
+rmmod videobuf2_vmalloc
+rmmod videobuf2_memops
+insmod /lib/modules/5.8.16.a-1-hardened/kernel/drivers/media/mc/mc.ko.xz
+insmod /lib/modules/5.8.16.a-1-hardened/kernel/drivers/media/v4l2-core/videodev.ko.xz
+insmod /lib/modules/5.8.16.a-1-hardened/kernel/drivers/media/common/videobuf2/videobuf2-common.ko.xz
+insmod /lib/modules/5.8.16.a-1-hardened/kernel/drivers/media/common/videobuf2/videobuf2-v4l2.ko.xz
+insmod /lib/modules/5.8.16.a-1-hardened/kernel/drivers/media/common/videobuf2/videobuf2-memops.ko.xz
+insmod /lib/modules/5.8.16.a-1-hardened/kernel/drivers/media/common/videobuf2/videobuf2-vmalloc.ko.xz
+insmod /lib/modules/5.8.16.a-1-hardened/kernel/drivers/media/usb/uvc/uvcvideo.ko.xz

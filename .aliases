@@ -14,7 +14,7 @@ alias interjection="echo I\'d just like to interject for a moment. What you\'re 
 alias vimb='tabbed -c vimb -e'
 
 # vifm alias to preview images/videos
-alias vifm='vifmrun'
+alias vifm='~/.config/vifm/vifmrun'
 
 # update-grub alias (not present in arch linux by default)
 # usually these commands are run after a kernel upgrade
@@ -63,3 +63,10 @@ alias rickroll='mpv "https://www.youtube.com/watch?v=dQw4w9WgXcQ"'
 
 # use neovim instead of vim if nvim is installed
 [[ -f "/usr/bin/nvim" ]] && alias vim="nvim" 
+
+# make programs verbose
+alias cp="cp -v"
+alias mv="mv -v"
+alias rm="rm -v"
+alias ln="ln -v"
+alias rsync="rsync -v"

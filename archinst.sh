@@ -33,7 +33,7 @@ sudo pacman -Syu && printf '\e[1;42m[1] Success!\e[0m\n' || printf '\e[1;41m[1] 
 
 # Install necessary packages [2]
 printf '\e[1;4m[2] Installing necessary packages...\e[0m\n'
-sudo pacman -S --needed i3-gaps dmenu dunst i3lock i3status && printf '\e[1;42m[2] Success!\e[0m\n' || printf '\e[1;41m[2] Error! Could not install necessary packages!\e[0m\n' 
+sudo pacman -S --needed base-devel i3-gaps dmenu dunst i3lock i3status && printf '\e[1;42m[2] Success!\e[0m\n' || printf '\e[1;41m[2] Error! Could not install necessary packages!\e[0m\n' 
 
 # Install additional packages [3]
 printf '\e[1;4m[3] Installing additional packages...\e[0m\n'
@@ -112,9 +112,16 @@ yay -S --norebuild --noredownload unicode-emoji libxft-bgra-git ttf-font-awesome
 printf '\e[1;4m[20] Installing fzf...\e[0m\n'
 cd ~/.config && git clone https://github.com/junegunn/fzf && printf '\e[1;4m[20] FZF: Please accept both choices by typing "y" two times! DO NOT update your shell configuration!\e[0m\n' && ./fzf/install && printf '\e[1;42m[20] Success!\e[0m\n' || printf '\e[1;41m[20] Error! Could not install fzf!\e[0m\n'
 
-# Copy configurations [21]
-printf '\e[1;4m[21] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ && printf '\e[1;42m[21] Success!\e[0m\n' || printf '\e[1;41m[21] Error! Could not copy configurations!\e[0m\n' 
+# Intstall various cpu tools [21]
+printf '\e[1;4m[21] Do you have a ThinkPad?\n[y/n]\e[0m\n' && read answer
+[[ $answer = "Y" || $answer = "y" ]] && printf '\e1;4m[21] Installing ThinkPad-Fan-Control...\e[0m\n' && cd && git clone https://github.com/ForgedTurbo/ThinkPad-Fan-Control && printf '\e[1;42m[21] Success!\e[0m\n' || printf '\e[1;41m[21] Error! Could not install ThinkPad-Fan-Control!\e[0m\n'
+[[ $answer = "N" || $answer = "n" ]] && printf '\e1;41m[21] Not installing ThinkPad-Fan-Control...\e[0m\n'
+printf '\e[1;4m[21] Installing cpuface...\e[0m\n' && yay -S cpuface-git && printf '\e[1;42m[21] Success!\e[0m\n' || printf '\e[1;41m[21] Error! Could not install cpuface!\e[0m\n'
+printf '\e[1;4m[21] Installing intel-undervolt...\e[0m\n' && sudo pacman -S intel-undervolt && printf '\e[1;42m[21] Success!\e[0m\n' || printf '\e[1;41m[21] Error! Could not install intel-undervolt!\e[0m\n'
+
+# Copy configurations [22]
+printf '\e[1;4m[22] Copying configurations...\e[0m\n'
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && cp .cpuface_profiles.json $HOME && printf '\e[1;42m[22] Success!\e[0m\n' || printf '\e[1;41m[22] Error! Could not copy configurations!\e[0m\n' 
 
 # Successfully set up dotfiles
 printf "

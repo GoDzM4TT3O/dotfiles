@@ -1,4 +1,5 @@
 #!/bin/sh
+# monitor the usage of one or more disks
 
 drives=$(lsblk -lp | grep "t /" | awk '{print $1, "(" $4 ")", "on", $7}')
 [[ $drives = "" ]] && exit

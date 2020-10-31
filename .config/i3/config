@@ -162,7 +162,19 @@ bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioStop exec --no-startup-id mpc stop
 
 # webcam control
-bindsym XF86Display exec st ~/.config/scripts/webcam
+bindsym XF86Search exec st ~/.config/scripts/webcam
+
+# fix webcam
+bindsym XF86Tools exec st sudo ~/.config/scripts/fix-webcam
+
+# CPU toolkit
+bindsym XF86Explorer exec st ~/.config/scripts/cputools
+
+# download music from YT videos
+bindsym XF86Display exec st ~/.config/scripts/downloader
+
+# script launcher
+bindsym XF86LaunchA exec st ~/.config/scripts/launcher
 
 # split in horizontal orientation
 bindsym $super+h split h

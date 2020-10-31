@@ -76,7 +76,7 @@ modules-left = i3
 ; If you don't use pulseaudio, enable alsa
 ; xkeyboard shows your current keyboard layout and if CAPS LOCK is on
 ; powermenu doesn't work on i3 for me, so I'll disable it
-modules-right = xbacklight alsa xkeyboard memory cpu wlan eth battery temperature date
+modules-right = user xbacklight alsa xkeyboard memory cpu wlan eth battery temperature date
 
 ; show systray on the right
 tray-position = right
@@ -190,6 +190,15 @@ label-song-ellipsis = true
 type = internal/xwindow
 label = %title:0:30:...%
 
+; show current user
+[module/user]
+type = custom/script
+
+exec = whoami
+format-prefix = " "
+
+format-underline = #88c0d0
+
 ; filesystem
 [module/filesystem]
 type = internal/fs
@@ -268,7 +277,7 @@ label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted =  muted
+label-muted = muted
 label-muted-foreground = #666
 
 bar-volume-width = 15
