@@ -347,12 +347,12 @@ You can use Newsboat to open Youtube videos in `mpv`, but first you need to inst
 
 I have a ThinkPad T440p with an Intel Core i5-4340M (Haswell). I have installed a tool that undervolts the CPU. `intel-undervolt`'s configuration file is located over at `/etc/intel-undervolt.conf`. My config file can be found in the root of this repository and is not copied over by default for security reasons. You have to be careful with undervolting, so read the following info ***CAREFULLY***!
 
-	1. Values over -60mV are considered ***UNSAFE***, unless you know what you are doing!
-	2. You know when you undervolted too much when the screen starts flickering, or you cannot perform any benchmark (either graphical benchmarks that involve the iGPU/GPU or benchmarks that involve the CPU)
-	3. Generally, undervolting is safer than overclocking
-	4. I have found that the best performance obtainable by my laptop was achieved using "intel-undervolt", "cpuface" (to use the performance governor), "ThinkPad Fan Control" (to control the fan speed) and, obviously, while charging the laptop.
+- Values over -60mV are considered ***UNSAFE***, unless you know what you are doing!
+- You know when you undervolted too much when the screen starts flickering, or you cannot perform any benchmark (either graphical benchmarks that involve the iGPU/GPU or benchmarks that involve the CPU)
+- Generally, undervolting is safer than overclocking
+- I have found that the best performance obtainable by my laptop was achieved using `intel-undervolt`, `cpuface` (to use the performance governor), `ThinkPad Fan Control` (to control the fan speed) and, obviously, while charging the laptop.
 
-	Here are my laptop's highest benchmark results: https://browser.geekbench.com/v5/cpu/4443158
+Here are my laptop's highest benchmark results: https://browser.geekbench.com/v5/cpu/4443158
 	
 I do not condone undervolting. Do it at your own risk.
 
