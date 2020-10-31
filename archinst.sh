@@ -122,9 +122,12 @@ printf '\e[1;4m[21] Installing intel-undervolt...\e[0m\n' && sudo pacman -S inte
 # Install youtube-dlc [22]
 printf '\e[1;4m[22] Installing cpuface...\e[0m\n' && cd && git clone https://github.com/blackjack4494/yt-dlc && cd yt-dlc && make && sudo make install && printf '\e[1;42m[22] Success!\e[0m\n' || printf '\e[1;41m[22] Error! Could not install youtube-dlc!\e[0m\n'
 
-# Copy configurations [23]
-printf '\e[1;4m[23] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp-r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && cp .cpuface_profiles.json $HOME && printf '\e[1;42m[23] Success!\e[0m\n' || printf '\e[1;41m[23] Error! Could not copy configurations!\e[0m\n' 
+# Install lightdm-webkit-theme-litarvan [23]
+printf '\e[1;4m[23] Installing lightdm-webkit-theme-litarvan...\e[0m\n' && sudo pacman -S lightdm-webkit-theme-litarvan && sudo sed -i 's/^webkit\_theme\s*=\s*\(.*\)/webkit\_theme = lightdm-webkit-theme-litarvan #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf && printf '\e[1;42m[22] Success!\e[0m\n' || printf '\e[1;41m[22] Error! Could not install lightdm-webkit-theme-litarvan!\e[0m\n'
+
+# Copy configurations [24]
+printf '\e[1;4m[24] Copying configurations...\e[0m\n'
+cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp-r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && cp .cpuface_profiles.json $HOME && printf '\e[1;42m[24] Success!\e[0m\n' || printf '\e[1;41m[24] Error! Could not copy configurations!\e[0m\n' 
  
 # Successfully set up dotfiles
 printf "
