@@ -350,7 +350,7 @@ I have a ThinkPad T440p with an Intel Core i5-4340M (Haswell). I have installed 
 - Values over -60mV are considered ***UNSAFE***, unless you know what you are doing!
 - You know when you undervolted too much when the screen starts flickering, or you cannot perform any benchmark (either graphical benchmarks that involve the iGPU/GPU or benchmarks that involve the CPU)
 - Generally, undervolting is safer than overclocking
-- I have found that the best performance obtainable by my laptop was achieved using `intel-undervolt`, `cpuface` (to use the performance governor), `ThinkPad Fan Control` (to control the fan speed) and, obviously, while charging the laptop.
+- I have found that the best performance obtainable by my laptop was achieved using `throttled`, `intel-undervolt`, `cpuface` (to use the performance governor), `ThinkPad Fan Control` (to control the fan speed) and, obviously, while charging the laptop.
 
 Here are my laptop's highest benchmark results: https://browser.geekbench.com/v5/cpu/4443158
 	
