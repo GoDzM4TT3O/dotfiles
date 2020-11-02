@@ -25,9 +25,24 @@
 	- [Music](#music)
 	- [Text editor](#text-editor)
 	- [Network Manager](#network-manager)
-	- [Low battery notifier](#low-battery-notifier)
 	- [RSS Reader](#rss-reader)
 	- [Intel Undervolt](#intel-undervolt)
+	+ [My Scripts](#my-scripts)
+		- [Low Battery Notifier](#low-battery-notifier)
+		- [Cpu Tools](#cputools)
+		- [Disk Usage](#disk-usage)
+		- [Display Select](#displayselect)
+		- [Dmenu Unicode](#dmenuunicode)
+		- [Downloader](#downloader)
+		- [Fix Webcam](#fix-webcam)
+		- [Inactivity](#inactivity)
+		- [Launcher](#launcher)
+		- [Mount](#mount)
+		- [Random wallpaper](#randomwall)
+		- [Random wallpaper now](#randomwall-now)
+		- [Rss Add](#rss-add)
+		- [Umount](#umount)
+		- [Webcam](#webcam)
 - [Installation](#installation)
 	- [Copying the configurations](#copying-configurations)
 	- [Modifying the configurations](#modifying-configurations)
@@ -293,7 +308,7 @@ NOTE: to launch cli-visualizer, run `vis`
 
 ### Text editor
 - Text editor: `vim` / `nvim` (neovim)
-- Vim color scheme: monokai
+- Vim color scheme: dogrun
 - Vim package manager: vim-plug
 - Vim status bar: lightline.vim
 
@@ -311,26 +326,6 @@ Installation instructions:
 
 - Arch Linux/Manjaro: `yay -S networkmanager-dmenu-git`
 - All of the other distros: https://github.com/firecat53/networkmanager-dmenu#installation
-
-### Low battery notifier
-I wrote my own low battery notifier. If one of your batteries' capacity is less than 20%, it will send a critical notification, containing said battery name and its capacity. To make this work, you need to install a cron manager.
-
-Installation instructions:
-
-- Debian/Mint/Ubuntu: cron should already be installed;
-- Arch Linux/Manjaro: `sudo pacman -S cronie`;
-
-I don't know if Manjaro ships with a cron manager.
-
-After you're done, run this command: `crontab -e`, then add this line:
-
-`* * * * * DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 ~/.config/scripts/bat-warn`
-
-You're done! I also have this in my root crontab (`sudo crontab -e`):
-
-`*/30 * * * * /usr/bin/updatedb`
-
-Every 30 minutes the command "updatedb" will run, so that the next time you run "locate FILE" it will be very fast to show you where a file is.
 
 ### RSS Reader
 
@@ -354,6 +349,77 @@ I have a ThinkPad T440p with an Intel Core i5-4340M (Haswell). I have installed 
 Here are my laptop's highest benchmark results: https://browser.geekbench.com/v5/cpu/4443158
 	
 I do not condone undervolting. Do it at your own risk.
+
+***
+
+### My scripts
+These sections below contain a list of the scripts I've made. You can refer to [KEYBINDINGS.md](https://godzm4tt3o.js.org/dotfiles/KEYBINDINGS) or [.config/scripts/](https://github.com/GoDzM4TT3O/dotfiles/tree/master/.config/scripts) for a list of scripts, what they do, and how to run them.
+
+### Low battery notifier
+I wrote my own low battery notifier. If one of your batteries' capacity is less than 20%, it will send a critical notification, containing said battery name and its capacity. To make this work, you need to install a cron manager.
+
+Installation instructions:
+
+- Debian/Mint/Ubuntu: cron should already be installed;
+- Arch Linux/Manjaro: `sudo pacman -S cronie`;
+
+I don't know if Manjaro ships with a cron manager.
+
+After you're done, run this command: `crontab -e`, then add this line:
+
+`* * * * * DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 ~/.config/scripts/bat-warn`
+
+You're done! I also have this in my root crontab (`sudo crontab -e`):
+
+`*/30 * * * * /usr/bin/updatedb`
+
+Every 30 minutes the command "updatedb" will run, so that the next time you run "locate FILE" it will be very fast to show you where a file is.
+
+### CpuTools
+This script launches the following 3 programs:
+
+- Cpuface: to choose a CPU governor (performance/schedutil); cpuface profiles/presets are already included in this repository;
+- ThinkPad-Fan-Control: if you have a ThinkPad, the arch install script will automatically download this tool from [ForgedTurbo/ThinkPad-Fan-Control](https://github.com/ForgedTurbo/ThinkPad-Fan-Control). This tool lets you choose the fan speed and other fan-related settings.
+- Intel-Undervolt: tool to undervolt Intel CPUs, starting from Haswell and newer. ([READ ABOVE!])(#intel-undervolt)
+
+### Disk-Usage
+Monitor a disk's usage using lsblk. You can choose how many seconds to refresh, and which disk/partition.
+
+### DisplaySelect
+Choose a monitor/display and use it at its best settings.
+
+### Dmenu Unicode
+You can choose an emoji from a list of emojis (file is located in `.config/scripts/emoji`), and copy that emoji to the clipboard.
+
+### Downloader
+This script uses youtube-dlc to download songs from YT and convert them to an mp3 file with cover art. It requires you to have a valid YT URL in your clipboard before running it, or you can also enter it manually.
+
+### Fix-Webcam
+Sometimes my webcam does not want to turn on. I run this script like I'd run `sudo modprobe -r uvcvideo; sudo modprobe uvcvideo`.
+
+### Inactivity
+This script automatically moves the mouse using xdotool to prevent inactivity/automatic screen locking.
+
+### Launcher
+This script lets you choose which scripts to run, using dmenu. It looks for executables in `.config/scripts`.
+
+### Mount
+Choose which disk/partition to mount and where to mount it.
+
+### Randomwall
+Random wallpaper. This script runs each time i3 starts, and waits 3 minutes to choose a random wallpaper from `~/wallpapers`.
+
+### Randomwall-now
+Immediately choose a random wallpaper from `~/wallpapers` without waiting.
+
+### Rss Add
+Add an RSS feed to Newsboat.
+
+### Umount
+Unmount a disk/partition.
+
+### Webcam
+Toggle webcam (on/off).
 
 ***
 
