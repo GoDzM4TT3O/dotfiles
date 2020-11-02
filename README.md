@@ -324,7 +324,7 @@ I don't know if Manjaro ships with a cron manager.
 
 After you're done, run this command: `crontab -e`, then add this line:
 
-`* * * * * XDG_RUNTIME_DIR=/run/user/$(id -u) ~/.config/scripts/bat-warn`
+`* * * * * DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 ~/.config/scripts/bat-warn`
 
 You're done! I also have this in my root crontab (`sudo crontab -e`):
 

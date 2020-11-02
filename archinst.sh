@@ -37,7 +37,7 @@ sudo pacman -S --needed base-devel i3-gaps dmenu dunst i3lock i3status && printf
 
 # Install additional packages [3]
 printf '\e[1;4m[3] Installing additional packages...\e[0m\n'
-sudo pacman -S python pandoc zip throttled htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim neovim && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
+sudo pacman -S cronie python pandoc zip throttled htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim neovim && printf '\e[1;42m[3] Success!\e[0m\n' || printf '\e[1;41m[3] Error! Could not install additional packages!\e[0m\n' 
 
 # Install yay (AUR Helper) [4]
 printf '\e[1;4m[4] Installing yay (AUR Helper)...\e[0m\n'
@@ -127,7 +127,7 @@ printf '\e[1;4m[23] Installing lightdm-webkit-theme-litarvan...\e[0m\n' && sudo 
 
 # Copy configurations [24]
 printf '\e[1;4m[24] Copying configurations...\e[0m\n'
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp-r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && cp .cpuface_profiles.json $HOME && printf '\e[1;42m[24] Success!\e[0m\n' || printf '\e[1;41m[24] Error! Could not copy configurations!\e[0m\n' 
+cd; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && cp .cpuface_profiles.json $HOME && printf '\e[1;42m[24] Success!\[0m\n' || printf '\e[1;41m[24] Error! Could not copy configurations!\e[0m\n' 
  
 # Successfully set up dotfiles
 printf "
@@ -139,4 +139,5 @@ printf "
 @ https://github.com/GoDzM4TT3O/dotfiles
 \e[1;42mThe installation finished without errors! It is recommended you modify "~/.config/polybar/config" following the guide over at https://godzm4tt3o.js.org/dotfiles/#modifying-configurations\e[0m\n
 \e[1;40mDon't worry if Vim/Neovim spits out some errors the first time you open it, but remember to run ':PlugInstall'!\e[0m\n
+\e[1;40mPlease add the following line to your crontab (by running 'crontab -e'):\n* * * * * DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 ~/.config/scripts/bat-warn\e[0m\n
 "
