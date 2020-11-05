@@ -26,10 +26,13 @@ do
 		speaker-test -t sine -f 1000 & pid=$!; sleep 0.1s; kill -9 $pid
 	}
 
+	# avoid sending unnecessary notifications
+	[[ $capacity = 100 ]] && exit 0
+
 	# if capacity is less than 10% and the battery isn't charging, send a notification (will go away in 30 seconds)
-	[[ $capacity < 10 && $status = "Discharging" || $capacity < 10 && $status = "Unknown" ]] && makebeep && /usr/bin/notify-send -u critical -t 30000 "Battery $batteryname charge very low " "Please charge battery $batteryname, its capacity is $capacity%." && exit 0
+	[[ $capacity < 10 && $status = "Discharging" || $capacity < 10 && $status = "Unknown" ]] && makebeep && /usr/bin/notify-send -u critical -t 30000 "Battery $batteryname charge very low " "Please charge battery $batteryname, its capacity is $capacity%."
 	
 	# if capacity is less than 20% and the battery isn't charging, send a notification (will go away in 30 seconds)
-	[[ $capacity < 20 && $status = "Discharging" || $capacity < 20 && $status = "Discharging" ]] && makebeep && /usr/bin/notify-send -u critical -t 30000 "Battery $batteryname charge low " "Please charge battery $batteryname, its capacity is $capacity%." && exit 0
+	[[ $capacity < 20 && $status = "Discharging" || $capacity < 20 && $status = "Discharging" ]] && makebeep && /usr/bin/notify-send -u critical -t 30000 "Battery $batteryname charge low " "Please charge battery $batteryname, its capacity is $capacity%."
 
 done

@@ -29,7 +29,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/nord]
+[bar/dogrun]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -143,7 +143,7 @@ label-focused = %index%
 label-focused-background = #295573 
 label-focused-foreground = #88c0d0
 ;label-focused-underline= ${colors.primary}
-label-focused-underline= #88c0d0
+label-focused-underline= #31a9e0
 ;label-focused-underline = #295573 
 ; adjust the value below accordingly
 ; >2: have less screen space, blocks will slide to the right if there isn't enough space
@@ -197,7 +197,7 @@ type = custom/script
 exec = whoami
 format-prefix = " "
 
-format-underline = #88c0d0
+format-underline = #31a9e0
 
 ; filesystem
 [module/filesystem]
@@ -226,7 +226,7 @@ bar-indicator-font = 2
 bar-fill = =
 bar-fill-font = 2
 ;bar-fill-foreground = #9f78e1
-bar-fill-foreground = #bf616a
+bar-fill-foreground = #f56574
 bar-empty = =
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -249,11 +249,11 @@ label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 15
-bar-volume-foreground-0 = #88c0d0
-bar-volume-foreground-1 = #88c0d0
-bar-volume-foreground-2 = #88c0d0
-bar-volume-foreground-3 = #88c0d0
-bar-volume-foreground-4 = #88c0d0
+bar-volume-foreground-0 = #31a9e0
+bar-volume-foreground-1 = #31a9e0
+bar-volume-foreground-2 = #31a9e0
+bar-volume-foreground-3 = #31a9e0
+bar-volume-foreground-4 = #31a9e0
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = true
@@ -281,11 +281,11 @@ label-muted = muted
 label-muted-foreground = #666
 
 bar-volume-width = 15
-bar-volume-foreground-0 = #88c0d0
-bar-volume-foreground-1 = #88c0d0
-bar-volume-foreground-2 = #88c0d0
-bar-volume-foreground-3 = #88c0d0
-bar-volume-foreground-4 = #88c0d0
+bar-volume-foreground-0 = #31a9e0
+bar-volume-foreground-1 = #31a9e0
+bar-volume-foreground-2 = #31a9e0
+bar-volume-foreground-3 = #31a9e0
+bar-volume-foreground-4 = #31a9e0
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = true
@@ -305,13 +305,13 @@ blacklist-0 = num lock
 
 format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-foreground = #d08770
+format-prefix-foreground = #f56574
 ;format-prefix-underline = ${colors.secondary}
-format-prefix-underline = #d08770
+format-prefix-underline = #f56574
 
 label-layout = %layout%
 ;label-layout-underline = ${colors.secondary}
-label-layout-underline = #d08770
+label-layout-underline = #f56574
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -328,7 +328,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 ;format-underline = #8fbcbb
 ;format-underline = #81a1c1
-format-underline = #88c0d0
+format-underline = #31a9e0
 label = RAM: %percentage_used%%
 
 ; cpu module
@@ -340,7 +340,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
 ;format-underline = #bf616a
 ;format-underline = #81a1c1
-format-underline = #88c0d0
+format-underline = #31a9e0
 label = CPU: %percentage:2%%
 
 ; wireless module
@@ -354,7 +354,7 @@ format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
 ;format-connected-underline = #b48ead
 ;format-connected-underline = #81a1c1
-format-connected-underline = #88c0d0
+format-connected-underline = #31a9e0
 label-connected = %essid%
 
 ;format-disconnected =
@@ -381,7 +381,7 @@ interval = 3.0
 ;format-connected-underline = #55aa55
 ;format-connected-underline = #a3be8c
 ;format-connected-underline = #81a1c1
-format-connected-underline = #88c0d0
+format-connected-underline = #31a9e0
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -405,7 +405,7 @@ format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
 ;format-charging-underline = #ebcb8b
 ;format-charging-underline = #81a1c1
-format-charging-underline = #88c0d0
+format-charging-underline = #31a9e0
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -449,7 +449,7 @@ format = <ramp> <label>
 ;format-underline = #f50a4d
 ;format-underline = #bf616a
 ;format-underline = #81a1c1
-format-underline = #88c0d0
+format-underline = #31a9e0
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -486,7 +486,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 ;format-underline = #5e81ac
 ;format-underline = #81a1c1
-format-underline = #88c0d0
+format-underline = #31a9e0
 
 label = %date% %time%
 
