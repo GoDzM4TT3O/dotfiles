@@ -2,7 +2,7 @@
 # download youtube videos and save them as mp3s
 
 # If clipboard is empty tell the user and exit
-[[ $(xclip -o) = "" ]] && notify-send -u critical "Downloader" "Clipboard is empty!" && exit 1
+[[ $(xclip -o) = "" ]] && notify-send -u critical "Downloader" "Clipboard is empty!"
 
 # Ask the user to enter a valid URL or get it from their clipboard
 url=$(xclip -o | dmenu -i -p "Enter a valid youtube url:")
@@ -30,7 +30,7 @@ if [[ $url =~ (http://|http://www.|https://|https://www.)youtu(.be|be.com)/([a-z
 	# notify the user that download is starting and start downloading
 	# if it was successful, tell the user
 	# if it was not, warn him
-	notify-send "Downloader" "Starting download! URL: $url" && youtube-dlc -x --embed-thumbnail --audio-format mp3 -f bestaudio --audio-quality 0 -c -i "$url" --cookies $HOME/cookies -o "$HOME/Music/%(title)s.%(ext)s" && notify-send "Downloader" "Successfully downloaded youtube video into $HOME/Music!" || notify-send -u critical "Downloader" "An error occurred!"
+	notify-send "Downloader" "Starting download! URL: $url" && youtube-dl -x --embed-thumbnail --audio-format mp3 -f bestaudio --audio-quality 0 -c -i "$url" --cookies $HOME/cookies -o "$HOME/Music/%(title)s.%(ext)s" && notify-send "Downloader" "Successfully downloaded youtube video into $HOME/Music!" || notify-send -u critical "Downloader" "An error occurred!"
 
 # if the URL does not match the regex
 else
