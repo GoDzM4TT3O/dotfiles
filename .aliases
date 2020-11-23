@@ -5,13 +5,7 @@ alias translate='trans'
 # if you have some text in a foreign language, you can add the following to your text:
 # "-from LANGUAGE". for example: tts "ciao prova" -from it
 # uses mpv. change it to vlc if you'd like to use vlc
-alias tts="echo $@ | trans -speak -player mpv -no-translate"
-
-# I'd just like to interject for a moment
-alias interjection="echo I\'d just like to interject for a moment. What you\'re referring to Linux, is in fact, GNU/Linux, or as I\'ve recently taken to calling it, GNU plus Linux."
-
-# add tabs to vimb (needs tabbed: https://tools.suckless.org/tabbed/)
-alias vimb='tabbed -c vimb -e'
+alias tts="echo $@ | translate -speak -player mpv -no-translate"
 
 # vifm alias to preview images/videos
 alias vifm='~/.config/vifm/vifmrun'
@@ -23,9 +17,6 @@ alias update-grub='sudo mkinitcpio -P; sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # connect to wifi (I use the Arch Wiki's wpa_supplicant config)
 alias wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0'
-
-# kill picom/compton before starting obs, otherwise the recording won't look right
-alias obs='pkill picom; obs'
 
 # neofetch
 # if we use st don't show distro logo
@@ -51,15 +42,6 @@ alias force-kill='killall -9 $1'
 
 # rot13 encryption
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
-
-# screen locking using slock
-alias lockscreen='slock -m "Locked at $(date "+%a %d, %H:%M:%S") $(printf "\nRandom quote: ") $(fortune)"'
-
-# prevent screen locking
-alias preventlock='while true; do xdotool mousemove 100 100; sleep 20; xdotool mousemove 500 500; done'
-
-# rickroll
-alias rickroll='mpv "https://www.youtube.com/watch?v=dQw4w9WgXcQ"'
 
 # use neovim instead of vim if nvim is installed
 [[ -f "/usr/bin/nvim" ]] && alias vim="nvim" 
