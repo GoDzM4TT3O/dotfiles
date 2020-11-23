@@ -127,7 +127,7 @@ printf '\e[1;4m[23] Installing lightdm-webkit-theme-litarvan...\e[0m\n' && sudo 
 
 # Copy configurations [24]
 printf '\e[1;4m[24] Copying configurations...\e[0m\n'
-cd; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && cp .cpuface_profiles.json $HOME && printf '\e[1;42m[24] Success!\[0m\n' || printf '\e[1;41m[24] Error! Could not copy configurations!\e[0m\n' 
+cd; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local,cpuface_profiles.json} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && printf '\e[1;42m[24] Success!\[0m\n' || printf '\e[1;41m[24] Error! Could not copy configurations!\e[0m\n' 
  
 # Successfully set up dotfiles
 printf "

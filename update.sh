@@ -6,11 +6,11 @@ read -p "[yes/no]> " inp
 case $inp in
 	[Yy]* )
 		# Copy configurations
-		printf '\e[1;4mCopying configurations...\e[0m\n' && cd ~/dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && export dotsCopied=1 || export dotsCopied=0
+		printf '\e[1;4mCopying configurations...\e[0m\n' && cd ~/dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local,cpuface_profiles.json} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && export dotsCopied=1 || export dotsCopied=0
 		;;
 	[Nn]* )
 		# Run git pull on this repo
-		printf '\e[1;4mFetching latest files...\e[0m\n' && cd ~/dotfiles && git pull && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png,randomwall.sh} ~ && cp {u,}mount ~ && export dotsCopied=1 || export dotsCopied=0
+		printf '\e[1;4mFetching latest files...\e[0m\n' && cd ~/dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,*.zsh,local,cpuface_profiles.json} $HOME && cp -r {wallpaper*,archlogo.txt,italiarch.png} $HOME && export dotsCopied=1 || export dotsCopied=0
 		;;
 	* )
 		echo "Please type either yes or no." ;;
