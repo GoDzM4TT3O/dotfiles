@@ -3,14 +3,13 @@
 - [Sections](#sections)
 + [Previews](#previews)
 	- [st](#st)
-	- [kitty](#kitty)
 - [Help](#help)
 - [Others (not included)](#others-not-included)
 	- [Firefox Addons](#firefox-addons)
 - [Terminal](#terminal)
 	- [Shell](#shell)
 - [Window Manager](#window-manager)
-	- [Polybar](#polybar)
+	- [DwmBlocks](#dwmblocks)
 - [Window Manager addons](#window-manager-addons)
 	- [Automatic lock](#xautolock)
 	- [LightDM](#lightdm)
@@ -18,7 +17,6 @@
 	- [Slock (suckless locker)](#slock)
 - [Extras](#extras)
 	- [Image Viewer](#image-viewer)
-	- [Music](#music)
 	- [Text editor](#text-editor)
 	- [Network Manager](#network-manager)
 	- [Intel Undervolt](#intel-undervolt)
@@ -46,45 +44,27 @@
 ### st
 (suckless terminal)
 
+Tiling st window with zsh prompt
+![st-tile](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-tile.png)
+
 Floating st window with zsh prompt
 ![st-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-float.png)
 
-Two st windows (programs: `htop` and cli-visualizer, the command for the latter is `vis`)
+Two st windows (programs: `htop` and `ranger`)
 ![st-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-two.png)
 
-Three st windows (programs: neofetch, vifm and tty-clock)
+Three st windows (programs: `neofetch`, `ranger` and `htop`)
 ![st-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-three.png)
-
-Three st windows with floating layout (programs: `tty-clock`, cli-visualizer (`vis`) and `htop`)
-![st-three-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-three-float.png)
-
-### kitty
-
-Floating kitty window with zsh prompt
-![kitty-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/kitty-float.png)
-
-Two kitty windows (programs: `htop` and cli-visualizer, the command for the latter is `vis`)
-![kitty-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/kitty-two.png)
-
-Three kitty windows (programs: neofetch, vifm and tty-clock)
-![kitty-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/kitty-three.png)
-
-Three kitty windows with floating layout (programs: `tty-clock`, cli-visualizer (`vis`) and `htop`)
-![kitty-three-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/kitty-three-float.png)
 
 ***
 
 ## Help
-It is recommended that you please check [this page](https://godzm4tt3o.js.org/dotfiles/KEYBINDINGS).
-
-It contains all of the custom keybindings that I use with i3wm.
-
-You can also check [this file](https://github.com/GoDzM4TT3O/dotfiles/blob/master/.vim/tips.md), it contains a few Vim tricks you didn't know!
+Have any issues with dwm? Check the [`man` page](https://github.com/GoDzM4TT3O/dotfiles/blob/master/dwm/dwm.1) or read the [source code](https://github.com/GoDzM4TT3O/dotfiles/blob/master/dwm/config.h), it contains all of the custom keybindings that I use with dwm.
 
 ## Others (not included)
 - Grub theme: [Arch Silence](https://github.com/fghibellini/arch-silence); I previously used [Slaze](https://github.com/vinceliuice/grub2-themes)
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
-- Icon theme: [Paper](https://github.com/snwh/paper-icon-theme)
+- Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - Simply mount android: [`simple-mtpfs`](https://wiki.archlinux.org/index.php/Media_Transfer_Protocol#simple-mtpfs)
 - Check disk usage: [`ncdu`](https://dev.yorhel.nl/ncdu)
 - Luke Smith's [domain blocklist](https://github.com/LukeSmithxyz/etc)
@@ -116,18 +96,13 @@ Here's a list of the firefox addons I use:
 - Universal Bypass
 
 ## Terminal
-- Terminal: `st` (luke's build) and `kitty` (my own config)
-- Terminal color scheme: [Nord](http://nordtheme.com/)
-
-NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created. Also, to run `kitty`, you need OpenGL 3.3 or newer. If you have OpenGL 3.2 or older, use `urxvt`, the config files are already included.
-
+- Terminal: `st` (Luke's build)
 - Terminal file manager: `ranger`
 - Get system info: `neofetch`
 
 ### Shell
 I use `zsh`. To make it work, you need to install zsh and oh-my-zsh:
 
-- Debian/Mint/Ubuntu: `sudo apt install zsh; cd ~; sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - Arch Linux/Manjaro: `sudo pacman -S zsh; yay -S oh-my-zsh-git # replace yay with any other AUR helper`
 
 Make `zsh` the default shell: `chsh -s /bin/zsh`
@@ -146,22 +121,14 @@ Make `zsh` the default shell: `chsh -s /bin/zsh`
 ***
 
 ## Window Manager
-- Window Manager: `i3-gaps`
-- Status bar: `polybar` (`i3status` config is available, see .config/i3/config)
-- Lock screen: `i3lock` (SUPER+L), `slock` (after 10 minutes of inactivity)
-
-### polybar
-I use polybar. It's far better than i3bar and i3status.
-
-Installation instructions:
-
-- Arch Linux/Manjaro: `yay -S polybar`
-- Other distros: please refer [to this guide](https://github.com/polybar/polybar#getting-started)
+- Window Manager: `dwm`
+- Status bar: `dwmblocks` 
+- Lock screen: `slock` 
 
 ## Window Manager addons
 - Automatic lock: `xautolock`
 - Display manager: `lightdm`
-- LightDM theme: `lightdm-webkit-theme-litarvan`
+- LightDM theme: [`saluto-lightdm-theme-dwm`](https://aur.archlinux.org/packages/saluto-lightdm-theme-dwm)
 
 ### xautolock
 Install `xautolock`:
@@ -200,10 +167,6 @@ I have included my own build of [slock](https://tools.suckless.org/slock) with t
 - Caps color: turns the screen bright red to alert the user that caps lock is on
 
 - Message: include a custom message; with my custom build you can see when the screen was locked & a random quote, using fortune.
-
-You also need to install fortune, or you can modify the [i3config](https://github.com/GoDzM4TT3O/dotfiles/blob/master/.config/i3/config#L61) file. You can install fortune using [these instructions](https://github.com/GoDzM4TT3O/dotfiles/tree/master/slock).
-
-Alternatively, you can use LightDM or i3lock as a screen locker, instead of Slock, if you don't like Slock.
 
 To install Slock, run:
 
@@ -320,19 +283,7 @@ Toggle webcam (on/off).
 ***
 
 ## Installation
-Get i3-gaps:
-- Debian/Mint/Ubuntu: `sudo apt install i3-gaps dunst i3lock i3status`
-- Arch Linux/Manjaro: `sudo pacman -S --needed i3-gaps dunst i3lock i3status`
-
-Install additional packages:
-- Debian/Mint/Ubuntu: `sudo apt install copyq git fortune-mod picom hsetroot exa zsh xsel rofi fonts-noto xsettingsd lxappearance scrot feh kitty xinit fonts-font-awesome fonts-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim`
-- Arch Linux/Manjaro: `sudo pacman -S --needed copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot feh kitty xorg-xinit ttf-font-awesome ttf-fira-code vifm neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake vim nvim`
-
-NOTE: if you don't use a display manager (such as LightDM or GDM), add the following line to `~/.xinitrc`:
-
-```
-exec i3
-```
+Please see the arch install scripts, and base yourself off of those.
 
 ### Copying configurations
 WARNING: THIS WILL REPLACE YOUR EXISTING CONFIGURATIONS!!!
@@ -341,17 +292,3 @@ If you don't want to replace your existing configurations, please manually edit 
 ```bash
 cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ 
 ```
-
-### Modifying configurations
-Currently, I use polybar instead of i3status, but the information below is still relevant. The configuration file is located in `.config/polybar/config`. Customize it however you want, enable/disable any module you want ;)
-
-NOTE: on some laptops, you should modify the battery name. For example, instead of being called "BAT1", the battery on my Thinkpad T440p is called "BAT0". You can find the available batteries under "/sys/class/power_supply/BAT?". If you have more than one battery (such as Thinkpads with an internal and external battery), try to duplicate the battery indicator, giving it another name (such as "modules/battery-int" or "modules/battery-ext").
-You also need to modify the wireless interface and the wired interface names, found in the same configuration file, under their appropriate module categories (modules/wlan and modules/eth). The info below can help you.
-
-If you want to use i3status, you should modify `~/.config/i3status/config`, because it contains network interfaces that might be different from yours.
-Change `wlan0` and `enp3s0` with your network interfaces.
-You can find yours by running the command `ip link | grep -oE "^[2-9]: [e-w]......"`, then you will likely have two results.
-My results are "2: enp3s0" and "3: wlan0". You need to copy the interface names (after the number and the colon) respectively over the existing interfaces.
-For example, if your results are "2: eth0" and "3: wlp4s0", replace "enp3s0" with "eth0", and "wlan0" with "wlp4s0".
-
-Make sure to replace the network interfaces and the battery (my battery is BAT1 but for you it could be BAT0).

@@ -195,6 +195,16 @@ git clone https://github.com/GoDzM4TT3O/dotfiles &&
 	printf '\e[1;42m Success!\[0m\n' ||
 	printf '\e[1;41m Error! Could not copy configurations!\e[0m\n' 
 
+# Install dwm and dwmblocks
+printf '\e[1;4m Installing dwm and dwmblocks...\e[0m\n'
+cd $HOME/dotfiles &&
+	cd dwm &&
+	sudo make clean install &&
+	cd dwmblocks &&
+	sudo make clean install &&
+	printf '\e[1;42m Success!\[0m\n' ||
+	printf '\e[1;41m Error! Could install dwm and/or dwmblocks!\e[0m\n' 
+
 # Successfully set up dotfiles
 printf "
     _             _     ___           _    
