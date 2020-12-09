@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/matteo/.vim/autoload/airline'
-let g:netrw_dirhist_2='/home/matteo/.config/i3status'
-let g:netrw_dirhist_3='/home/matteo/.config/vis/colors'
