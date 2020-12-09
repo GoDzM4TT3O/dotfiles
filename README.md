@@ -61,6 +61,8 @@ Three st windows (programs: `neofetch`, `ranger` and `htop`)
 ## Help
 Have any issues with dwm? Check the [`man` page](https://github.com/GoDzM4TT3O/dotfiles/blob/master/dwm/dwm.1) or read the [source code](https://github.com/GoDzM4TT3O/dotfiles/blob/master/dwm/config.h), it contains all of the custom keybindings that I use with dwm.
 
+Also, check out https://github.com/GoDzM4TT3O/dwm, this is the main repository for my build of dwm & dwmblocks. If you need any help, go there.
+
 ## Others (not included)
 - Grub theme: [Arch Silence](https://github.com/fghibellini/arch-silence); I previously used [Slaze](https://github.com/vinceliuice/grub2-themes)
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
