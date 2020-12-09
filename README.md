@@ -48,13 +48,13 @@ Tiling st window with zsh prompt
 ![st-tile](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-tile.png)
 
 Floating st window with zsh prompt
-![st-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-float.png)
+![st-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-floating.png)
 
 Two st windows (programs: `htop` and `ranger`)
-![st-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-two.png)
+![st-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-twow.png)
 
 Three st windows (programs: `neofetch`, `ranger` and `htop`)
-![st-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-three.png)
+![st-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-threew.png)
 
 ***
 
