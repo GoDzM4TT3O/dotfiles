@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # The famous "get a menu of emojis to copy" script.
 
 # Get user selection via dmenu from emoji file.

@@ -1,0 +1,62 @@
+#!/bin/bash
+# choose a genre and which song to play
+
+# root of music folder
+musicfolder="$HOME/Music"
+
+# choose a genre/folder where music is contained
+chosenfolder=$(ls "$musicfolder" --hide "lost+found" | dmenu -i -p "Choose a music folder")
+[[ "$chosenfolder" = "" ]] && exit 1
+
+choosesub=$(printf "Yes\nNo" | dmenu -i -p "Choose subfolder?")
+[[ "$choosesub" = "" ]] && exit 1
+
+if [[ "$choosesub" = "Yes" || "$choosesub" = "yes" ]]; then
+	chosensub=$(ls -l "$musicfolder/$chosenfolder" | grep "^d" | awk '{print $9}' | dmenu -i -p "Choose a subfolder")
+	[[ "$chosensub" = "" ]] && exit 1
+	chosenfolder="$chosenfolder/$chosensub"
+fi
+
+# ask the user if he wants to shuffle the folder
+shuffle=$(printf "Yes\nNo" | dmenu -i -p "Shuffle folder?")
+[[ "$shuffle" = "" ]] && exit 1
+
+# if the user does not want to shuffle the selected folder
+if [[ "$shuffle" = "No" || "$shuffle" = "no" ]]; then
+
+	# ask if the user wants to play songs from a specific artist
+	onlyartist=$(printf "Yes\nNo" | dmenu -i -p "Play songs only from a specific artist?")
+	[[ "$onlyartist" = "" ]] && exit 1
+
+	# if he does
+	if [[ "$onlyartist" = "Yes" || "$onlyartist" = "yes" ]]; then
+
+		# ask which artist to choose
+		chosenartist=$(ls "$musicfolder/$chosenfolder" | cut -d "-" -f 1 | uniq | dmenu -i -p "Choose an artist")
+		[[ "$chosenartist" = "" ]] && exit 1
+
+		# choose a song made by the user chosen artist
+		chosensong=$(ls "$musicfolder/$chosenfolder" | grep ".mp3" | grep "$chosenartist" | dmenu -i -p "Choose a song to play")
+
+		# if no song is chosen, exit
+		[[ "$chosensong" = "" ]] && exit 1
+
+	# if he doesn't
+	elif [[ "$onlyartist" = "No" || "$onlyartist" = "no" ]]; then
+
+		# choose a song
+		chosensong=$(ls "$musicfolder/$chosenfolder" | grep ".mp3" | dmenu -i -p "Choose a song to play")
+
+		# if no song is chosen, exit
+		[[ "$chosensong" = "" ]] && exit 1
+	fi
+
+	# play the selected song
+	mpv --no-audio-display "$musicfolder/$chosenfolder/$chosensong"
+
+# if the user wants to shuffle the selected folder
+elif [[ "$shuffle" = "Yes" || "$shuffle" = "yes" ]]; then
+
+		# shuffle the folder
+		mpv --no-audio-display --shuffle --loop "$musicfolder/$chosenfolder/"
+fi
