@@ -9,10 +9,6 @@
 	- [Firefox Addons](#firefox-addons)
 - [Terminal](#terminal)
 	- [Shell](#shell)
-- [Terminal addons](#terminal-addons)
-	- [Vifm](#vifm)
-	- [Shell Color Scripts](#shell-color-scripts)
-	- [Exa](#exa)
 - [Window Manager](#window-manager)
 	- [Polybar](#polybar)
 - [Window Manager addons](#window-manager-addons)
@@ -25,11 +21,9 @@
 	- [Music](#music)
 	- [Text editor](#text-editor)
 	- [Network Manager](#network-manager)
-	- [RSS Reader](#rss-reader)
 	- [Intel Undervolt](#intel-undervolt)
 	+ [My Scripts](#my-scripts)
 		- [Low Battery Notifier](#low-battery-notifier)
-		- [Cpu Tools](#cputools)
 		- [Disk Usage](#disk-usage)
 		- [Display Select](#displayselect)
 		- [Dmenu Unicode](#dmenuunicode)
@@ -38,15 +32,12 @@
 		- [Inactivity](#inactivity)
 		- [Launcher](#launcher)
 		- [Mount](#mount)
-		- [Random wallpaper](#randomwall)
-		- [Random wallpaper now](#randomwall-now)
-		- [Rss Add](#rss-add)
+		- [Random wallpaper](#randomwall-now)
 		- [Umount](#umount)
 		- [Webcam](#webcam)
 - [Installation](#installation)
 	- [Copying the configurations](#copying-configurations)
 	- [Modifying the configurations](#modifying-configurations)
-
 
 ***
 
@@ -94,10 +85,6 @@ You can also check [this file](https://github.com/GoDzM4TT3O/dotfiles/blob/maste
 - Grub theme: [Arch Silence](https://github.com/fghibellini/arch-silence); I previously used [Slaze](https://github.com/vinceliuice/grub2-themes)
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
 - Icon theme: [Paper](https://github.com/snwh/paper-icon-theme)
-- Firefox theme: [Firefox-mod](https://github.com/datguypiko/Firefox-mod)
-- Terminal meme generator: [`memethesis-cli`](https://github.com/fakefred/memethesis-cli)
-- Mirror phone screen: [`scrcpy`](https://github.com/Genymobile/scrcpy)
-- System security hardening: [`apparmor`](https://wiki.archlinux.org/index.php/Apparmor); I also use [`linux-hardened`](https://wiki.archlinux.org/index.php/Security#Kernel_hardening)
 - Simply mount android: [`simple-mtpfs`](https://wiki.archlinux.org/index.php/Media_Transfer_Protocol#simple-mtpfs)
 - Check disk usage: [`ncdu`](https://dev.yorhel.nl/ncdu)
 - Luke Smith's [domain blocklist](https://github.com/LukeSmithxyz/etc)
@@ -106,17 +93,23 @@ NOTE: If you want to change graphical settings, such as the cursor theme or the 
 You can now install everything in this list by simply running the [archinst](https://github.com/GoDzM4TT3O/dotfiles/blob/master/archinst.sh) script! Run it with the following commands:
 
 ```bash
-cd ~; wget https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/archinst.sh && chmod +x archinst.sh && ./archinst.sh
+cd $HOME
+wget https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/archinst.sh &&
+chmod +x archinst.sh &&
+sh archinst.sh
 ```
 
 ### Firefox addons
 Here's a list of the firefox addons I use:
+- CanvasBlocker
 - ClearURLs
 - Dark Reader
+- DecentralEyes
 - Facebook Container
 - Google Container - with Integrations
 - HTTPS Everywhere
 - Popup Blocker (strict)
+- Privacy Badger
 - Search by Image
 - SponsorBlock for YouTube
 - uBlock Origin
@@ -125,17 +118,11 @@ Here's a list of the firefox addons I use:
 ## Terminal
 - Terminal: `st` (luke's build) and `kitty` (my own config)
 - Terminal color scheme: [Nord](http://nordtheme.com/)
-- Terminal font: [Fira Code](https://github.com/tonsky/FiraCode)
-- Terminal config creator: [`kitty-cat`](https://github.com/adi1090x/kitty-cat)
 
 NOTE: I installed Nord Theme and Fira Code for `kitty` using kitty-cat. There is no need to install kitty-cat again, as the config is already created. Also, to run `kitty`, you need OpenGL 3.3 or newer. If you have OpenGL 3.2 or older, use `urxvt`, the config files are already included.
 
-- Terminal file manager: `vifm`
-- Terminal clock: `tty-clock`
-- Terminal startup script: [`shell-color-scripts`](https://gitlab.com/dwt1/shell-color-scripts)
+- Terminal file manager: `ranger`
 - Get system info: `neofetch`
-
-Please install [`st`](https://github.com/LukeSmithxyz/st), otherwise the default i3 config might not work for you, unless you modify it.
 
 ### Shell
 I use `zsh`. To make it work, you need to install zsh and oh-my-zsh:
@@ -155,61 +142,6 @@ Make `zsh` the default shell: `chsh -s /bin/zsh`
 
 + `Powerleve10k` (shell prompt)
 	- To install it, run: `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k`
-
-## Terminal addons
-### vifm
-Installation instructions:
-- Debian/Mint/Ubuntu: `sudo apt install python-pip python3 vifm ffmpegthumbnailer poppler* imagemagick xdotool fzf sxiv`
-- Arch Linux/Manjaro: `sudo pacman -S python-pip python3 vifm ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv`
-
-Install dependencies:
-
-```bash
-cd ~ # go into /home/$USER
-sudo pip3 install --upgrade ueberzug # ueberzug
-git clone https://github.com/marianosimone/epub-thumbnailer # epub-thumbnailer
-cd epub-thumbnailer
-pip install --upgrade pillow # install/update python pillow
-sudo python install.py install # install epub-thumbnailer
-cd ~ # go into /home/$USER
-git clone https://github.com/sdushantha/fontpreview # fontpreview
-cd fontpreview
-sudo make install # install fontpreview
-```
-
-Configure vifm image previews and use custom vifm run script:
-```
-cd dotfiles/.config/vifm
-chmod 777 {vifmrun,scripts/vifmimg}
-sudo cp .config/vifm/vifmrun /usr/bin
-# add alias vifm="vifmrun" to .aliases
-# in my config it is already done
-```
-
-If you want to use `vifm`, just run it from the terminal.
-
-### shell-color-scripts
-Installation instructions:
-
-```bash
-git clone https://gitlab.com/dwt1/shell-color-scripts
-cd shell-color-scripts
-rm -rf /opt/shell-color-scripts || return 1
-sudo mkdir -p /opt/shell-color-scripts/colorscripts || return 1
-sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
-sudo cp colorscript.sh /usr/bin/colorscript
-sudo cp zsh_completion/_colorscript /usr/share/zsh/site-functions
-```
-
-### Exa
-Exa is a replacement for ls. It is more beautiful, and it is better than ls.
-
-Installation instructions:
-
-- Debian/Mint/Ubuntu: `sudo apt install exa`
-(if it doesn't work please check https://the.exa.website/)
-
-- Arch Linux/Manjaro: `sudo pacman -S exa`
 
 ***
 
@@ -251,24 +183,11 @@ Install the required packages:
 
 Custom theme installation.
 
-- Debian/Mint/Ubuntu:
+- Arch Linux/Manjaro: `yay -S saluto-lightdm-theme-dwm`
 
-```
-# If you prefer the last stable release, download from the releases page instead: https://github.com/Litarvan/lightdm-webkit-theme-litarvan/releases/latest
-cd; sudo git clone https://github.com/Litarvan/lightdm-webkit-theme-litarvan -o /usr/share/lightdm-webkit/themes/litarvan
+Enabling LightDM: `sudo systemctl enable lightdm.service` Or `sudo rc-update add xdm default`
 
-# Set default lightdm-webkit2-greeter theme to Litarvan
-sudo sed -i 's/^webkit\_theme\s*=\s*\(.*\)/webkit\_theme = lightdm-webkit-theme-litarvan #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
-
-# Set default lightdm greeter to lightdm-webkit2-greeter
-sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
-```
-
-- Arch Linux/Manjaro: `sudo pacman -S yay --needed; sudo pacman -S lightdm-webkit-theme-litarvan`
-
-Enabling LightDM: `sudo systemctl enable lightdm.service`
-
-[Replace current display manager with LightDM](https://github.com/NoiSek/Aether#installation):
+Make sure you also disable other display managers:
 ```
 sudo systemctl disable gdm
 sudo systemctl disable sddm
@@ -289,35 +208,29 @@ Alternatively, you can use LightDM or i3lock as a screen locker, instead of Sloc
 To install Slock, run:
 
 ```bash
-cd ~/dotfiles # I assume you cloned this repo in your home directory
-cd slock
-sudo make install
+cd $HOME/dotfiles &&
+cd slock &&
+sudo make clean install
 ```
 
 ***
 
 ## Extras
 ### Image viewer
-- Image viewer: `feh`
-
-### Music
-- Music player: `cmus`
-- Music visualizer: [cli-visualizer](https://github.com/dpayne/cli-visualizer)
-
-NOTE: to launch cli-visualizer, run `vis`
+- Image viewer: `sxiv`
 
 ### Text editor
-- Text editor: `vim` / `nvim` (neovim)
+- Text editor: `nvim` (neovim)
 - Vim color scheme: dogrun
 - Vim package manager: vim-plug
 - Vim status bar: lightline.vim
 
 How to configure `vim` properly:
-+ Open Vim: `vim`
-+ Run `:PlugInstall` inside Vim
++ Open NeoVim: `nvim`
++ Run `:PlugInstall` inside NeoVim
 + After this, everything should be working properly.
 
-Vim usage instructions: [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/master/.vim/readme.txt)
+NeoVim usage instructions: [readme.txt inside .vim](https://github.com/godzm4tt3o/dotfiles/blob/master/.vim/readme.txt)
 
 ### Network manager
 I use [networkmanager-dmenu](https://github.com/firecat53/networkmanager-dmenu). It's a network manager that integrates with dmenu. To launch it, press SUPER+N (n for network).
@@ -326,14 +239,6 @@ Installation instructions:
 
 - Arch Linux/Manjaro: `yay -S networkmanager-dmenu-git`
 - All of the other distros: https://github.com/firecat53/networkmanager-dmenu#installation
-
-### RSS Reader
-
-I use Newsboat, with Luke Smith's custom config and my own URLs.
-You can use Newsboat to open Youtube videos in `mpv`, but first you need to install `urlscan`:
-
-- Debian/Mint/Ubuntu: `sudo apt install urlscan`
-- Arch Linux/Manjaro: `sudo pacman -S urlscan`
 
 ### Intel Undervolt
 
@@ -363,24 +268,21 @@ Installation instructions:
 - Debian/Mint/Ubuntu: cron should already be installed;
 - Arch Linux/Manjaro: `sudo pacman -S cronie`;
 
-I don't know if Manjaro ships with a cron manager.
+After you're done, run this command: `crontab -e`, then add these two lines:
 
-After you're done, run this command: `crontab -e`, then add this line:
+```
+# if the user's battery's percentage is <20% and it is not charging, warn the user
+* * * * * DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 ~/.config/scripts/bat-warn
 
-`* * * * * DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 ~/.config/scripts/bat-warn`
+# choose a random wallpaper every three minutes
+*/3 * * * * DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 ~/.config/scripts/randomwall-now
+```
 
-You're done! I also have this in my root crontab (`sudo crontab -e`):
+You're done! I also have this in my root crontab:
 
 `*/30 * * * * /usr/bin/updatedb`
 
 Every 30 minutes the command "updatedb" will run, so that the next time you run "locate FILE" it will be very fast to show you where a file is.
-
-### CpuTools
-This script launches the following 3 programs:
-
-- Cpuface: to choose a CPU governor (performance/schedutil); cpuface profiles/presets are already included in this repository;
-- ThinkPad-Fan-Control: if you have a ThinkPad, the arch install script will automatically download this tool from [ForgedTurbo/ThinkPad-Fan-Control](https://github.com/ForgedTurbo/ThinkPad-Fan-Control). This tool lets you choose the fan speed and other fan-related settings.
-- Intel-Undervolt: tool to undervolt Intel CPUs, starting from Haswell and newer. ([READ ABOVE!])(#intel-undervolt)
 
 ### Disk-Usage
 Monitor a disk's usage using lsblk. You can choose how many seconds to refresh, and which disk/partition.
@@ -406,14 +308,8 @@ This script lets you choose which scripts to run, using dmenu. It looks for exec
 ### Mount
 Choose which disk/partition to mount and where to mount it.
 
-### Randomwall
-Random wallpaper. This script runs each time i3 starts, and waits 3 minutes to choose a random wallpaper from `~/wallpapers`.
-
 ### Randomwall-now
-Immediately choose a random wallpaper from `~/wallpapers` without waiting.
-
-### Rss Add
-Add an RSS feed to Newsboat.
+Immediately choose a random wallpaper from `~/wallpapers`.
 
 ### Umount
 Unmount a disk/partition.
