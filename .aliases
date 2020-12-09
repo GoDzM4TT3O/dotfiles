@@ -1,54 +1,94 @@
-# rename trans to translate
-alias translate='trans'
+# make programs verbose
+alias cp="cp -v"
+alias ln="ln -v"
+alias mv="mv -v"
+alias rm="rm -v"
+alias rsync="rsync -v"
+
+# replace ls with exa, if exa is installed
+[ $(which exa) ] && alias ls='exa --icons --group-directories-first --color=always' || alias ls="ls --group-directories-first --color=always"
+
+# when ls is mistyped, show sl
+alias LS="sl -alc"
+
+# when ls is mistyped, show sl
+alias sl="sl -alc"
+
+# add color support to dir
+alias dir='dir --color=always'
 
 # usage: tts "your text goes here"
 # if you have some text in a foreign language, you can add the following to your text:
 # "-from LANGUAGE". for example: tts "ciao prova" -from it
 # uses mpv. change it to vlc if you'd like to use vlc
-alias tts="echo $@ | translate -speak -player mpv -no-translate"
+[ $(which trans) ] && alias tts="echo $@ | trans -speak -player mpv -no-translate"
 
-# vifm alias to preview images/videos
-alias vifm='~/.config/vifm/vifmrun'
+# show ANSI color escapes and avoid line wrapping
+alias less='less -RS'
+
+# add color support to grep
+alias grep='grep --color=auto'
+
+# use doas instead of sudo
+[ $(which doas) ] && alias sudo="doas"
+
+# add color support to vdir
+alias vdir='vdir --color=always'
+
+# connect to wifi (I use the Arch Wiki's wpa_supplicant config)
+alias wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0'
+
+# add color support to egrep
+alias egrep='egrep --color=always'
+
+# add color support to fgrep
+alias fgrep='fgrep --color=always'
+
+# encrypt/decrypt rot13 text
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# don't show distro logo when running neofetch
+alias neofetch='neofetch --color_blocks off'
+
+# rename trans to translate
+[ $(which trans) ] && alias translate='trans'
 
 # update-grub alias (not present in arch linux by default)
 # usually these commands are run after a kernel upgrade
 # just to be sure, I'll run them too
 alias update-grub='sudo mkinitcpio -P; sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
-# connect to wifi (I use the Arch Wiki's wpa_supplicant config)
-alias wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0'
-
-# neofetch
-# if we use st don't show distro logo
-[[ $TERM = "st-256color" ]] && alias neofetch='neofetch --color_blocks off'
-
-# if we use kitty use kitty backend and show custom distro logo
-[[ $TERM = "xterm-kitty" ]] && alias neofetch='neofetch --color_blocks off --kitty archlogo.png'
-
-# if we use urxvt use w3m backend and show custom distro logo
-[[ $TERM = "rxvt-256color" ]] && alias neofetch='neofetch --color_blocks off --w3m archlogo.png'
-
-# replace ls with exa
-alias ls='exa --icons --group-directories-first'
-
-# show ANSI color escapes and avoid line wrapping
-alias less='less -RS'
-
-# when I type too fast
-alias vmi='vim'
-
-# force kill a process
-alias force-kill='killall -9 $1'
-
-# rot13 encryption
-alias rot13='tr a-zA-Z n-za-mN-ZA-M'
-
 # use neovim instead of vim if nvim is installed
-[[ -f "/usr/bin/nvim" ]] && alias vim="nvim" 
+[ $(which nvim) ] && alias vim="nvim" && alias vmi="nvim" || alias vmi = "vim"
 
-# make programs verbose
-alias cp="cp -v"
-alias mv="mv -v"
-alias rm="rm -v"
-alias ln="ln -v"
-alias rsync="rsync -v"
+# Video4Linux2 virtual webcam settings
+# snow particle effect
+alias fakecam-snow="gst-launch-1.0 -v videotestsrc pattern=snow ! "video/x-raw,width=640,height=480,framerate=15/1,format=YUY2" ! v4l2sink device=/dev/video2"
+# smpte effect
+alias fakecam-smpte="gst-launch-1.0 -v videotestsrc pattern=smpte horizontal-speed=1 ! "video/x-raw,width=1280,height=720,framerate=30/1,format=YUY2" ! v4l2sink device=/dev/video2"
+# show desktop capture
+alias fakecam-desktop="gst-launch-1.0 -v ximagesrc startx=1 starty=1 endx=320 endy=240 ! videoconvert ! "video/x-raw,format=YUY2" ! v4l2sink device=/dev/video2"
+# show video file
+alias fakecam-video-normal="ffmpeg -stream_loop -1 -re -i ~/Videos/chad.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2"
+alias fakecam-video-hartman="ffmpeg -stream_loop -1 -re -i ~/Videos/hartman.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2"
+alias fakecam-video-sunglasses="ffmpeg -stream_loop -1 -re -i ~/Videos/damn.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2"
+alias fakecam-video-ronnie="ffmpeg -stream_loop -1 -re -i ~/Videos/ronnie.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2"
+# check out https://github.com/umlaeute/v4l2loopback/wiki/GStreamer for more
+
+# ranger aliases
+alias dsk="ranger ~/Desktop"
+alias sts="ranger ~/.local/bin"
+alias docs="ranger ~/Documents"
+alias pics="ranger ~/Pictures"
+alias scrs="ranger ~/.config/scripts"
+alias vids="ranger ~/Videos"
+alias files="ranger ."
+alias songs="ranger ~/Music"
+alias trash="ranger ~/.local/share/Trash/files"
+alias walls="ranger ~/wallpapers"
+alias browse="ranger ."
+alias videos="ranger ~/Videos"
+alias desktop="ranger ~/Desktop"
+alias documents="ranger ~/Documents"
+alias downloads="ranger ~/Downloads"
+
