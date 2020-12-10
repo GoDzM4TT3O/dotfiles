@@ -98,7 +98,10 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 # export LANG=en_US.UTF-8
 
 # Preferred editor 
-[ $(which nvim) ] && export EDITOR='nvim' || [ $(which vim) ] && export EDITOR='vim'
+[ $(which nvim) ] &&
+	export EDITOR='nvim' ||
+[ $(which vim) ] ||
+		export EDITOR='vim'
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
