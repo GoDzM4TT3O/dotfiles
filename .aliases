@@ -1,21 +1,14 @@
-# make programs verbose
-alias cp="cp -v"
-alias ln="ln -v"
-alias mv="mv -v"
-alias rm="rm -v"
-alias rsync="rsync -v"
+# use doas instead of sudo
+[ $(which doas) ] && alias sudo="doas"
 
 # replace ls with exa, if exa is installed
 [ $(which exa) ] && alias ls='exa --icons --group-directories-first --color=always' || alias ls="ls --group-directories-first --color=always"
 
-# when ls is mistyped, show sl
-alias LS="sl -alc"
+# use neovim instead of vim if nvim is installed
+[ $(which nvim) ] && alias vim="nvim" && alias vmi="nvim" || alias vmi = "vim"
 
-# when ls is mistyped, show sl
-alias sl="sl -alc"
-
-# add color support to dir
-alias dir='dir --color=always'
+# rename trans to translate
+[ $(which trans) ] && alias translate='trans'
 
 # usage: tts "your text goes here"
 # if you have some text in a foreign language, you can add the following to your text:
@@ -23,72 +16,57 @@ alias dir='dir --color=always'
 # uses mpv. change it to vlc if you'd like to use vlc
 [ $(which trans) ] && alias tts="echo $@ | trans -speak -player mpv -no-translate"
 
-# show ANSI color escapes and avoid line wrapping
-alias less='less -RS'
+# make programs verbose
+alias \
+	cp="cp -v" \
+	ln="ln -v" \
+	mv="mv -v" \
+	rm="rm -v" \
+	rsync="rsync -v" \
+	su="su -l" \
+	LS="sl -alc" \
+	sl="sl -alc" \
+	less='less -RS'
 
-# add color support to grep
-alias grep='grep --color=auto'
+# add color support to grep and others
+alias \
+	grep='grep --color=auto' \
+	vdir='vdir --color=always' \
+	egrep='egrep --color=always' \
+	fgrep='fgrep --color=always'
+	dir='dir --color=always' \
+	neofetch='neofetch --color_blocks off'
 
-# use doas instead of sudo
-[ $(which doas) ] && alias sudo="doas"
-
-# add color support to vdir
-alias vdir='vdir --color=always'
-
-# connect to wifi (I use the Arch Wiki's wpa_supplicant config)
-alias wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0'
-
-# add color support to egrep
-alias egrep='egrep --color=always'
-
-# add color support to fgrep
-alias fgrep='fgrep --color=always'
-
-# encrypt/decrypt rot13 text
-alias rot13='tr a-zA-Z n-za-mN-ZA-M'
-
-# don't show distro logo when running neofetch
-alias neofetch='neofetch --color_blocks off'
-
-# rename trans to translate
-[ $(which trans) ] && alias translate='trans'
-
-# update-grub alias (not present in arch linux by default)
-# usually these commands are run after a kernel upgrade
-# just to be sure, I'll run them too
-alias update-grub='sudo mkinitcpio -P; sudo grub-mkconfig -o /boot/grub/grub.cfg'
-
-# use neovim instead of vim if nvim is installed
-[ $(which nvim) ] && alias vim="nvim" && alias vmi="nvim" || alias vmi = "vim"
+# miscellaneous
+alias \
+	rot13='tr a-zA-Z n-za-mN-ZA-M' \
+	update-grub='sudo mkinitcpio -P; sudo grub-mkconfig -o /boot/grub/grub.cfg' \
+	wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0' \
 
 # Video4Linux2 virtual webcam settings
-# snow particle effect
-alias fakecam-snow="gst-launch-1.0 -v videotestsrc pattern=snow ! "video/x-raw,width=640,height=480,framerate=15/1,format=YUY2" ! v4l2sink device=/dev/video2"
-# smpte effect
-alias fakecam-smpte="gst-launch-1.0 -v videotestsrc pattern=smpte horizontal-speed=1 ! "video/x-raw,width=1280,height=720,framerate=30/1,format=YUY2" ! v4l2sink device=/dev/video2"
-# show desktop capture
-alias fakecam-desktop="gst-launch-1.0 -v ximagesrc startx=1 starty=1 endx=320 endy=240 ! videoconvert ! "video/x-raw,format=YUY2" ! v4l2sink device=/dev/video2"
-# show video file
-alias fakecam-video-normal="ffmpeg -stream_loop -1 -re -i ~/Videos/chad.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2"
-alias fakecam-video-hartman="ffmpeg -stream_loop -1 -re -i ~/Videos/hartman.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2"
-alias fakecam-video-sunglasses="ffmpeg -stream_loop -1 -re -i ~/Videos/damn.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2"
-alias fakecam-video-ronnie="ffmpeg -stream_loop -1 -re -i ~/Videos/ronnie.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2"
 # check out https://github.com/umlaeute/v4l2loopback/wiki/GStreamer for more
+alias \
+	fakecam-snow='gst-launch-1.0 -v videotestsrc pattern=snow ! "video/x-raw,width=640,height=480,framerate=15/1,format=YUY2" ! v4l2sink device=/dev/video2' \
+	fakecam-smpte='gst-launch-1.0 -v videotestsrc pattern=smpte horizontal-speed=1 ! "video/x-raw,width=1280,height=720,framerate=30/1,format=YUY2" ! v4l2sink device=/dev/video2' \
+	fakecam-desktop="gst-launch-1.0 -v ximagesrc startx=1 starty=1 endx=320 endy=240 ! videoconvert ! "video/x-raw,format=YUY2" ! v4l2sink device=/dev/video2" \
+	fakecam-video="ffmpeg -stream_loop -1 -re -i ~/Videos/video.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2" \
 
 # ranger aliases
-alias dsk="ranger ~/Desktop"
-alias sts="ranger ~/.local/bin"
-alias docs="ranger ~/Documents"
-alias pics="ranger ~/Pictures"
-alias scrs="ranger ~/.config/scripts"
-alias vids="ranger ~/Videos"
-alias files="ranger ."
-alias songs="ranger ~/Music"
-alias trash="ranger ~/.local/share/Trash/files"
-alias walls="ranger ~/wallpapers"
-alias browse="ranger ."
-alias videos="ranger ~/Videos"
-alias desktop="ranger ~/Desktop"
-alias documents="ranger ~/Documents"
-alias downloads="ranger ~/Downloads"
-
+alias \
+	dsk="ranger ~/Desktop" \
+	shr="ranger ~/Android" \
+	sts="ranger ~/.local/bin" \
+	docs="ranger ~/Documents" \
+	pics="ranger ~/Pictures" \
+	scrs="ranger ~/.config/scripts" \
+	sync="ranger ~/Android" \
+	vids="ranger ~/Videos" \
+	files="ranger ." \
+	trash="ranger ~/.local/share/Trash/files" \
+	walls="ranger ~/wallpapers" \
+	browse="ranger ." \
+	videos="ranger ~/Videos" \
+	desktop="ranger ~/Desktop" \
+	torrents="ranger ~/Downloads/Torrents" \
+	documents="ranger ~/Documents" \
+	downloads="ranger ~/Downloads"
