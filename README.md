@@ -1,8 +1,8 @@
 # GoDzM4TT3O's dotfiles
 ## Sections:
 - [Sections](#sections)
-+ [Previews](#previews)
-	- [st](#st)
+- [Cloning](#cloning)
+- [Previews](#previews)
 - [Help](#help)
 - [Others (not included)](#others-not-included)
 	- [Firefox Addons](#firefox-addons)
@@ -35,36 +35,39 @@
 		- [Webcam](#webcam)
 - [Installation](#installation)
 	- [Copying the configurations](#copying-configurations)
-	- [Modifying the configurations](#modifying-configurations)
 
 ***
 
+## Cloning
+NOTE! Please clone this repository with the following command: `git clone --recurse-submodules https://github.com/GoDzM4TT3O/dotfiles`
+
+The directory `dwm` is a submodule that points to [GoDzM4TT3O/dwm](https://github.com/GoDzM4TT3O/dwm) and might not get downloaded when cloning normally!
+
 ## Previews
 
-### st
-(suckless terminal)
+See [GoDzM4TT3O/dwm#previews](https://github.com/godzm4tt3o/dwm#previews) for more pictures.
 
 Tiling st window with zsh prompt
-![st-tile](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-tile.png)
+![st-tile](https://raw.githubusercontent.com/GoDzM4TT3O/dwm/master/Previews/preview-st.png)
 
-Floating st window with zsh prompt
-![st-float](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-floating.png)
+Tiling st window with floating program
+![tile-float](https://raw.githubusercontent.com/GoDzM4TT3O/dwm/master/Previews/preview-floating-win.png)
 
-Two st windows (programs: `htop` and `ranger`)
-![st-two](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-twow.png)
+Tiling layout (programs: `ranger`, `nvim`, and `tty-clock`)
+![layout-tile](https://raw.githubusercontent.com/GoDzM4TT3O/dwm/master/Previews/layouts-tile.png)
 
-Three st windows (programs: `neofetch`, `ranger` and `htop`)
-![st-three](https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/previews/st-threew.png)
+CenteredMaster layout (programs: `neofetch`, `ranger` and `htop`)
+![layout-centeredmaster](https://raw.githubusercontent.com/GoDzM4TT3O/dwm/master/Previews/layouts-centeredmaster.png)
 
 ***
 
 ## Help
-Have any issues with dwm? Check the [`man` page](https://github.com/GoDzM4TT3O/dotfiles/blob/master/dwm/dwm.1) or read the [source code](https://github.com/GoDzM4TT3O/dotfiles/blob/master/dwm/config.h), it contains all of the custom keybindings that I use with dwm.
+Have any issues with dwm? Check the [`man` page](https://github.com/GoDzM4TT3O/dwm/blob/master/dwm.1) or read the [source code](https://github.com/GoDzM4TT3O/dwm/blob/master/config.h), it contains all of the custom keybindings that I use with dwm.
 
-Also, check out [GoDzM4TT3O/dwm](https://github.com/GoDzM4TT3O/dwm), this is the main repository for my build of dwm & dwmblocks. If you need any help, go there.
+NOTE: [GoDzM4TT3O/dwm](https://github.com/GoDzM4TT3O/dwm) is the main repository for my build of dwm & dwmblocks. If you need any help, go there.
 
 ## Others (not included)
-- Grub theme: [Arch Silence](https://github.com/fghibellini/arch-silence); I previously used [Slaze](https://github.com/vinceliuice/grub2-themes)
+- Grub theme: [Arch Silence](https://github.com/fghibellini/arch-silence)
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
 - Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - Simply mount android: [`simple-mtpfs`](https://wiki.archlinux.org/index.php/Media_Transfer_Protocol#simple-mtpfs)
@@ -72,13 +75,18 @@ Also, check out [GoDzM4TT3O/dwm](https://github.com/GoDzM4TT3O/dwm), this is the
 - Luke Smith's [domain blocklist](https://github.com/LukeSmithxyz/etc)
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
-You can now install everything in this list by simply running the [archinst](https://github.com/GoDzM4TT3O/dotfiles/blob/master/archinst.sh) script! Run it with the following commands:
+You can now install everything in this list by simply running the [archinst](https://github.com/GoDzM4TT3O/dotfiles/blob/master/archinst.sh) install scripts! Run one of them with the following commands:
 
 ```bash
-cd $HOME
+# Systemd
 wget https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/archinst.sh &&
 chmod +x archinst.sh &&
 sh archinst.sh
+
+# OpenRC
+wget https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/archinst-openrc.sh &&
+chmod +x archinst-openrc.sh &&
+sh archinst-openrc.sh
 ```
 
 ### Firefox addons
@@ -98,7 +106,7 @@ Here's a list of the firefox addons I use:
 - Universal Bypass
 
 ## Terminal
-- Terminal: `st` (Luke's build)
+- Terminal: `st` (Luke's build with my keybindings (not included))
 - Terminal file manager: `ranger`
 - Get system info: `neofetch`
 
@@ -154,9 +162,12 @@ Custom theme installation.
 
 - Arch Linux/Manjaro: `yay -S saluto-lightdm-theme-dwm`
 
-Enabling LightDM: `sudo systemctl enable lightdm.service` Or `sudo rc-update add xdm default`
++ Enable LightDM:
+	- SystemD:	`sudo systemctl enable lightdm.service`
+	- OpenRC:	`sudo rc-update add xdm default`
 
-Make sure you also disable other display managers:
+Make sure you also disable other display managers (SystemD):
+
 ```
 sudo systemctl disable gdm
 sudo systemctl disable sddm
@@ -178,6 +189,8 @@ cd slock &&
 sudo make clean install
 ```
 
+Another build of mine, called `slock-red` is included. This build has its background color always set to red.
+
 ***
 
 ## Extras
@@ -186,11 +199,11 @@ sudo make clean install
 
 ### Text editor
 - Text editor: `nvim` (neovim)
-- Vim color scheme: dogrun
-- Vim package manager: vim-plug
-- Vim status bar: lightline.vim
+- Vim color scheme: `dogrun`
+- Vim package manager: `vim-plug`
+- Vim status bar: `lightline.vim`
 
-How to configure `vim` properly:
+How to configure `nvim` properly:
 + Open NeoVim: `nvim`
 + Run `:PlugInstall` inside NeoVim
 + After this, everything should be working properly.
@@ -292,5 +305,5 @@ WARNING: THIS WILL REPLACE YOUR EXISTING CONFIGURATIONS!!!
 If you don't want to replace your existing configurations, please manually edit your files!
 
 ```bash
-cd ~; git clone https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} ~ && cp -r {wallpaper*,archlogo.txt,italiarch.png} ~ 
+cd ~; git clone --recurse-submodules https://github.com/GoDzM4TT3O/dotfiles && cd dotfiles && cp -r .{config,vim*,z*,x*,X*,alias*,p10k.zsh,local} $HOME && cp -r dwm $HOME
 ```
