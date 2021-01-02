@@ -1,3 +1,3 @@
 [submodule "dwm"]
 	path = dwm
-	url = git@github.com:GoDzM4TT3O/dwm.git
+	url = https://github.com/GoDzM4TT3O/dwm.git
