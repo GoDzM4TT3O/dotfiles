@@ -37,14 +37,13 @@ sudo pacman -Syu &&
 
 # Install necessary packages
 printf '\e[1;4m Installing necessary packages...\e[0m\n'
-sudo pacman -S --needed base-devel i3-gaps dmenu dunst i3lock i3status &&
+sudo pacman -S --needed base-devel dmenu dunst &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install necessary packages!\e[0m\n' 
 
 # Install additional packages 
 printf '\e[1;4m Installing additional packages...\e[0m\n'
-sudo pacman -S cronie python pandoc zip throttled htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot ttf-font-awesome ranger neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake neovim &&
-	sudo rc-update add lenovo_fix default &&
+sudo pacman -S cronie python pandoc zip htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot ranger neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake neovim &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install additional packages!\e[0m\n' 
 
@@ -83,10 +82,9 @@ curl -LO "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install
 
 # Install xautolock and LightDM 
 printf '\e[1;4m Installing xautolock and LightDM...\e[0m\n'
-sudo pacman -S --needed xautolock lightdm displaymanager-openrc &&
-	yay -S lightdm-webkit2-greeter &&
-	sed -i 's/DISPLAYMANAGER="[a-zA-Z]*"/DISPLAYMANAGER="lightdm"/' /etc/conf.d/xdm &&
-	sudo rc-update add xdm default &&
+sudo pacman -S --needed xautolock lightdm lightdm-openrc &&
+	yay -S lightdm-webkit2-greeter saluto-lightdm-theme-dwm &&
+	sudo rc-update add lightdm default &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install xautolock or lightdm!\e[0m\n' 
 
@@ -103,19 +101,6 @@ printf '\e[1;4m Installing networkmanager-dmenu...\e[0m\n'
 yay -S --norebuild --noredownload networkmanager-dmenu-git &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install networkmanager-dmenu!\e[0m\n' 
-
-# Install slock 
-printf '\e[1;4m Installing slock...\e[0m\n'
-cd $HOME/dotfiles/slock &&
-	sudo make clean install &&
-	printf '\e[1;42m Success!\e[0m\n' ||
-	printf '\e[1;41m Error! Could not install slock!\e[0m\n' 
-
-# Install polybar 
-printf '\e[1;4m Installing polybar...\e[0m\n'
-yay -S --norebuild --noredownload polybar &&
-	printf '\e[1;42m Success!\e[0m\n' ||
-	printf '\e[1;41m Error! Could not install polybar!\e[0m\n' 
 
 # Install Powerlevel10k 
 printf '\e[1;4m Installing Powerlevel10k...\e[0m\n'
@@ -137,7 +122,7 @@ yay -S --norebuild --noredownload st-luke-git &&
 
 # Install required fonts 
 printf '\e[1;4m Installing required fonts...\e[0m\n'
-yay -S --norebuild --noredownload unicode-emoji libxft-bgra-git ttf-font-awesome ttf-meslo-nerd-font-powerlevel10k powerline-fonts ttf-joypixels otf-openmoji ttf-symbola &&
+yay -S --norebuild --noredownload unicode-emoji libxft-bgra-git ttf-meslo-nerd-font-powerlevel10k powerline-fonts ttf-joypixels ttf-linux-libertine &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install the required fonts!\e[0m\n' 
 
@@ -179,12 +164,6 @@ printf '\e[1;4m Installing cpupower...\e[0m\n' &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install cpupower!\e[0m\n'
 
-# Install saluto-lightdm-theme-dwm
-printf '\e[1;4m Installing saluto-lightdm-theme-dwm...\e[0m\n' &&
-	yay -S saluto-lightdm-theme-dwm &&
-	printf '\e[1;42m Success!\e[0m\n' ||
-	printf '\e[1;41m Error! Could not install saluto-lightdm-theme-dwm!\e[0m\n'
-
 # Copy configurations 
 printf '\e[1;4m Copying configurations...\e[0m\n'
 cd $HOME
@@ -204,6 +183,13 @@ cd $HOME/dotfiles &&
 	sudo make clean install &&
 	printf '\e[1;42m Success!\[0m\n' ||
 	printf '\e[1;41m Error! Could install dwm and/or dwmblocks!\e[0m\n' 
+
+# Install slock 
+printf '\e[1;4m Installing slock...\e[0m\n'
+cd $HOME/dotfiles/slock &&
+	sudo make clean install &&
+	printf '\e[1;42m Success!\e[0m\n' ||
+	printf '\e[1;41m Error! Could not install slock!\e[0m\n' 
 
 # Successfully set up dotfiles
 printf "
