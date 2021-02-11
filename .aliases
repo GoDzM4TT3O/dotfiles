@@ -1,5 +1,5 @@
 # use doas instead of sudo
-[ $(which doas) ] && alias sudo="doas"
+[ $(which doas) ] && alias sudo="doas" && alias yay="yay --sudo doas"
 
 # replace ls with exa, if exa is installed
 [ $(which exa) ] && alias ls='exa --icons --group-directories-first --color=always' || alias ls="ls --group-directories-first --color=always"
@@ -35,13 +35,16 @@ alias \
 	egrep='egrep --color=always' \
 	fgrep='fgrep --color=always'
 	dir='dir --color=always' \
-	neofetch='neofetch --color_blocks off'
 
 # miscellaneous
 alias \
+	mpv-hi="mpv --vo=gpu --hwdec=vaapi --opengl-pbo --drm-draw-plane=overlay --drm-drmprime-video-plane=primary --drm-draw-surface-size=1920x1080" \
+	neofetch="neofetch --color_blocks off" \
+	poweroff='doas /usr/bin/poweroff' \
+	reboot='doas /usr/bin/reboot' \
 	rot13='tr a-zA-Z n-za-mN-ZA-M' \
+	surf="tabbed -c surf -BNPTeg & disown" \
 	update-grub='sudo mkinitcpio -P; sudo grub-mkconfig -o /boot/grub/grub.cfg' \
-	wifi='sudo wpa_supplicant -Bi wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf; sudo dhcpcd wlan0' \
 
 # Video4Linux2 virtual webcam settings
 # check out https://github.com/umlaeute/v4l2loopback/wiki/GStreamer for more
@@ -49,17 +52,22 @@ alias \
 	fakecam-snow='gst-launch-1.0 -v videotestsrc pattern=snow ! "video/x-raw,width=640,height=480,framerate=15/1,format=YUY2" ! v4l2sink device=/dev/video2' \
 	fakecam-smpte='gst-launch-1.0 -v videotestsrc pattern=smpte horizontal-speed=1 ! "video/x-raw,width=1280,height=720,framerate=30/1,format=YUY2" ! v4l2sink device=/dev/video2' \
 	fakecam-desktop="gst-launch-1.0 -v ximagesrc startx=1 starty=1 endx=320 endy=240 ! videoconvert ! "video/x-raw,format=YUY2" ! v4l2sink device=/dev/video2" \
-	fakecam-video="ffmpeg -stream_loop -1 -re -i ~/Videos/video.mp4 -vf hvflip -map 0:v -vf format=yuv420p -f v4l2 /dev/video2" \
+	webcam-inc-contrast="v4l2-ctl --set-ctrl contrast=35" \
+	webcam-dec-contrast="v4l2-ctl --set-ctrl contrast=0" \
+	webcam-inc-brightness="v4l2-ctl --set-ctrl brightness=85" \
+	webcam-dec-brightness="v4l2-ctl --set-ctrl brightness=0" \
+	webcam-inc-saturation="v4l2-ctl --set-ctrl saturation=80" \
+	webcam-dec-saturation="v4l2-ctl --set-ctrl saturation=0" \
+	webcam-inc-sharpness="v4l2-ctl --set-ctrl sharpness=7" \
+	webcam-dec-sharpness="v4l2-ctl --set-ctrl sharpness=2" \
 
 # ranger aliases
 alias \
 	dsk="ranger ~/Desktop" \
-	shr="ranger ~/Android" \
 	sts="ranger ~/.local/bin" \
 	docs="ranger ~/Documents" \
 	pics="ranger ~/Pictures" \
 	scrs="ranger ~/.config/scripts" \
-	sync="ranger ~/Android" \
 	vids="ranger ~/Videos" \
 	files="ranger ." \
 	trash="ranger ~/.local/share/Trash/files" \
