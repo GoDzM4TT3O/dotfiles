@@ -43,7 +43,7 @@ sudo pacman -S --needed base-devel dmenu dunst &&
 
 # Install additional packages 
 printf '\e[1;4m Installing additional packages...\e[0m\n'
-sudo pacman -S cronie python pandoc zip htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot ranger neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake neovim &&
+sudo pacman -S cronie python zip htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi noto-fonts xsettingsd lxappearance scrot ranger neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf sxiv ncurses fftw cmake neovim &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install additional packages!\e[0m\n' 
 
