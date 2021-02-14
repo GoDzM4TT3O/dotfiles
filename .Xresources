@@ -43,7 +43,7 @@
 ! Font configuration
 ! ------------------------------------------------------------------------------
 
-*.font:	Liberation Mono:pixelsize=14:antialias=true:autohint=true;
+*.font:	Liberation Mono:pixelsize=14:antialias=true:autohint=true:hintstyle=full;
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration
@@ -51,7 +51,7 @@
 
 Xft.antialias: 1
 Xft.autohint: 1
-Xft.dpi: 90
+Xft.dpi: 95
 Xft.hinting: 1
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault

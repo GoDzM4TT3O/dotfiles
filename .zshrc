@@ -10,23 +10,13 @@ fi
 export PATH=$HOME/.local/bin:$HOME/.config/scripts:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="/home/$(whoami)/.oh-my-zsh"
 
 # extended pattern matching features
 setopt extendedglob
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="agnoster"
+# Set name of the theme to load
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -35,17 +25,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=30
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 DISABLE_LS_COLORS="false"
@@ -78,9 +62,6 @@ HISTSIZE=1000
 # Zsh max history lines
 SAVEHIST=1000
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -90,15 +71,8 @@ plugins=(adb archlinux colored-man-pages fast-syntax-highlighting gitfast safe-p
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
 autoload -Uz promptinit
 promptinit
-
-# Command not found
-source /usr/share/doc/pkgfile/command-not-found.zsh
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # Correctly set language variables
 export LANG="en_US.UTF-8"
@@ -115,11 +89,14 @@ export LC_TELEPHONE="it_IT.UTF-8"
 export LC_MEASUREMENT="it_IT.UTF-8"
 export LC_IDENTIFICATION="it_IT.UTF-8"
 
-# Preferred editor 
-# If neovim is found, use it
-# Otherwise use vim
-[ $(which nvim) ] &&
-	export EDITOR='nvim' || export EDITOR='vim'
+# Use vim mode in the terminal
+# set -o vi
+
+# Command not found (Arch Linux; uses `pkgfile`)
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# Preferred editor: If neovim is found, use it; otherwise use vim
+[ $(which nvim) ] && export EDITOR='nvim' || export EDITOR='vim'
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -127,9 +104,31 @@ export ARCHFLAGS="-arch x86_64"
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# Compilation flags
+#-- Architecture
+export CARCH="x86_64"
+export CHOST="x86_64-pc-linux-gnu"
+#-- Compiler Flags (set to Haswell CPU for max performance)
+export CFLAGS=" -march=haswell -mtune=haswell -O3 -pipe -fno-plt "
+export CXXFLAGS=" -march=haswell -mtune=haswell -O3 -pipe -fno-plt "
+#-- Make Flags: change this for DistCC/SMP systems
+export MAKEFLAGS="-j2"
+
+# Set LD_PRELOAD to avoid warning messages
+export LD_PRELOAD=""
+
+# check if running in a TTY, and appropriately modify vim's color settings
+if [[ "$TERM" =~ "linux" ]]; then
+	sed -in 's/colorscheme dogrun/colorscheme monokai/;s/set termguicolors/set notermguicolors/' ~/.vimrc
+
+# we are running in a graphical terminal, so revert back to default settings
+else
+	sed -in 's/colorscheme monokai/colorscheme dogrun/;s/set notermguicolors/set termguicolors/' ~/.vimrc
+fi
+
 # encode a string in a qr code
 qrencode() {
-	curl qrenco.de/$1
+	curl "qrenco.de/$1"
 }
 
 # convert any supported file to mp4
@@ -145,8 +144,7 @@ rm-apk() {
 
 # create a directory and cd into it
 mkcd() {
-	mkdir "$1"
-	cd "$1"
+	mkdir "$1" && cd "$1"
 }
 
 # empty trash
@@ -181,29 +179,7 @@ complete -o default -F _pip_completion pip
 # fzf for reverse history searching
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Compilation flags
-#-- Architecture
-CARCH="x86_64"
-CHOST="x86_64-pc-linux-gnu"
-#-- Compiler Flags (set to Haswell CPU for max performance)
-CFLAGS=" -march=haswell -mtune=haswell -O3 -pipe -fno-plt "
-CXXFLAGS=" -march=haswell -mtune=haswell -O3 -pipe -fno-plt "
-#-- Make Flags: change this for DistCC/SMP systems
-MAKEFLAGS="-j2"
-
 # Add aliases
 source ~/.aliases
-
-# Use vim mode in the terminal
-# set -o vi
-
-# check if running in a TTY, and appropriately modify vim's color settings
-if [[ "$TERM" =~ "linux" ]]; then
-	sed -in 's/colorscheme dogrun/colorscheme monokai/;s/set termguicolors/set notermguicolors/' ~/.vimrc
-
-# we are running in a graphical terminal, so revert back to default settings
-else
-	sed -in 's/colorscheme monokai/colorscheme dogrun/;s/set notermguicolors/set termguicolors/' ~/.vimrc
-fi
 
 echo "Successfully started zsh"
