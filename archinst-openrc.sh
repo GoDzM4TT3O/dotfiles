@@ -59,7 +59,7 @@ $root pacman -S --needed base-devel dmenu dunst &&
 
 # Install additional packages 
 printf '\e[1;4m Installing additional packages...\e[0m\n'
-$root pacman -S cronie python zip htop copyq git fortune-mod picom hsetroot exa zsh xsel rofi xsettingsd lxappearance scrot ranger neofetch python-pip python3 ffmpegthumbnailer poppler imagemagick xdotool fzf ncurses fftw cmake neovim &&
+$root pacman -S cmake copyq cronie exa ffmpegthumbnailer fftw fortune-mod fzf git hsetroot htop imagemagick lxappearance mlocate ncurses neofetch neovim picom poppler python python-pip python3 ranger rofi scrot xdotool xsel xsettingsd zip zsh &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install additional packages!\e[0m\n' 
 
@@ -78,12 +78,10 @@ printf '\e[1;4m Installing ranger configuration dependencies...\e[0m\n'
 cd $dotfilesdir
 $root pip3 install --upgrade ueberzug pillow &&
 	git clone https://github.com/marianosimone/epub-thumbnailer &&
-	cd epub-thumbnailer &&
-	$root python install.py install &&
+	cd epub-thumbnailer && $root python install.py install &&
 	cd $dotfilesdir &&
 	git clone https://github.com/sdushantha/fontpreview &&
-	cd fontpreview &&
-	$root make install &&
+	cd fontpreview && $root make clean install &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf "\e[1;41m Error! Could not install vifm\'s configurations or their dependencies!\e[0m\n" 
 
