@@ -21,11 +21,10 @@ pkgbuilddir="$HOME/Documents/dotfiles/pkgbuilddir"
 
 # If the directories above do not exist, create them,
 [ ! -d "$dotfilesdir" ] && mkdir -p "$dotfilesdir"
-[ ! -d "$pkgbuilddir" ] && mkdir -p "$pkgbuilddir"
 
 # Clone my dotfiles & PKGBUILDS repository there.
-git clone https://github.com/GoDzM4TT3O/dotfiles "$dotfilesdir/dotfiles"
-git clone https://github.com/GoDzM4TT3O/pkgbuilds "$pkgbuilddir"
+[ ! -d "$dotfilesdir/dotfiles" ] && git clone https://github.com/GoDzM4TT3O/dotfiles "$dotfilesdir/dotfiles"
+[ ! -d "$pkgbuilddir" ] && git clone https://github.com/GoDzM4TT3O/pkgbuilds "$pkgbuilddir"
 
 printf "
     _             _     ___           _    

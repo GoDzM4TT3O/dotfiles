@@ -153,3 +153,12 @@ Every 30 minutes the command `updatedb` will run, so that the next time you run 
 
 ## Installation
 See the Arch install script, and base yourself off of that.
+
+If you have an Arch-based distro that uses OpenRC, run the following commands:
+```bash
+mkdir -p ~/Documents/dotfiles
+cd ~/Documents/dotfiles
+git clone --recurse-submodules https://github.com/GoDzM4TT3O/dotfiles
+cd dotfiles
+./archinst-openrc.sh
+```
