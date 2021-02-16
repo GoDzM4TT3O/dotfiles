@@ -1,4 +1,4 @@
-# GoDzM4TT3O's dotfiles
+# saloniamatteo's dotfiles
 ## Sections:
 - [Cloning](#cloning)
 - [Previews](#previews)
@@ -17,32 +17,32 @@
 ***
 
 ## Cloning
-NOTE! Please clone this repository with the following command: `git clone --recurse-submodules https://github.com/GoDzM4TT3O/dotfiles`
+NOTE! Please clone this repository with the following command: `git clone --recurse-submodules https://github.com/saloniamatteo/dotfiles`
 
-The directory `dwm` is a submodule that points to [GoDzM4TT3O/dwm](https://github.com/GoDzM4TT3O/dwm) and might not get downloaded when cloning normally!
+The directory `dwm` is a submodule that points to [saloniamatteo/dwm](https://github.com/saloniamatteo/dwm) and might not get downloaded when cloning normally!
 
 ## Previews
 
-See [GoDzM4TT3O/dwm#previews](https://github.com/godzm4tt3o/dwm#previews) for more pictures.
+See [saloniamatteo/dwm#previews](https://github.com/godzm4tt3o/dwm#previews) for more pictures.
 
 Tiling st window with zsh prompt
-![st-tile](https://raw.githubusercontent.com/GoDzM4TT3O/dwm/master/Previews/preview-st.png)
+![st-tile](https://raw.githubusercontent.com/saloniamatteo/dwm/master/Previews/preview-st.png)
 
 Tiling st window with floating program
-![tile-float](https://raw.githubusercontent.com/GoDzM4TT3O/dwm/master/Previews/preview-floating-win.png)
+![tile-float](https://raw.githubusercontent.com/saloniamatteo/dwm/master/Previews/preview-floating-win.png)
 
 Tiling layout (programs: `ranger`, `nvim`, and `tty-clock`)
-![layout-tile](https://raw.githubusercontent.com/GoDzM4TT3O/dwm/master/Previews/layouts-tile.png)
+![layout-tile](https://raw.githubusercontent.com/saloniamatteo/dwm/master/Previews/layouts-tile.png)
 
 CenteredMaster layout (programs: `neofetch`, `ranger` and `htop`)
-![layout-centeredmaster](https://raw.githubusercontent.com/GoDzM4TT3O/dwm/master/Previews/layouts-centeredmaster.png)
+![layout-centeredmaster](https://raw.githubusercontent.com/saloniamatteo/dwm/master/Previews/layouts-centeredmaster.png)
 
 ***
 
 ## Help
-Have any issues with dwm? Check the [`man` page](https://github.com/GoDzM4TT3O/dwm/blob/master/dwm.1) or read the [source code](https://github.com/GoDzM4TT3O/dwm/blob/master/config.h), it contains all of the custom keybindings that I use with dwm.
+Have any issues with dwm? Check the [`man` page](https://github.com/saloniamatteo/dwm/blob/master/dwm.1) or read the [source code](https://github.com/saloniamatteo/dwm/blob/master/config.h), it contains all of the custom keybindings that I use with dwm.
 
-NOTE: [GoDzM4TT3O/dwm](https://github.com/GoDzM4TT3O/dwm) is the main repository for my build of dwm & dwmblocks. If you need any help, go there.
+NOTE: [saloniamatteo/dwm](https://github.com/saloniamatteo/dwm) is the main repository for my build of dwm & dwmblocks. If you need any help, go there.
 
 ## Others (not included)
 - Grub theme: [Artix Silence](https://aur.archlinux.org/packages/artix-silence-grub-theme-git)
@@ -53,11 +53,11 @@ NOTE: [GoDzM4TT3O/dwm](https://github.com/GoDzM4TT3O/dwm) is the main repository
 - Luke Smith's [domain blocklist](https://github.com/LukeSmithxyz/etc)
 
 NOTE: If you want to change graphical settings, such as the cursor theme or the icon theme, use `lxappearance`.
-You can now install everything in this list by simply running the [archinst](https://github.com/GoDzM4TT3O/dotfiles/blob/master/archinst.sh) install scripts! Run one of them with the following commands:
+You can now install everything in this list by simply running the [archinst](https://github.com/saloniamatteo/dotfiles/blob/master/archinst.sh) install scripts! Run one of them with the following commands:
 
 ```bash
 # OpenRC only!
-wget https://raw.githubusercontent.com/GoDzM4TT3O/dotfiles/master/archinst-openrc.sh &&
+wget https://raw.githubusercontent.com/saloniamatteo/dotfiles/master/archinst-openrc.sh &&
 chmod +x archinst-openrc.sh &&
 sh archinst-openrc.sh
 ```
@@ -79,7 +79,7 @@ Here's a list of the LibreWolf (Firefox) addons I use:
 - Universal Bypass
 
 ## Terminal
-- Terminal: `st` (Luke's build with my keybindings ([included](https://github.com/GoDzM4TT3O/pkgbuilds/tree/master/st-matteo)))
+- Terminal: `st` (Luke's build with my keybindings ([included](https://github.com/saloniamatteo/pkgbuilds/tree/master/st-matteo)))
 - Terminal file manager: `ranger`
 - Get system info: `neofetch`
 
@@ -158,7 +158,7 @@ If you have an Arch-based distro that uses OpenRC, run the following commands:
 ```bash
 mkdir -p ~/Documents/dotfiles
 cd ~/Documents/dotfiles
-git clone --recurse-submodules https://github.com/GoDzM4TT3O/dotfiles
+git clone --recurse-submodules https://github.com/saloniamatteo/dotfiles
 cd dotfiles
 ./archinst-openrc.sh
 ```

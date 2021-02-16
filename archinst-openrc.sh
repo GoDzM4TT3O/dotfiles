@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# GoDzM4TT3O's dotfiles
+# saloniamatteo's dotfiles
 # This installer works on distributions based on Arch Linux
 # NOTE: This is the OpenRC version. If you use Arch/Manjaro, DON'T use this script!
 # You shouldn't run this as root.
@@ -23,8 +23,8 @@ pkgbuilddir="$HOME/Documents/dotfiles/pkgbuilddir"
 [ ! -d "$dotfilesdir" ] && mkdir -p "$dotfilesdir"
 
 # Clone my dotfiles & PKGBUILDS repository there.
-[ ! -d "$dotfilesdir/dotfiles" ] && git clone https://github.com/GoDzM4TT3O/dotfiles "$dotfilesdir/dotfiles"
-[ ! -d "$pkgbuilddir" ] && git clone https://github.com/GoDzM4TT3O/pkgbuilds "$pkgbuilddir"
+[ ! -d "$dotfilesdir/dotfiles" ] && git clone https://github.com/saloniamatteo/dotfiles "$dotfilesdir/dotfiles"
+[ ! -d "$pkgbuilddir" ] && git clone https://github.com/saloniamatteo/pkgbuilds "$pkgbuilddir"
 
 printf "
     _             _     ___           _    
@@ -40,7 +40,7 @@ printf "
  \___/| .__/ \___|_| |_|_| \_\\\____| version (for Artix)
       |_|                           
 
-@ https://github.com/GoDzM4TT3O/dotfiles
+@ https://github.com/saloniamatteo/dotfiles
 Starting installation...
 "
 
@@ -204,7 +204,7 @@ printf "
   / _ \ | '__/ __| '_ \ | || '_ \/ __| __|
  / ___ \| | | (__| | | || || | | \__ \ |_
 /_/   \_\_|  \___|_| |_|___|_| |_|___/\__|
-@ https://github.com/GoDzM4TT3O/dotfiles
+@ https://github.com/saloniamatteo/dotfiles
 \e[1;42mThe installation finished without errors!\e[0m\n
 \e[1;40mDon't worry if Vim/Neovim spits out some errors the first time you open it, but remember to run ':PlugInstall', then ':UpdateRemotePlugins'!\e[0m\n
 \e[1;40mPlease add the following line to your crontab (by running 'crontab -e'):\n* * * * * DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/$UID ~/.config/scripts/bat-warn\e[0m\n
