@@ -1,4 +1,4 @@
-# saloniamatteo's dotfiles
+# Salonia Matteo's dotfiles
 ## Sections:
 - [Cloning](#cloning)
 - [Previews](#previews)
@@ -23,7 +23,7 @@ The directory `dwm` is a submodule that points to [saloniamatteo/dwm](https://gi
 
 ## Previews
 
-See [saloniamatteo/dwm#previews](https://github.com/godzm4tt3o/dwm#previews) for more pictures.
+See [saloniamatteo/dwm#previews](https://github.com/saloniamatteo/dwm#previews) for more pictures.
 
 Tiling st window with zsh prompt
 ![st-tile](https://raw.githubusercontent.com/saloniamatteo/dwm/master/Previews/preview-st.png)
