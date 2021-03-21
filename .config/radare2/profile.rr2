@@ -1,0 +1,3 @@
+#!/usr/bin/rarun2
+stdio=/dev/tty4
+stdout=/dev/tty4

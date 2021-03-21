@@ -1,0 +1,71 @@
+# ASSEMBLY
+# Show empty line after every basic block
+e asm.bb.line=true
+# Realign disassembly if a basic block starts in the middle of an instruction
+e asm.bb.middle=true
+# Show opcode description
+e asm.describe=true
+# Show function signature in disasm
+e asm.fcnsig=true
+# Highlight current line
+e asm.highlight=true
+# Show ASCII-art lines at disassembly
+e asm.lines=true
+# Set default disassembly syntax to intel
+e asm.syntax=intel
+# Use tabs in disassembly
+e asm.tabs=true
+
+# CONFIGURATION
+# Select default editor program
+e cfg.editor=nvim
+# Show tips at startup
+e cfg.fortunes=true
+# Show descriptions in command completion
+e cfg.newtab=true
+
+# COLORS
+# Set color scheme to behelit
+eco behelit
+
+# COMMANDS
+# xterm command to spawn with V@
+e cmd.xterm=st
+
+# DEBUGGING
+# Break on entrypoint
+e dbg.bep=loader
+# Follow program counter when debugging
+e dbg.follow=true
+
+# GRAPHS
+# Show comments at right
+#e graph.cmtright=true
+# 0=no edges, 1=simple edges, 2=avoid collisions
+e graph.edges=2
+# Show true (t) and false (f) hints for conditional edges in graph
+e graph.hints=true
+
+# LINES
+# Enable absolute line numbers
+e lines.abs=true
+
+# SCREEN
+# Set color mode to 256 colors
+# 0=no colors; 1=16 colors; 2=256 colors; 3=16 million colors
+e scr.color=2
+# System program (or '..') to use when output exceeds screen boundaries
+e scr.pager=less
+# Use vi mode for input prompt
+e scr.prompt.vi=true
+# Show flagzone (fz) scrollbar in visual mode (0=no,1=right,2=top,3=bottom)
+e scr.scrollbar=1
+# Prettify Visual Mode
+e scr.utf8=true
+e scr.utf8.curvy=true
+
+# TIME
+# Date format (%Y-%m-%d %H:%M:%S %z)
+e time.fmt=%d-%m-%Y %H:%M:%S %z
+# Time zone, in hours relative to GMT: +2, -1,..
+e time.zone=+1
