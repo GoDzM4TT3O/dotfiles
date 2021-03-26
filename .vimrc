@@ -10,25 +10,21 @@
 set number
 " show menu auto-completion options
 set wildmenu
-" highlight the current line
-" cul = cursorline
+" highlight the current line (cul = cursorline)
 set cul
 " use fast terminal
 set ttyfast
 " redraw only when it is needed
 set lazyredraw
-filetype plugin indent on
 " enable syntax
 syntax on
 set laststatus=2
 set encoding=UTF-8
-" don't show the current mode
-" (it is shown in the status bar)
+" don't show the current mode (it is shown in the status bar)
 set noshowmode
 " show the top status bar
 set showtabline=2
 set ruler
-set cursorline
 " indentation
 set smartindent
 set autoindent
@@ -37,6 +33,41 @@ set wrap
 set linebreak
 " show matching opening/closing brackets
 set showmatch
+" enable mouse
+set mouse=a
+set go=a
+" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+set splitbelow splitright
+" }}}
+
+" OmniCompletion {{{
+" enable OmniCompletion
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
+set tags=../tags,tags
+set path+=.,../,include/,/usr/include/
+
+" configure menu behavior
+set completeopt=longest,menuone,preview
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? "\<C-n>" :
+			\ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+			\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+" Use CTRL+Space for omni-completion
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+			\ "\<lt>C-n>" :
+			\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+			\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+			\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+
+" Popum menu Highlight Group
+highlight Pmenu ctermbg=13 guibg=LightGray
+highlight PmenuSel ctermbg=7 guibg=DarkBlue guifg=White
+highlight PmenuSbar ctermbg=7 guibg=DarkGray
+highlight PmenuThumb guibg=Black
 " }}}
 
 " Search {{{
@@ -73,6 +104,12 @@ map <C-v> "+P
 " use gj and gk to go up and down a line visually
 noremap j gj
 noremap k gk
+
+" Split tabs
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 " }}}
 
 " Tabs {{{
@@ -86,8 +123,31 @@ noremap <C-p> :tabp<CR>
 noremap <C-x> :tabclose<CR>
 " }}}
 
-" Tab completion {{{
-imap <Tab> <C-n>
+" Goyo {{{
+" press <leader>f (\f) to toggle Goyo
+map <leader>f :Goyo 70% \| set linebreak<CR>
+" }}}
+
+" Set spell check to <leader>o (\o; orthography)
+map <leader>o :setlocal spell!<CR>
+
+" Cscope {{{
+" \fs: Find this C symbol
+nnoremap <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+" \fg: Find definition
+nnoremap <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+" \fd: Find functions called by this function
+nnoremap <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+" \fc: Find functions that call this function
+nnoremap <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+" \ft: Find this string
+nnoremap <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+" \fe: Find this egrep pattern
+nnoremap <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+" \ff: Find this file
+nnoremap <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+" \fi: Find files that #include this file
+nnoremap <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 " }}}
 
 " }}}
@@ -110,6 +170,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'sainnhe/lightline_foobar.vim'
 Plug 'delphinus/lightline-delphinus'
+" vim goyo
+Plug 'junegunn/goyo.vim'
 " -------------------- "
 " VimWiki (must be used on .wiki files)
 " press "\wd" to delete current wiki file
@@ -117,38 +179,15 @@ Plug 'delphinus/lightline-delphinus'
 " press "\ws" to select and open wiki index file
 " press "\wt" to open index.wiki file in ~/vimwiki in a new tab
 " press "\ww" to open index.wiki file in ~/vimwiki
-" press "Enter" to 
+" press "Enter" to
 Plug 'vimwiki/vimwiki'
 " -------------------- "
+" Code
 " C code completion
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
-Plug 'Shougo/deoplete-clangx'
+Plug 'valloric/youcompleteme'
+" Cscope
+Plug 'brookhong/cscope.vim'
 call plug#end()
-" }}}
-
-" Plugin Options {{{
-
-" automatically load neodark_alter theme on vim startup (VimEnter)
-autocmd VimEnter * let g:lightline.colorscheme = "neodark_alter"
-autocmd VimEnter * call lightline#init()
-autocmd VimEnter * call lightline#colorscheme()
-autocmd VimEnter * call lightline#update()
-
-" lightline-delphinus options
-let g:lightline_delphinus_use_powerline_glyphs = 1
-let g:lightline_delphinus_colorscheme = "nord_improved"
-
-" lightline_foobar options
-let g:lightline_foobar_bold = 1
-
-" enable vim dev-icons
-let g:webdevicons_enable = 1
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
 " }}}
 
 " Colors {{{
@@ -163,14 +202,105 @@ set termguicolors
 
 " }}}
 
+" Plugin Options {{{
+" lightline-delphinus options
+let g:lightline_delphinus_use_powerline_glyphs = 1
+let g:lightline_delphinus_colorscheme = "nord_improved"
+
+" lightline_foobar options
+let g:lightline_foobar_bold = 1
+
+" enable vim dev-icons
+let g:webdevicons_enable = 1
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" Make cscope silent
+let g:cscope_silent = 1
+
+" lightline settings
+let g:lightline = {
+	\ 'colorscheme': 'neodark_alter',
+	\ 'component': {
+	\		'lineinfo': ' %3l:%-2v', 
+	\ },
+	\ 'component_function': {
+	\	 'gitbranch': 'FugitiveHead',
+	\	 'readonly': 'LightlineReadonly'
+	\ },
+	\ 'tab_component_function': {
+	\	 'tabnum': 'LightlineWebDevIcons',
+	\ },
+	\ }
+
+" Check filename (LightLine)
+function! LightlineFilename()
+	if &buftype ==# 'terminal'
+		return expand('%:p')
+	elseif expand('%:t') !=# ''
+		return expand('%:t')
+	else
+		return '[No Name]'
+	endif
+endfunction
+
+" Get WebDevIcon (LightLine)
+function! LightlineWebDevIcons(n)
+	let l:bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
+	return WebDevIconsGetFileTypeSymbol(bufname(l:bufnr))
+endfunction
+
+" Show RO symbol if read-only
+function! LightlineReadonly() 
+ 	return &readonly ? 'RO' : '' 
+endfunction 
+
+" YCM {{{
+" Enable signature help
+let g:ycm_auto_trigger = 1
+" Modify error symbol
+let g:ycm_error_symbol = 'E>'
+" Modify warning symbol
+let g:ycm_error_symbol = 'W>'
+" Add preview to Vim's completeopt
+let g:ycm_add_preview_to_completeopt = 1
+" Set configuration
+let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/youcompleteme/.ycm_extra_conf.py"
+" }}}
+
+" Vimwiki options {{{
+let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown', '.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+" }}}
+
+" }}}
+
 " Spell-checking {{{
 
+" enable spell-checking
+set nospell
+
 " set spell-checking language to en_US
-" set spell spelllang=en_us
+set spelllang=en_us
 
 " enable word completion
 set complete+=kspell
+set wildmode=longest,list,full
 
+" }}}
+
+" Auto-commands {{{
+" automatically load neodark_alter theme on vim startup (VimEnter)
+"autocmd VimEnter * let g:lightline.colorscheme = "neodark_alter"
+"autocmd VimEnter * call lightline#init()
+"autocmd VimEnter * call lightline#colorscheme()
+"autocmd VimEnter * call lightline#update()
+
+" Enable Goyo by default for mutt writing
+autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
 " }}}
 
 " DO NOT REMOVE THIS LINE
