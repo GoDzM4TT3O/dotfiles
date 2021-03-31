@@ -1,0 +1,66 @@
+#!/bin/bash
+# tell me which subject I have at an exact day and hour
+
+# where the spreadsheet with the time is located
+file="$HOME/Documents/orario.csv"
+
+# get a list of days
+days=$(cat $file | head -n 1 | sed 's/,Lunedì/Lunedì/' | sed 's/,,/\n/g' | head -n 6)
+
+# ask the user to choose a day
+chosenday=$(printf "$days" | dmenu -i -p "Quale giorno vuoi scegliere?")
+
+# if no day is chosen, quit
+[[ $chosenday = "" ]] && exit 1
+
+# time range
+timerange=("Prima ora: 1\n" \
+	"Seconda ora: 2\n" \
+	"Terza ora: 3\n" \
+	"Quarta ora: 4\n" \
+	"Quinta ora: 5\n" \
+	"Sesta ora: 6")
+
+# ask user to choose a time
+chosentime=$(printf "${timerange[*]}\n" | awk '{print $1, $2}' | tr -d ":" | dmenu -i -p "Quale fascia oraria vuoi scegliere?")
+
+# if no time is chosen, quit
+[[ $chosentime = "" ]] && exit 1
+
+# choose an appropriate hour number ("Terza Ora" = 3)
+hournum=$(printf "${timerange[*]}" | grep "$chosentime" | awk '{print $3}')
+
+# print the chosen day, time and subject
+case $chosenday in
+	"Lunedì")
+		[[ "$hournum" = "6" ]] && exit 1
+		subject=$(awk -F "\"*,\"*" '{print $1}' $file | head -n $(expr 2 + $hournum) | tail -n 1 | sed 's/_/ /g')
+		notify-send "Orario" "$chosenday, $chosentime: $subject"
+		;;
+	"Martedì")
+		[[ "$hournum" = "6" ]] && exit 1
+		subject=$(awk -F "\"*,\"*" '{print $3}' $file | head -n $(expr 2 + $hournum) | tail -n 1 | sed 's/_/ /g')
+		notify-send "Orario" "$chosenday, $chosentime: $subject"
+		;;
+	"Mercoledì")
+		subject=$(awk -F "\"*,\"*" '{print $5}' $file | head -n $(expr 2 + $hournum) | tail -n 1 | sed 's/_/ /g')
+		notify-send "Orario" "$chosenday, $chosentime: $subject"
+		;;
+	"Giovedì")
+		subject=$(awk -F "\"*,\"*" '{print $7}' $file | head -n $(expr 2 + $hournum) | tail -n 1 | sed 's/_/ /g')
+		notify-send "Orario" "$chosenday, $chosentime: $subject"
+		;;
+	"Venerdì")
+		[[ "$hournum" = "6" ]] && exit 1
+		subject=$(awk -F "\"*,\"*" '{print $9}' $file | head -n $(expr 2 + $hournum) | tail -n 1 | sed 's/_/ /g')
+		notify-send "Orario" "$chosenday, $chosentime: $subject"
+		;;
+	"Sabato")
+		[[ "$hournum" = "6" ]] && exit 1
+		subject=$(awk -F "\"*,\"*" '{print $11}' $file | head -n $(expr 2 + $hournum) | tail -n 1 | sed 's/_/ /g')
+		notify-send "Orario" "$chosenday, $chosentime: $subject"
+		;;
+	*)
+		echo "No match found"
+		;;
+esac

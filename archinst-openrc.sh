@@ -12,15 +12,18 @@
 # If it is, prefer it to `sudo`
 [ $(which doas) ] && root="doas" || root="sudo"
 
-# Use "~/Documents/dotfiles" as a directory to store everything
-# that is going to be downloaded, instead of cluttering $HOME.
+# Use "~/Documents/dotfiles" to store everything that is going to be downloaded
 dotfilesdir="$HOME/Documents/dotfiles"
 
-# Use "~/Documents/dotfiles/pkgbuilds" as a directory to store my PKGBUILDS 
+# Use "~/Documents/dotfiles/pkgbuilds" my PKGBUILDS 
 pkgbuilddir="$HOME/Documents/dotfiles/pkgbuilddir"
+
+# Use "~/.local/share/zsh" to store zsh plugins
+ZSRCDIR="$HOME/.local/share/zsh"
 
 # If the directories above do not exist, create them,
 [ ! -d "$dotfilesdir" ] && mkdir -p "$dotfilesdir"
+[ ! -d "$ZSRCDIR" ] && mkdir -p "$ZSRCDIR"
 
 # Clone my dotfiles & PKGBUILDS repository there.
 [ ! -d "$dotfilesdir/dotfiles" ] && git clone https://github.com/saloniamatteo/dotfiles "$dotfilesdir/dotfiles"
@@ -50,15 +53,9 @@ $root pacman -Syu &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not check for updates!\e[0m\n' 
 
-# Install necessary packages
-printf '\e[1;4m Installing necessary packages...\e[0m\n'
-$root pacman -S --needed base-devel dmenu dunst &&
-	printf '\e[1;42m Success!\e[0m\n' ||
-	printf '\e[1;41m Error! Could not install necessary packages!\e[0m\n' 
-
-# Install additional packages 
-printf '\e[1;4m Installing additional packages...\e[0m\n'
-$root pacman -S cmake copyq cronie exa ffmpegthumbnailer fftw fortune-mod fzf git hsetroot htop imagemagick lxappearance mlocate ncurses neofetch neovim picom poppler python python-pip python3 ranger rofi scrot xdotool xsel xsettingsd zip zsh &&
+# Install packages
+printf '\e[1;4m Installing packages...\e[0m\n'
+$root pacman -S --needed base-devel dmenu dunst curl cmake copyq cronie exa ffmpegthumbnailer fftw fortune-mod fzf git hsetroot htop imagemagick lxappearance mlocate ncurses neofetch neovim picom poppler python python-pip python3 ranger rofi scrot xdotool xsel xsettingsd zip zsh &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install additional packages!\e[0m\n' 
 
@@ -84,12 +81,35 @@ $root pip3 install --upgrade ueberzug pillow &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf "\e[1;41m Error! Could not install vifm\'s configurations or their dependencies!\e[0m\n" 
 
+# Create directories for zsh plugins
+printf '\e[1;4m Creating zsh plugin directories...\e[0m\n'
+	mkdir -p $ZSRCDIR/{archlinux,colored-man-pages,fast-syntax-highlighting,gitfast,safe-paste,zsh-autosuggestions} &&
+	printf '\e[1;42m Success!\e[0m\n' ||
+	printf '\e[1;41m Error! Could not create zsh plugin directories!\e[0m\n'
+
+# Temporarily download Oh-My-Zsh repo, to copy plugins
+printf '\e[1;4m Temporarily cloning Oh-My-Zsh...\e[0m\n'
+	git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh $ZSRCDIR/ohmyzsh &&
+	printf '\e[1;42m Success!\e[0m\n' ||
+	printf '\e[1;41m Error! Could not clone repo!\e[0m\n'
+
 # Install zsh plugins 
-printf '\e[1;4m Installing oh-my-zsh...\e[0m\n'
-curl -LO "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh" &&
-	CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh ./install.sh &&
+printf '\e[1;4m Installing zsh plugins...\e[0m\n'
+	# ArchLinux integration
+	mv $ZSRCDIR/ohmyzsh/plugins/archlinux $ZSRCDIR/archlinux &&
+	# Colored Man Pages
+	mv $ZSRCDIR/ohmyzsh/plugins/colored-man-pages $ZSRCDIR/colored-man-pages &&
+	# Fast Syntax Highlighting
+	git clone https://github.com/zdharma/fast-syntax-highlighting $ZSRCDIR/fast-syntax-highlighting &&
+	# Fast git Syntax Highlighting
+	mv $ZSRCDIR/ohmyzsh/plugins/gitfast $ZSRCDIR/gitfast &&
+	# Safe Paste (don't run commands when pasting)
+	mv $ZSRCDIR/ohmyzsh/plugins/safe-paste $ZSRCDIR/safe-paste &&
+	# Zsh-Autosuggestions
+	git clone https://github.com/zsh-users/zsh-autosuggestions $ZSRCDIR/zsh-autosuggestions &&
+	echo "Removing Oh-My-Zsh repo..." &&
+	rm -rf $ZSRCDIR/ohmyzsh &&
 	echo "Making zsh the default shell..." &&
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
 	chsh -s /bin/zsh &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install zsh plugins!\e[0m\n'
@@ -109,18 +129,6 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubuserconte
 	mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle &&
 	printf '\e[1;42m Success! Now please open vim and run :PlugInstall\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install the necessary vim plugins!\e[0m\n' 
-
-# Install Powerlevel10k 
-printf '\e[1;4m Installing Powerlevel10k...\e[0m\n'
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k &&
-	printf '\e[1;42m Success!\e[0m\n' ||
-	printf '\e[1;41m Error! Could not install Powerlevel10k!\e[0m\n' 
-
-# Install fast-syntax-highlighting 
-printf '\e[1;4m Installing fast-syntax-highlighting...\e[0m\n'
-git clone https://github.com/zdharma/fast-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting &&
-	printf '\e[1;42m Success!\e[0m\n' ||
-	printf '\e[1;41m Error! Could not install fast-syntax-highlighting!\e[0m\n' 
 
 # Install st (suckless terminal) 
 # Use my PKGBUILD
@@ -177,7 +185,7 @@ printf '\e[1;4m Installing cpupower...\e[0m\n' &&
 printf '\e[1;4m Copying configurations...\e[0m\n'
 cd $dotfilesdir/dotfiles &&
 	cd dotfiles &&
-	cp -r .aliases .config .vimrc .vim .zshrc .xinitrc .xprofile .Xresources .zshrc .fzf.zsh .p10k.zsh .local $HOME &&
+	cp -r .aliases .config .vimrc .vim .zshrc .xinitrc .xprofile .Xresources .zshrc .fzf.zsh .local $HOME &&
 	cp -r wallpapers $HOME &&
 	printf '\e[1;42m Success!\[0m\n' ||
 	printf '\e[1;41m Error! Could not copy configurations!\e[0m\n' 

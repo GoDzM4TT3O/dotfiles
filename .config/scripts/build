@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# use doas if installed
+[ $(which doas) ] && root="doas" || root="sudo"
+
+# stop tlp
+$root rc-service tlp stop
+# increase cpu performance
+printf "\nIncreasing CPU performance! \n\n"
+# enable Turbo Boost
+$root x86_energy_perf_policy --turbo-enable 1
+# apply msr mods
+$root modprobe -v msr
+$root wrmsr -a 0x1a4 0xf
+# enable hugepages
+#echo 3 | $root tee /sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
+#echo 1168 | $root tee /proc/sys/vm/nr_hugepages
+#$root sysctl -w vm.nr_hugepages="1024"
+# apply undervolt (make sure to set values to 0!)
+$root intel-undervolt apply
+# set governor to performance
+$root x86_energy_perf_policy performance
+$root cpupower frequency-set -g performance
+# increase frequency
+$root cpupower -c all set -b 0
+$root cpupower frequency-set -f 36000000
+#$root c2ctl 0-3 -e
+$root c2ctl 0 36 36
+$root c2ctl 1 35 35
+$root c2ctl 2 35 35
+$root c2ctl 3 35 35
+# set fan speed to 7
+echo "level 7" | $root tee /proc/acpi/ibm/fan
+
+# enable swaps
+#$root swapon /dev/sd{a6,b3}

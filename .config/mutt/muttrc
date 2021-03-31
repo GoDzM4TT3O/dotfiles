@@ -1,0 +1,43 @@
+# vim: filetype=neomuttrc
+# Add various files
+source /usr/share/mutt-wizard/mutt-wizard.muttrc
+source ~/.config/mutt/gpg.muttrc
+
+# Palette for use with the Linux console.  Black background.
+color hdrdefault blue black
+color quoted blue black
+color signature blue black
+color attachment red black
+color prompt brightmagenta black
+color message brightred black
+color error brightred black
+color indicator black red
+color status brightgreen blue
+color tree white black
+color normal white black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index red black "~N|~O"
+
+# color body brightwhite black '\*+[^*]+\*+'
+# color body brightwhite black '_+[^_]+_+'
+
+# fast reply
+set fast_reply=yes
+set include=yes
+
+# Enable header editing
+set edit_headers=yes
+
+# Custom Mail-User-Agent ID.
+my_hdr User-Agent: neomutt
+my_hdr X-Message-Flag: Install Gentoo
+
+# Set encoding to UTF-8
+set send_charset="utf-8"
+
+# Automatically view emails as html
+auto_view text/html
+alternative_order text/plain text/enriched text/html

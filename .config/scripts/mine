@@ -1,0 +1,98 @@
+#!/bin/sh
+# this script will setup everything to start mining.
+
+# use doas if installed
+[ $(which doas) ] && root="doas" || root="sudo"
+
+# kill unnecessary services
+printf "\nKilling unnecessary services! \n\n"
+$root rc-service NetworkManager stop
+$root rc-service atd stop
+$root rc-service backlight stop
+$root rc-service avahi-daemon stop
+$root rc-service chrony stop
+$root rc-service cronie stop
+$root rc-service cupsd stop
+$root rc-service dbus stop
+$root rc-service device-mapper stop
+$root rc-service elogind stop
+$root rc-service fcgiwrap stop
+$root rc-service gpm stop
+$root rc-service keymaps stop
+$root rc-service libvirt-guests stop
+$root rc-service libvirtd stop
+$root rc-service local stop
+$root rc-service loopback stop
+$root rc-service net.lo stop
+$root rc-service netmount stop
+$root rc-service nginx stop
+$root rc-service save-keymaps stop
+$root rc-service savetermencoding stop
+$root rc-service sshd stop
+$root rc-service tlp stop
+$root rc-service udev stop
+$root rc-service udev-settle stop
+$root rc-service udev-trigger stop
+$root rc-service vmware-networks stop
+$root rc-service vmware-networks-configuration stop
+$root pkill accounts-daemon
+$root pkill adb
+$root pkill at-spi-bus-launcher
+$root pkill at-spi2-registryd
+$root pkill crond
+$root pkill dbus-daemon
+$root pkill gitstatusd-linu
+$root pkill gpg-agent
+$root pkill gvfsd
+$root pkill polkitd
+$root pkill python3
+$root pkill udevd
+$root pkill vmware-tray
+
+# stop unnecessary TTYs
+$root rc-service agetty.tty4 stop
+$root rc-service agetty.tty5 stop
+$root rc-service agetty.tty6 stop
+
+# increase cpu performance
+printf "\nIncreasing CPU performance! \n\n"
+# enable Turbo Boost
+$root x86_energy_perf_policy --turbo-enable 1
+# apply undervolt (make sure to set values to 0!)
+$root intel-undervolt apply
+# set governor to performance
+$root x86_energy_perf_policy performance
+$root cpupower frequency-set -g performance
+# increase frequency
+$root cpupower -c all set -b 0
+$root cpupower frequency-set -f 34000000
+$root c2ctl 0-3 -e
+$root c2ctl 0 30 30
+$root c2ctl 1 30 30
+$root c2ctl 2 30 30
+$root c2ctl 3 30 30
+$root c2ctl 4 30 30
+$root c2ctl 5 30 30
+$root c2ctl 6 30 30
+$root c2ctl 7 30 30
+# set fan speed to 7
+echo "level 7" | $root tee /proc/acpi/ibm/fan
+
+# kill lightdm and Xorg services
+printf "Killing LightDM & Xorg! \n\n"
+$root pkill dwm
+$root pkill dwmblocks
+$root pkill Xorg
+$root rc-service lightdm stop
+
+# disable swap
+$root swapoff /dev/sda8
+$root swapoff /dev/sdb3
+$root rc-service swap stop
+
+# kill zsh
+printf "\nKilling ZSH! \n\n"
+$root pkill zsh
+
+# warn user
+echo "Ready to mine!"

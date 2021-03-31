@@ -1,0 +1,3 @@
+#!/bin/zsh
+# check if zsh is fast enough
+notify-send "Profiler" "It works! Shell: $SHELL"

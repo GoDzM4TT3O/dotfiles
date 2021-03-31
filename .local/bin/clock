@@ -33,4 +33,4 @@ case $BLOCK_BUTTON in
 esac
 
 #echo " $(date '+%a %d %b %Y') $icon $(date '+%R')"
-echo " $(date '+%a %d/%m/%Y') $icon $(date '+%R')"
+echo "📅 $(date '+%a %d/%m/%Y') $icon $(date '+%R')"

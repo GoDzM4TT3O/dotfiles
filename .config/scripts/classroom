@@ -1,0 +1,24 @@
+#!/bin/bash
+# apri un corso di classroom
+
+courses=("Motoria: https://meet.google.com/lookup/hzq4d4q2he?authuser=0&hs=179\n" \
+	"Economia-Aziendale: https://meet.google.com/lookup/d36en3u2tm?authuser=0&hs=179\n" \
+	"Laboratorio-Economia-Aziendale: https://meet.google.com/lookup/clt67carxq?authuser=0&hs=179\n" \
+	"Diritto-Economia: https://meet.google.com/lookup/awfvz67zed?authuser=0&hs=179\n" \
+	"Francese: https://meet.google.com/lookup/cyafqmmbuq?authuser=0&hs=179\n" \
+	"Italiano-Storia: https://meet.google.com/lookup/hygsnyz2w6?authuser=0&hs=179\n" \
+	"Inglese: https://meet.google.com/lookup/dczrmb2bib?authuser=0&hs=179\n" \
+	"Matematica: https://meet.google.com/lookup/gzkjbkrkr2?authuser=0&hs=179\n" \
+	"Informatica: https://meet.google.com/lookup/divlsipwdp?authuser=0&hs=179\n" \
+	"Religione: https://meet.google.com/lookup/gauxnyhjvh?authuser=0&hs=179\n")
+
+subjects=$(printf "${courses[*]}" | awk '{print $1}' | tr -d ":" )
+
+chosensubject=$(printf "$subjects\n" | dmenu -i -p "Scegli che materia hai ora:")
+
+[[ $chosensubject = "" ]] && exit 0
+[[ $chosensubject = "Matematica" ]] && notify-send -u critical "Classroom" "La prof di matematica cambia sempre il link, per favore apri Classroom direttamente da Firefox!" && exit 0
+
+link=$(printf "${courses[*]}" | grep "$chosensubject" | grep -o "https://meet.google.com/lookup/[a-zA-Z0-9]*?authuser=0&hs=179" | head -n 1)
+
+firefox $link

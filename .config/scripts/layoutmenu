@@ -10,4 +10,4 @@ H[] Deck Layout				4
 |M| CenteredMaster Layout		6
 >M> CenteredFloatingMaster Layout	7
 ><> Floating Layout			8
-" | xmenu
+" | xmenu -i
