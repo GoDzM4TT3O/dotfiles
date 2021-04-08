@@ -150,7 +150,7 @@ cd $pkgbuilddir &&
 
 # Install required fonts 
 printf '\e[1;4m Installing required fonts...\e[0m\n'
-yay -S --norebuild --noredownload libxft-bgra-git noto-fonts powerline-fonts ttf-linux-libertine ttf-joypixels ttf-meslo-nerd-font-powerlevel10k unicode-emoji &&
+yay -S --norebuild --noredownload libxft-bgra-git noto-fonts powerline-fonts libertinus-font ttf-joypixels ttf-meslo-nerd-font-powerlevel10k unicode-emoji &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install the required fonts!\e[0m\n' 
 
