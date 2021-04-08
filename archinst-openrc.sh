@@ -55,7 +55,7 @@ $root pacman -Syu &&
 
 # Install packages
 printf '\e[1;4m Installing packages...\e[0m\n'
-$root pacman -S --needed base-devel dmenu dunst curl cmake copyq cronie exa ffmpegthumbnailer fftw fortune-mod fzf git hsetroot htop imagemagick lxappearance mlocate ncurses neofetch neovim picom poppler python python-pip python3 ranger rofi scrot xdotool xsel xsettingsd zip zsh &&
+$root pacman -S --needed base-devel capitaine-cursors cmake copyq cronie curl dmenu dunst exa ffmpegthumbnailer fftw fortune-mod fzf git hsetroot htop imagemagick lxappearance mlocate ncurses neofetch neovim picom poppler python python-pip python3 ranger rofi scrot xdotool xsel xsettingsd zip zsh &&
 	printf '\e[1;42m Success!\e[0m\n' ||
 	printf '\e[1;41m Error! Could not install additional packages!\e[0m\n' 
 
