@@ -158,19 +158,17 @@ nnoremap <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 call plug#begin('~/.vim/plugged')
 " -------------------- "
 " Color schemes
-" nord
-Plug 'arcticicestudio/nord-vim'
-" dogrun
+" Dogrun
 Plug 'wadackel/vim-dogrun'
 " -------------------- "
 " UI
-" vim dev-icons
+" Vim dev-icons
 Plug 'ryanoasis/vim-devicons'
-" vim status bar (lightline)
+" Vim status bar (lightline)
 Plug 'itchyny/lightline.vim'
 Plug 'sainnhe/lightline_foobar.vim'
 Plug 'delphinus/lightline-delphinus'
-" vim goyo
+" Vim goyo
 Plug 'junegunn/goyo.vim'
 " -------------------- "
 " VimWiki (must be used on .wiki files)
@@ -187,6 +185,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'valloric/youcompleteme'
 " Cscope
 Plug 'brookhong/cscope.vim'
+" LaTeX integration
+Plug 'vim-latex/vim-latex'
 call plug#end()
 " }}}
 
@@ -203,6 +203,9 @@ set termguicolors
 " }}}
 
 " Plugin Options {{{
+" set TeX flavor to LaTeX
+let g:tex_flavor = "latex"
+
 " lightline-delphinus options
 let g:lightline_delphinus_use_powerline_glyphs = 1
 let g:lightline_delphinus_colorscheme = "nord_improved"
@@ -212,9 +215,6 @@ let g:lightline_foobar_bold = 1
 
 " enable vim dev-icons
 let g:webdevicons_enable = 1
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 
 " Make cscope silent
 let g:cscope_silent = 1
@@ -256,6 +256,30 @@ function! LightlineReadonly()
  	return &readonly ? 'RO' : '' 
 endfunction 
 
+" Disable stuff before entering Goyo mode,
+" including lightline
+function! s:goyo_enter()
+	call lightline#disable()
+	set noshowmode
+	set noshowcmd
+	set scrolloff=999
+	let b:quitting = 0
+	let b:quitting_bang = 0
+	autocmd QuitPre <buffer> let b:quitting = 1
+	cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+" Close Vim if exiting Goyo mode
+function! s:goyo_leave()
+	if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+		if b:quitting_bang
+			qa!
+		else
+			qa
+		endif
+	endif
+endfunction
+
 " YCM {{{
 " Enable signature help
 let g:ycm_auto_trigger = 1
@@ -291,16 +315,22 @@ set wildmode=longest,list,full
 " }}}
 
 " Auto-commands {{{
-" automatically load neodark_alter theme on vim startup (VimEnter)
-"autocmd VimEnter * let g:lightline.colorscheme = "neodark_alter"
-"autocmd VimEnter * call lightline#init()
-"autocmd VimEnter * call lightline#colorscheme()
-"autocmd VimEnter * call lightline#update()
-
 " Enable Goyo by default for mutt writing
 autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
+
+" Close Vim if exiting Goyo mode
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+" }}}
+
+" Others {{{
+" Disable VimInfo & ShaDa
+let viminfo="/dev/null"
+let viminfofile="/dev/null"
+let shada="/dev/null"
+let shadafile="/dev/null"
 " }}}
 
 " DO NOT REMOVE THIS LINE
