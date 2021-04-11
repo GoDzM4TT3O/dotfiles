@@ -3,8 +3,8 @@
 # Displays todays precipication chance (☔) and daily low (🥶) and high (🌞).
 # Usually intended for the statusbar.
 
-# Set location to "Modica"
-LOCATION="Modica"
+# Set forecast location
+LOCATION=""
 
 # If we have internet, get a weather report from wttr.in and store it locally.
 # You could set up a shell alias to view the full file in a pager in the
