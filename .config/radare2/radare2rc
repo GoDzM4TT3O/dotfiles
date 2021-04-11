@@ -28,10 +28,6 @@ e cfg.newtab=true
 # Set color scheme to behelit
 eco behelit
 
-# COMMANDS
-# xterm command to spawn with V@
-e cmd.xterm=st
-
 # DEBUGGING
 # Break on entrypoint
 e dbg.bep=loader
@@ -69,3 +65,21 @@ e scr.utf8.curvy=true
 e time.fmt=%d-%m-%Y %H:%M:%S %z
 # Time zone, in hours relative to GMT: +2, -1,..
 e time.zone=+1
+
+# NOTE: here are some useful commands.
+# aaa: start disassembly
+# afl: list disassembled functions
+# afn <newname>: rename function
+# afvn <oldname> <newname>: rename variable
+# db <addr>: add breakpoint to addr
+# dc: start program execution
+# dr <reg> = <val>: set register reg value to val
+# dr: show register values
+# doo <args>: restart program with arguments args
+# pdf: disasseble chosen function
+# s <func>: go to func
+# v: advanced visual mode
+# VV: visual/graph mode
+
+# Typically, to debug a program, you would run:
+# aaa, afl, s <func>, pdf, VV, db [addr], doo [args], dc, ...

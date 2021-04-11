@@ -1,3 +1,4 @@
 #!/usr/bin/rarun2
+# Redirect input & output to /dev/tty4
 stdio=/dev/tty4
 stdout=/dev/tty4
