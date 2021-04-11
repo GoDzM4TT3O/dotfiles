@@ -1,9 +1,13 @@
+#> BEFORE ZSH
+
 # Check if we are running Plan9's "dumb" terminal, and open the Plan9 shell
 if [[ $TERM = "dumb" ]]; then
 	echo "Opening the Plan9 shell (rc) from zsh..."
 	/usr/lib/plan9/bin/rc && echo "Quitting! "
 	exit
 fi
+
+#< END BEFORE ZSH
 
 #> PROMPT
 
@@ -17,9 +21,14 @@ add-zsh-hook precmd vcs_info
 PS1+='%F{red}${vcs_info_msg_0_}%f $%b '
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' check-for-staged-changes true
+zstyle ':vcs_info:*' complete true
+zstyle ':vcs_info:*' complete-options true
+zstyle ':vcs_info:*' file-list true
 zstyle ':vcs_info:*' get-revision true
-zstyle ':vcs_info:*' unstagedstr ' ?'
+zstyle ':vcs_info:*' list always
+zstyle ':vcs_info:*' list-dirs-first true
 zstyle ':vcs_info:*' stagedstr ' +'
+zstyle ':vcs_info:*' unstagedstr ' ?'
 # %a -> action info
 # %b -> branch name
 # %c -> show staged changes
@@ -96,6 +105,10 @@ setopt extendedglob
 # Enable prompt substitution
 setopt prompt_subst
 
+# Don't save command to history if it
+# starts with a space
+setopt HIST_IGNORE_SPACE
+
 #< END SETOPTs
 
 #> ZSH VARIABLES
@@ -160,11 +173,14 @@ export LD_PRELOAD=""
 # Add /home/$USER/.local/bin to PATH so any script in that directory is executable
 export PATH=$HOME/.local/bin:$HOME/.config/scripts:$PATH
 
-# colored GCC warnings and errors
+# Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Key timeout for Vim mode
 export KEYTIMEOUT=1
+
+# Set default Browser
+export BROWSER="librewolf"
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -180,6 +196,9 @@ export MAKEFLAGS="-j4"
 # Support for pam-gnupg
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export SSH_ASKPASS=/usr/lib/ssh/gnome-ssh-askpass3
+
+# Directory that contains zsh plugins
+export ZSRCDIR="$HOME/.local/share/zsh"
 
 #< END EXPORTS
 
@@ -233,20 +252,20 @@ tomp4() {
 #< END FUNCTIONS
 
 #> SOURCES
-# Source aliases
-source ~/.aliases
-
-# Load zsh plugins
+# Load zsh plugins from $ZSRCDIR
 source /usr/share/doc/pkgfile/command-not-found.zsh
-source "$HOME/.local/share/zsh/archlinux/archlinux.plugin.zsh"
-source "$HOME/.local/share/zsh/colored-man-pages/colored-man-pages.plugin.zsh"
-source "$HOME/.local/share/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-source "$HOME/.local/share/zsh/gitfast/gitfast.plugin.zsh"
-source "$HOME/.local/share/zsh/safe-paste/safe-paste.plugin.zsh"
-source "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$ZSRCDIR/archlinux/archlinux.plugin.zsh"
+source "$ZSRCDIR/colored-man-pages/colored-man-pages.plugin.zsh"
+source "$ZSRCDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+source "$ZSRCDIR/gitfast/gitfast.plugin.zsh"
+source "$ZSRCDIR/safe-paste/safe-paste.plugin.zsh"
+source "$ZSRCDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Use fzf for reverse history searching
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Source aliases
+source ~/.aliases
 
 #< END SOURCES
 
