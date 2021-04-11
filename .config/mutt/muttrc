@@ -1,9 +1,17 @@
 # vim: filetype=neomuttrc
+
+# Sources {{{
 # Add various files
 source /usr/share/mutt-wizard/mutt-wizard.muttrc
-source ~/.config/mutt/gpg.muttrc
+source /home/matteo/.config/mutt/gpg.muttrc
+# }}}
 
-# Palette for use with the Linux console.  Black background.
+# Email accounts {{{
+# Search addresses using "abook"
+set query_command = "abook --mutt-query %s"
+# }}}
+
+# Colors {{{
 color hdrdefault blue black
 color quoted blue black
 color signature blue black
@@ -20,24 +28,81 @@ color search white black
 color tilde brightmagenta black
 color index blue black ~F
 color index red black "~N|~O"
+# }}}
 
-# color body brightwhite black '\*+[^*]+\*+'
-# color body brightwhite black '_+[^_]+_+'
+# Server settings {{{
+# Activate TLS if available on the server
+set ssl_starttls
 
-# fast reply
-set fast_reply=yes
-set include=yes
+# Always use SSL when connecting to a server
+set ssl_force_tls
 
-# Enable header editing
-set edit_headers=yes
+# Bell chime on new unread mails
+set beep_new
 
-# Custom Mail-User-Agent ID.
-my_hdr User-Agent: neomutt
-my_hdr X-Message-Flag: Install Gentoo
+# Strip headers and eval MIMEs when piping
+set pipe_decode
+
+# Strip headers and eval MIMEs before searching
+set thorough_search
+# }}}
+
+# Mail Composition {{{
+# Editor to use when writing mail
+set editor = "nvim"
 
 # Set encoding to UTF-8
 set send_charset="utf-8"
 
-# Automatically view emails as html
-auto_view text/html
-alternative_order text/plain text/enriched text/html
+# Enable header editing
+set edit_headers
+
+# Custom Headers
+my_hdr User-Agent: neomutt
+
+# Set Name
+set realname="Your Name"
+
+# Skip to Compose when replying
+set fast_reply
+
+# Include Original Message in Replies
+set include
+
+# Format to use when quoting mail
+set attribution = "On %d, %n wrote"
+
+# Reply to email address in "Reply To:" header
+set reply_to
+
+# Format of subject when forwarding
+set forward_format = "Fwd: %s"       
+set forward_decode
+
+# Custom Signature
+set signature="~/.config/mutt/signature"
+# }}}
+
+# View settings {{{
+# Automatically view emails as html using w3m
+auto_view text/html text/calendar application/ics
+alternative_order text/enriched text/plain text/html text
+# }}}
+
+# Bindings {{{
+bind attach <return> view-mailcap
+bind attach l view-mailcap
+bind index l display-message
+
+# Email completion bindings
+bind editor <Tab> complete-query
+bind editor ^T complete
+
+# Press A to add contact to address book (abook)
+macro index,pager A \
+    "<pipe-message>abook --add-email<return>" \
+    "Add Email address to address book (abook)"
+# }}}
+
+# Folding setting for Vim
+# vim:foldmethod=marker:foldlevel=0
