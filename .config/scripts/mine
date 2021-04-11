@@ -6,7 +6,7 @@
 
 # kill unnecessary services
 printf "\nKilling unnecessary services! \n\n"
-$root rc-service NetworkManager stop
+#$root rc-service NetworkManager stop
 $root rc-service atd stop
 $root rc-service backlight stop
 $root rc-service avahi-daemon stop
@@ -29,6 +29,7 @@ $root rc-service nginx stop
 $root rc-service save-keymaps stop
 $root rc-service savetermencoding stop
 $root rc-service sshd stop
+$root rc-service swap stop
 $root rc-service tlp stop
 $root rc-service udev stop
 $root rc-service udev-settle stop
@@ -46,6 +47,7 @@ $root pkill gpg-agent
 $root pkill gvfsd
 $root pkill polkitd
 $root pkill python3
+$root pkill ssh-agent
 $root pkill udevd
 $root pkill vmware-tray
 
@@ -78,17 +80,16 @@ $root c2ctl 7 30 30
 # set fan speed to 7
 echo "level 7" | $root tee /proc/acpi/ibm/fan
 
+# disable swap
+$root swapoff /dev/sda8
+$root swapoff /dev/sdb3
+
 # kill lightdm and Xorg services
 printf "Killing LightDM & Xorg! \n\n"
 $root pkill dwm
 $root pkill dwmblocks
 $root pkill Xorg
 $root rc-service lightdm stop
-
-# disable swap
-$root swapoff /dev/sda8
-$root swapoff /dev/sdb3
-$root rc-service swap stop
 
 # kill zsh
 printf "\nKilling ZSH! \n\n"
