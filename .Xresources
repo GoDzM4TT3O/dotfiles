@@ -43,7 +43,8 @@
 ! Font configuration
 ! ------------------------------------------------------------------------------
 
-*.font:	Liberation Mono:pixelsize=14:antialias=true:autohint=true:hintstyle=full;
+!*.font:	Liberation Mono:pixelsize=14:antialias=true:autohint=true:hintstyle=full;
+*.font:	Fira Code:pixelsize=14:antialias=true:autohint=true:hintstyle=full;
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration

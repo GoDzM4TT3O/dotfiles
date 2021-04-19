@@ -232,6 +232,19 @@ let g:lightline = {
 	\ 'tab_component_function': {
 	\	 'tabnum': 'LightlineWebDevIcons',
 	\ },
+	\ 'separator': {
+	\	'right': '',
+	\	'left': ''
+	\ },
+	\ 'subseparator': {
+	\	'right': '',
+	\	'left': ''
+	\ },
+	\ 'component_type': {
+	\	'ale_error': 'error',
+	\	'ale_warning': 'warning',
+	\	'ale_ok': 'ok'
+	\ },
 	\ }
 
 " Check filename (LightLine)
