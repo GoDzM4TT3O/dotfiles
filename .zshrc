@@ -18,7 +18,8 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 # Add git info in the prompt
 autoload -Uz add-zsh-hook vcs_info
 add-zsh-hook precmd vcs_info
-PS1+='%F{red}${vcs_info_msg_0_}%f $%b '
+#PS1+='%F{red}${vcs_info_msg_0_}%f $%b '
+PS1+='%F{red}${vcs_info_msg_0_}%f %F{red}[$(echo $?)]%f $%b '
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' check-for-staged-changes true
 zstyle ':vcs_info:*' complete true
