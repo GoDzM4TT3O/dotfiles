@@ -121,7 +121,8 @@ else
 fi
 fi
 
-# Use Vim mode
+# Vim mode
+set editing-mode vi
 set -o vi
 
 #< END OTHERS

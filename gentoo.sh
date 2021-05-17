@@ -97,7 +97,7 @@ cd $dotfilesdir/dotfiles &&
 	cd dotfiles &&
 	cp .xinitrc-gentoo $HOME/.xinitrc &&
 	cp .xprofile-gentoo $HOME/.xprofile &&
-	cp -r .aliases .bashrc .config/ .ls-cols .vimrc .vim/ .Xresources .local/ $HOME &&
+	cp -r .aliases .bashrc .config/ .ls-cols .inputrc .vimrc .vim/ .Xresources .local/ $HOME &&
 	cp -r wallpapers $HOME &&
 	printf '\e[1;42m Success!\[0m\n' ||
 	printf '\e[1;41m Error! Could not copy configurations!\e[0m\n' 
