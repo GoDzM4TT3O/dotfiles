@@ -51,7 +51,7 @@ Have any issues with dwm? Check the [`man` page](https://github.com/saloniamatte
 NOTE: [saloniamatteo/dwm](https://github.com/saloniamatteo/dwm) is the main repository for my build of dwm & dwmblocks. If you need any help, go there.
 
 ## Others (not included)
-- Grub theme: [Artix Silence](https://aur.archlinux.org/packages/artix-silence-grub-theme-git)
+- Grub theme: [Artix Silence](https://aur.archlinux.org/packages/artix-silence-grub-theme-git), [Gentoo Silence](https://github.com/saloniamatteo/gentoo-silence)
 - System wide dark theme: [matcha-dark-azul](https://github.com/vinceliuice/matcha-gtk-theme)
 - Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - Simply mount android: [`simple-mtpfs`](https://wiki.archlinux.org/index.php/Media_Transfer_Protocol#simple-mtpfs)
@@ -85,12 +85,12 @@ Here's a list of the LibreWolf (Firefox) addons I use:
 - Universal Bypass
 
 ## Terminal
-- Terminal: `st` (Luke's build with my keybindings ([included](https://github.com/saloniamatteo/pkgbuilds/tree/master/st-matteo)))
+- Terminal: `st` ([My build](https://github.com/saloniamatteo/st))
 - Terminal file manager: `ranger`
 - Get system info: `neofetch`
 
 ### Shell
-I use `zsh`.
+I use `zsh` on Artix, and `bash` on Gentoo.
 
 ***
 
@@ -98,9 +98,9 @@ I use `zsh`.
 - Window Manager: `dwm`
 - Status bar: `dwmblocks` 
 - Lock screen: `slock` 
-- Automatic lock: `xautolock`
-- Display manager: `lightdm`
-- LightDM theme: [`saluto-lightdm-theme-dwm`](https://aur.archlinux.org/packages/saluto-lightdm-theme-dwm)
+- Automatic lock: `xautolock` (Artix), `xscreensaver` (Gentoo)
+- Display manager: `lightdm` (Artix)
+- LightDM theme: [`saluto-lightdm-theme-dwm`](https://aur.archlinux.org/packages/saluto-lightdm-theme-dwm) (Artix)
 
 ### Slock
 I have included my own build of [slock](https://tools.suckless.org/slock) with two patches:

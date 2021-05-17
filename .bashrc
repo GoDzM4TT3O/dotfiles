@@ -121,6 +121,9 @@ else
 fi
 fi
 
+# Use Vim mode
+set -o vi
+
 #< END OTHERS
 
 echo "Successfully started bash"
