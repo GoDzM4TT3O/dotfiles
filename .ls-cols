@@ -1,0 +1,107 @@
+#! /bin/bash
+
+# see dircolors(1) - and: dircolors --print-database
+
+# ATTRIBUTES
+# (note: all attributes are listed below -
+#        i.e., there isn't a 02 one, etc.)
+# 00 = none
+# 01 = bright
+# 04 = underscore  (disables color code - ?)
+# 05 = blink       (gray background)
+# 07 = reverse     (color as background)
+# 08 = concealed   (?)
+
+# COLORS (30-37)
+N='00;30'  # black
+R='00;31'  # red
+G='00;32'  # green
+Y='00;33'  # yellow
+B='00;34'  # blue
+M='00;35'  # magenta
+C='00;36'  # cyan
+W='00;37'  # white
+
+# BRIGHT (1)
+BN='01;30' # black (gray)
+BR='01;31' # red
+BG='01;32' # green
+BY='01;33' # yellow
+BB='01;34' # blue
+BM='01;35' # magenta
+BC='01;36' # cyan
+BW='01;37' # white
+
+# BACKGROUND (40-47)
+BGN='40'   # black
+BGR='41'   # red
+BGG='42'   # green
+BGY='43'   # yellow
+BGB='44'   # blue
+BGM='45'   # magenta
+BGC='46'   # cyan
+BGW='47'   # white
+
+RS="rs=0"         # reset
+DI="di=$BB"       # directory
+LN="ln=$C"        # link
+MH="mh=00"        # multihardlink
+PI="pi=$BY;$BGB"  # pipe (FIFO)
+SO="so=$BM"       # socket
+DO="do=$M"        # door
+BD="bd=$BY;$BGB"  # block device driver
+CD="cd=$Y;$BGB"   # character device driver
+OR="or=$R"        # broken symlink (or non-stat'able file)
+SU="su=$N;$BGY"   # setuid (u+s)
+SG="sg=$BN;$BGR"  # setgid (g+s)
+CA="ca=$N;$BGR"   # capability
+TW="tw=$N;$BGG"   # sticky and "other writable" directory (+t, o+w)
+OW="ow=$BN;$BGG"  # ditto (-t, o+w)
+ST="st=$BW;$BGB"  #       (+t, o-w)
+EX="ex=$BG"       # +x
+
+AR="$BN"
+ARCHIVE="*.tar=$AR:*.tgz=$AR:*.arj=$AR:*.taz=$AR:*.lzh=$AR:*.lzma=$AR:*.tlz=$AR:*.txz=$AR:*.zip=$AR:*.z=$AR:*.Z=$AR:*.dz=$AR:*.gz=$AR:*.lz=$AR:*.xz=$AR:*.bz2=$AR:*.bz=$AR:*.tbz=$AR:*.tbz2=$AR:*.tz=$AR:*.deb=$AR:*.rpm=$AR:*.jar=$AR:*.war=$AR:*.ear=$AR:*.sar=$AR:*.rar=$AR:*.ace=$AR:*.zoo=$AR:*.cpio=$AR:*.7z=$AR:*.rz=$AR"
+
+IMG="$N;$BGG"
+IMAGE="*.jpg=$IMG:*.jpeg=$IMG:*.gif=$IMG:*.bmp=$IMG:*.pnm=$IMG:*.pbm=$IMG:*.pgm=$IMG:*.ppm=$IMG:*.tga=$IMG:*.xbm=$IMG:*.xpm=$IMG:*.tif=$IMG:*.tiff=$IMG:*.png=$IMG:*.svg=$IMG:*.svgz=$IMG:*.mng=$IMG:*.pcx=$IMG"
+
+MOV="$M"
+MOVIE="*.webm=$MOV:*.mov=$MOV:*.mpg=$MOV:*.mpeg=$MOV:*.m2v=$MOV:*.mkv=$MOV:*.webm=$MOV:*.ogm=$MOV:*.mp4=$MOV:*.m4v=$MOV:*.mp4v=$MOV:*.vob=$MOV:*.qt=$MOV:*.nuv=$MOV:*.wmv=$MOV:*.asf=$MOV:*.rm=$MOV:*.rmvb=$MOV:*.flc=$MOV:*.avi=$MOV:*.fli=$MOV:*.flv=$MOV:*.gl=$MOV:*.dl=$MOV:*.xcf=$MOV:*.xwd=$MOV:*.yuv=$MOV:*.cgm=$MOV:*.emf=$MOV:*.axv=$MOV:*.anx=$MOV:*.ogv=$MOV:*.ogx=$MOV:*.M2TS=$MOV:*.m2ts=$MOV:*.ts=$MOV"
+
+AUD="$BM"
+AUDIO="*.aac=$AUD:*.au=$AUD:*.flac=$AUD:*.mid=$AUD:*.midi=$AUD:*.mka=$AUD:*.mp3=$AUD:*.mpc=$AUD:*.ogg=$AUD:*.ra=$AUD:*.wav=$AUD:*.m4a=$AUD:*.axa=$AUD:*.oga=$AUD:*.spx=$AUD:*.xspf=$AUD:"
+
+SRC="$G"
+SOURCE="*.el=$SRC:*.c=$SRC:*.cc=$SRC:*.cpp=$SRC:*.fps=$SRC:*.tex=$SRC:*.bib=$SRC"
+
+HH="$Y"
+HEADER="*.h=$HH:*.hh=$HH"
+
+DIMP="$G"
+DIM="*.o=$DIMP:*.elc=$DIMP"
+
+TXT="$BW"
+TEXT="*.txt=$TXT"
+
+PDFP="$N;$BGW"
+PDF="*.pdf=$PDFP:*.ps=$PDFP"
+
+HTMLP="$W;$BGB"
+HTML="*.html=$HTMLP:*.htm=$HTMLP"
+
+PHP="*.php=$BW;$BGB"
+
+CSS="*.css=$B;$BGW"
+
+ISO="*.iso=$N;$BGC"
+
+TORRENT="*.torrent=$BW;$BGM"
+
+MAKEFILE="*Makefile=$BW;$BGB"
+
+TYPES="$ARCHIVE:$IMAGE:$MOVIE:$AUDIO:$SOURCE:$HEADER:$DIM:$TEXT:$PDF:$HTML:$PHP:$CSS:$TORRENT:$ISO"
+
+LS_COLORS="$RS:$DI:$LN:$MH:$PI:$SO:$DO:$BD:$CD:$OR:$SU:$SG:$CA:$TW:$OW:$ST:$EX:"$MAKEFILE":"$TYPES
+
+export LS_COLORS

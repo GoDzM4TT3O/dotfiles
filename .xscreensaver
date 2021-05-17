@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.44 for matteo on Wed Apr 21 16:06:54 2021.
+# Written by xscreensaver-demo 5.45 for matteo on Thu Apr 22 11:53:59 2021.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -282,6 +282,10 @@ programs:								      \
   GL: 				gravitywell -root			    \n\
   GL: 				etruscanvenus -root			    \n\
   GL: 				gibson -root				    \n\
+  GL: 				beats -root				    \n\
+  GL: 				covid19 -root				    \n\
+  GL: 				headroom -root				    \n\
+  GL: 				sphereeversion -root			    \n\
 
 
 pointerPollTime:    0:00:05

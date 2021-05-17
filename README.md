@@ -1,5 +1,6 @@
 # Salonia Matteo's dotfiles
 ## Sections:
+- [Donate](#Donate)
 - [Cloning](#cloning)
 - [Previews](#previews)
 - [Help](#help)
@@ -12,9 +13,14 @@
 - [Intel Undervolt](#intel-undervolt)
 - [Low Battery Notifier](#low-battery-notifier)
 - [Installation](#installation)
+	- [Artix Install Script](#Artix-Script)
+	- [Gentoo Install Script](#Gentoo-Script)
 	- [Copying the configurations](#copying-configurations)
 
 ***
+
+## Donate
+Support this project: https://saloniamatteo.top/donate.html
 
 ## Cloning
 NOTE! Please clone this repository with the following command: `git clone --recurse-submodules https://github.com/saloniamatteo/dotfiles`
@@ -154,7 +160,10 @@ Every 30 minutes the command `updatedb` will run, so that the next time you run 
 ## Installation
 See the Arch install script, and base yourself off of that.
 
+### Artix-Script
+
 If you have an Arch-based distro that uses OpenRC, run the following commands:
+
 ```bash
 mkdir -p ~/Documents/dotfiles
 cd ~/Documents/dotfiles
@@ -162,3 +171,17 @@ git clone --recurse-submodules https://github.com/saloniamatteo/dotfiles
 cd dotfiles
 ./archinst-openrc.sh
 ```
+
+### Gentoo-Script
+
+If you run Gentoo, run the commands below:
+
+```bash
+mkdir -p ~/Documents/dotfiles
+cd ~/Documents/dotfiles
+git clone --recurse-submodules https://github.com/saloniamatteo/dotfiles
+cd dotfiles
+./gentoo.sh
+```
+
+systemd is not supported in neither of the scripts.

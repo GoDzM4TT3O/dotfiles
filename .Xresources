@@ -52,11 +52,12 @@
 
 Xft.antialias: 1
 Xft.autohint: 1
-Xft.dpi: 95
+Xft.dpi: 101
 Xft.hinting: 1
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
+Xcursor.theme: Neutral++_White
 
 ! ------------------------------------------------------------------------------
 ! Rofi configs
